@@ -1,23 +1,20 @@
 project:
-  type: book
+  type: website
+  output-dir: docs
 
-book:
-  title: "Fullstack Dev Docs"
-  author: "Inti Luna"
-  date: "4/12/2025"
-  chapters:
-    - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
+website:
+  title: "inti-documentation.github.io"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
 
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
+    css: styles.css
+    toc: true
 
 editor: visual
 
