@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "Fullstack Dev Docs"
+  author: "Inti Luna"
+  date: "4/12/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
