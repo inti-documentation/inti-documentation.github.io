@@ -8,6 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - checkpoint7.qmd
       - about.qmd
 
 format:
