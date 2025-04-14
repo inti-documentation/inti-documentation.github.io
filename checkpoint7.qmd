@@ -2,9 +2,11 @@
 title: "Checkpoint 7"
 ---
 
-# Cuestionario
+# Cuestionario - Javascript
 
 ## ¿Qué diferencia a Javascript de cualquier otro lenguaje de programación?
+
+![JS icon](images/js.png)
 
 Javascript se diferencia de otros lenguajes (como Java, Python, C, Ruby, etc.) en que es el único que puede ser interpretado por un web browser.
 
