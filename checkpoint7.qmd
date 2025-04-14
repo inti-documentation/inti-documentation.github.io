@@ -117,6 +117,51 @@ Referencia:
 
 ## ¿Qué es un operador ternario?
 
+![JS ternary](images/js_ternary.png)
+
+El operador condicional (ternario) es el único operador de JavaScript que toma tres operandos: una condición seguida de un signo de interrogación (?), luego una expresión que se ejecuta si la condición es verdadera y, a continuación, dos puntos (:) seguidos de la expresión que se ejecuta si la condición es falsa. Este operador se utiliza frecuentemente como una alternativa a la sentencia if...else.
+
+```default
+condicion ? ExpresionEjecutaSiVerdadero : ExpresionEjecutaSiFalso
+```
+Por ejemplo, imaginamos que hemos decidido comprar lecha cuando hay menos de 5 litros en casa (nos encanta hacer yogurt :D). 
+
+Primero veamos como seria usando condicional tipo **if ... else** :
+
+```default
+
+if (lecheLitros >= 5) {
+  console.log(`No comprar leche!`);
+} else {
+  console.log(`Comprar leche!`);
+}
+
+```
+Ahora veamos un seudo código de operación ternaria:
+
+```default
+HayMenosQueUmbral ? ComprarLeche : NoComprarLeche
+```
+
+En código seria algo como:
+```default
+const umbral = 5;
+let lecheLitros = 26;
+const comprarLeche = lecheLitros >= umbral ? "No comprar leche" : "Comprar Leche";
+console.log(comprarLeche); // "No comprar leche"
+```
+
+Como vemos, la operación ternaria nos ofrece una manera de simplificar el código y la lectura en ciertos casos donde las condiciones son simples.
+
+Referencias
+
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator>
+
+<https://www.w3schools.com/java/java_conditions_shorthand.asp>
+
+<https://www.tpointtech.com/ternary-operator-in-java>
+
+
 ## ¿Cuál es la diferencia entre una declaración de función y una expresión de función?
 
 ## ¿Qué es la palabra clave "this" en JS?
