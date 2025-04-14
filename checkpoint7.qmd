@@ -339,7 +339,75 @@ Referencias
 
 ## ¿Qué es la palabra clave "this" en JS?
 
+![JS this](images/js_this.png)
 
+***This*** es una palabra clave utilizada dentro de funciones y clases. Hace referencia al objeto en cuestión. En el caso de que estamos creando una función, la palabra "this" se usa para representar o llamar al objeto que dicha función esta modificando. El objeto al que se refiere varia en dependencia de cómo y donde se llama a ***this***.
+
+
+Vamos a ver algunos ejemplos para entender mejor como usar ***this***:
+
+1. Al llamar fuera de función, se refire al objeto de ventana global.
+
+
+```default
+
+console.log('this alone', this); // [object Window]
+
+```
+
+2. Al llamar dentro de un objeto, nos referimos al objeto.
+
+
+```default
+
+const person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    getThis : function() {
+      return this;
+    }
+};
+
+console.log('this in object method', person.getThis());
+
+```
+
+Y de la misma manera, podemos usar ***this*** para llamar a otras propiedades del objeto
+
+```default
+const person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    getFullName : function() {
+      return this.name + ' ' + this.lastName;
+    }
+};
+
+console.log('this in object method', person.getFullName());
+```
+
+Hay otras posibles referencias de "this" que se resumen aqui:
+
+- En un método de un objeto, this se refiere al objeto.
+- Por sí solo, this se refiere al objeto global.
+- En una función, this se refiere al objeto global.
+- En una función en modo estricto, this es undefined.
+- En un evento, this se refiere al elemento que recibió el evento.
+- Métodos como call(), apply() y bind() pueden asignar this a cualquier objeto.
+
+
+
+Referencias
+
+<https://www.freecodecamp.org/espanol/news/como-usar-la-palabra-clave-this-en-javascript/>
+
+<https://keepcoding.io/blog/que-es-this-en-javascript/>
+
+<https://www.w3schools.com/js/js_this.asp>
+
+<https://medium.com/@leoanimesh/javascript-this-keyword-explained-a62f3676fca1>
 
 
 ## Ejercicio
