@@ -4,4 +4,6 @@ title: "About"
 
 Mi nombre es Inti Luna y soy ingeniero ambiental con un gran interés en aprender a crear soluciones que integran análisis de datos y web apps.
 
+[Linkedin](https://www.linkedin.com/in/inti-luna-aviles/)
+
 Contacto: <inti.luna.aviles@gmail.com>

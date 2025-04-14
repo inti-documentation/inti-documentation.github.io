@@ -201,6 +201,12 @@ if (edad < 12) {
 //console.log("El precio de la entrada es: $" + precioFinal);
 
 ```
+
+Referencias
+
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else>
+
+<https://www.w3schools.com/js/js_if_else.asp>
 ## ¿Qué es un operador ternario?
 
 ![JS ternary](images/js_ternary.png)
@@ -249,6 +255,87 @@ Referencias
 
 
 ## ¿Cuál es la diferencia entre una declaración de función y una expresión de función?
+
+En JS, se pueden definir funciones de usando declaración de función y expresión de función. Vamos a ver ejemplos y diferencias.
+
+### Declaración de función
+
+La función se define usando la palabra clave **function**. Se le asigna un nombre y se pueden llamar y reusar en varios sitios.
+
+Por ejemplo, creamos una función que suma dos números de la siguiente manera:
+
+```default
+
+function sumarNumeros(num1,num2){
+ return num1 + num2;
+}
+```
+***Hoisting***.   Las declaraciones de funciones se elevan al inicio del contexto lo que permite llamar a la función antes de escribir la declaración en el código.
+
+```default
+
+sumarNumeros(1,3);// 4
+
+function sumarNumeros(num1,num2){
+ return num1 + num2;
+}
+```
+
+### Expresión de función
+
+En este caso, a una variable se le asigna la función que puede ser anónima o tener un nombre interno. Por ejemplo, en la siguiente expresión creamos la variable getRectArea que contiene una función anónima:
+
+```default
+
+const getRectArea = function(width, height) {
+  return width * height;
+};
+
+console.log(getRectArea(3, 4));
+// Expected output: 12
+```
+
+Un ejemplo de función con nombre podria ser:
+
+```default
+
+let funcionConNombre = function miFuncion() {
+    console.log("Esta es una function expression con nombre.");
+};
+
+funcionConNombre();  //
+// Expected output: Esta es una function expression con nombre
+```
+
+***No hosting***. Lo que quiere decir que no se eleva y se tiene usar después de la asignación.
+
+Un uso común de expresiones de función es cuando se requiere una función como valor como cuando se usan callbacks.
+
+***Callbacks*** son funciones que se pasan como argumento a otra función y se ejecuta después de que ocurra un evento o se completa un proceso. Este tipo de mecánismos se usa en operaciones asíncronas como manejar eventos o esperar a una respuesta de API, ya que permite que el código continua su ejecución sin bloquearse. Por ejemplo, en en sieguiente código se espera a que ocurra un evento (click) y cuando esto ocurre, se imprime en consola un mensaje:
+
+```default
+
+button.addEventListener("click", function (event) {
+  console.log("button is clicked!");
+});
+
+```
+
+Es importante observar que la secuencia de ejecución con callbacks no es la secuencia en la que estan definidas pero más bien en la secuencia en la que son llamadas.Esto permite ir llamando a funciones de manera muy dinámicas y en respuesta a las acciones de lo que podría ser las necesidades de un usuario en una web app.
+
+Referencias
+
+<https://www.w3schools.com/js/js_function_definition.asp>
+
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function>
+
+<https://www.w3schools.com/js/js_callback.asp>
+
+<https://www.youtube.com/watch?v=kz_vwAF4NHI>
+
+
+
+
 
 ## ¿Qué es la palabra clave "this" en JS?
 
