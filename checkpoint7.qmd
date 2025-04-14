@@ -6,6 +6,16 @@ title: "Checkpoint 7"
 
 ## ¿Qué diferencia a Javascript de cualquier otro lenguaje de programación?
 
+Javascript se diferencia de otros lenguajes (como Java, Python, C, Ruby, etc.) en que es el único que puede ser interpretado por un web browser.
+
+La razón de esto es historica, en 1995 fue cuando creado por la empresa Netscape que era predominante en el mercado queria un lenguaje que pareciera como Java. Aunque inicialmente se penso para manejar Front-End y Back-End, solo ha sido exitosa en el Front-End. Aun después de la desaparición del browser de Netscape, las compañias siguientes han continuado el uso de Javascript.
+
+Referencias
+
+<https://snipcart.com/blog/why-javascript-benefits>
+
+<https://en.wikipedia.org/wiki/Netscape>
+
 ## ¿Cuáles son algunos tipos de datos JS?
 
 ## ¿Cuáles son las tres funciones de String en JS?
@@ -18,6 +28,65 @@ title: "Checkpoint 7"
 
 ## ¿Qué es la palabra clave "this" en JS?
 
-```{r}
-1 + 1
+
+
+
+## Ejercicio
+
+```{ojs}
+// ejercicio.js
+
+/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes
+Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". 
+Si es más pequeño, la consola registra "¡El número es menor que 50!"
+*/
+function myFunctionSumaMultiplica(num1, num2,num3,num4) {
+    
+// Verificar que se hayan pasado exactamente 4 argumentos
+if (arguments.length !== 4) {
+    console.log("Error de cantidad: se deben pasar 4 argumentos.");
+    return;
+}
+
+// Verificar que todos sean números
+if (
+    typeof num1 !== 'number' ||
+    typeof num2 !== 'number' ||
+    typeof num3 !== 'number' ||
+    typeof num4 !== 'number'
+) {
+    console.log("Error de tipo: todos los 4 argumentos deben ser números.");
+    return;
+}
+    
+    let suma1 = num1 + num2;
+    let suma2 = num3 + num4;
+    let producto = suma1 * suma2;
+    if (producto > 50) {
+        console.log(`¡El número ${producto} es mayor que 50!`);
+    }
+    else if (producto === 50) {
+        console.log(`¡El número ${producto} es igual a 50!`);
+    }
+    else {
+        console.log(`¡El número ${producto} es menor que 50!`);
+    }
+
+    
+  }
+
+//llama a la funcion y muestra el resultado en consola
+//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);
+
+// ejemplo con error de tipo
+//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);
+// ejemplo con error de cantidad de argumentos
+//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);
+
+
+
 ```
+      
+
+[Enlace a fichero JS](https://github.com/inti-documentation/inti-documentation.github.io/blob/main/checkpoint7_ejercicio.js)
+
