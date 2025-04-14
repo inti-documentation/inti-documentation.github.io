@@ -115,6 +115,92 @@ Referencia:
 
 ## ¿Qué es un condicional?
 
+En JS, una operación condicional, como el nombre indica, permite tener diferentes caminos a tomar (bloques de código a ejecutar) en dependencia de si una condición o condiciones se cumplen.
+
+Esto se puede entender con un ejemplo cotidiano. Digamos que vamos caminando al trabajo de manera regular pero si es tarde tenemos que tomar el metro.
+
+![Ejemplo condicional básico](images/condition_ejemplo1.png)
+
+Como vemos, el concepto de condicional es fácil de entender y lo usamos en nuestra vida cotidiana.
+
+Ahora en JS, la sintaxis seria:
+
+```default
+
+let tiempoParaTrabajar = 35;
+let limiteCaminar = 30;
+let limiteMetro = 15;
+
+if (tiempoParaTrabajar > limiteCaminar) {
+  console.log(`Vamos caminando!`);
+} else {
+  console.log(`Vamos en Metro que es tarde!`);
+}
+
+```
+
+Ahora complicamos un poco más la lógica para mostrar el caso de una condicional dentro de una condicional. Por ejemplo, si fuera tarde tomamos el metro pero si es muy tarde vamos a tomar un taxi. 
+
+![Ejemplo condicional anidado](images/condition_ejemplo2.png)
+
+```default
+
+let tiempoParaTrabajar = 35;
+let limiteCaminar = 30;
+let limiteMetro = 15;
+
+if (tiempoParaTrabajar > limiteCaminar) {
+  console.log(`Vamos caminando!`);
+} else {
+  if (tiempoParaTrabajar > limiteMetro){
+    console.log(`Vamos en Metro que es tarde!`);
+  } else {
+    console.log(`Vamos en Taxi que es muy tarde!`);
+  }
+}
+
+```
+
+En caso de que hubieran multiplies condiciones a probar usamos sintaxis: **"if...else if...else"**. 
+
+```default
+if (condition1)
+  statement1
+else if (condition2)
+  statement2
+else if (condition3)
+  statement3
+// …
+else
+  statementN
+```
+
+Veamos un ejemplo donde dependencia de la edad pagamos un precio diferente en el cine
+
+```default
+
+let edad = 15;         
+let precioBase = 10;   
+let precioFinal;       
+
+// Aplicar descuento por edad
+if (edad < 12) {
+  
+  precioFinal = precioBase * 0.5;
+} else if (edad >= 12 && edad < 18) {
+ 
+  precioFinal = precioBase * 0.75;
+} else if (edad >= 65) {
+  
+  precioFinal = precioBase * 0.7;
+} else {
+ 
+  precioFinal = precioBase;
+}
+
+//console.log("El precio de la entrada es: $" + precioFinal);
+
+```
 ## ¿Qué es un operador ternario?
 
 ![JS ternary](images/js_ternary.png)
