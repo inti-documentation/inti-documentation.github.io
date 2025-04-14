@@ -20,6 +20,97 @@ Referencias
 
 ## ¿Cuáles son algunos tipos de datos JS?
 
+En JavaScript existen diferentes tipos de datos que se pueden clasificar principalmente en dos grandes categorías: tipos primitivos y tipos complejos (también llamados objetos). A continuación, se desarrolla cada uno de estos grupos junto con ejemplos y explicaciones de su funcionamiento.
+
+### Tipos Primitivos
+
+Los tipos primitivos son aquellos que se almacenan y se gestionan por valor. Esto significa que cuando asignas o pasas un valor primitivo, se copia literalmente su valor en memoria. Algunas características clave de los tipos primitivos son:
+
+  Inmutabilidad: Una vez creado, el valor primitivo no puede cambiar; en lugar de modificarlo, se crea uno nuevo si se asigna un valor distinto.
+
+  Sin métodos propios: Aunque JavaScript permite acceder a métodos en tipos primitivos a través de un proceso llamado autoboxing (envoltura automática), en esencia estos valores no poseen métodos propios como los objetos.
+
+Los tipos primitivos en JavaScript incluyen:
+
+**Number**: Para representar tanto enteros como números con decimales. Sin embargo tiene limites:
+
+Números flotantes: Puedes trabajar con números muy pequeños y muy grandes, tanto positivos como negativos, que tienen decimales.
+
+Números enteros: Aunque puedes usar números enteros, JavaScript garantiza que sean precisos solo si están en el rango seguro, que es desde -(2^53 − 1) hasta 2^53 − 1.
+Si el número entero está fuera de este rango, ya no se representa con total precisión y se convierte en una aproximación de punto flotante.
+
+Verificación: Puedes usar la función Number.isSafeInteger() para comprobar si un número entero está dentro de ese rango seguro.
+
+**String**: Cadenas de caracteres.
+
+Codificación y Posición:
+Los strings se codifican usando UTF-16, lo que significa que cada carácter se guarda como un valor numérico de 16 bits. Cada carácter ocupa una posición numerada, donde el primer carácter está en el índice 0, el siguiente en el 1, y así sucesivamente. La propiedad length de un string indica el número de unidades UTF-16, que puede no coincidir exactamente con la cantidad real de caracteres en todos los casos.
+
+Inmutabilidad:
+Las cadenas son inmutables, lo que significa que una vez creada una cadena, no se puede modificar directamente. Si necesitas cambiarla, las operaciones como extraer una parte del texto (usando substring()) o unir dos cadenas (con el operador + o concat()) generan una nueva cadena sin alterar la original.
+
+**Boolean**: Valores lógicos true y false. Usualmene usados en operaciones con condicionales.
+
+**Null**: Representa la ausencia intencional de cualquier valor u objeto.
+
+**Undefined**: Indica que una variable ha sido declarada pero aún no se le ha asignado ningún valor.
+
+**Symbol**: Introducido en ES6, se utiliza para crear identificadores únicos para propiedades de objetos.
+
+**BigInt**: Introducido en versiones más recientes (ES2020), permite trabajar con números enteros de gran magnitud que superan el límite del tipo Number.
+
+En la siguiente tabla se puede resumir los tipos primitivos, los valores que regresa y  correspondiente clase o tipo de objeto que lo contiene:
+
+![JS types](images/js_types.png)
+
+### Tipos Complejos (Objetos)
+
+Los tipos complejos, o objetos, se gestionan por referencia. Esto significa que cuando asignas o pasas un objeto, lo que se copia es la referencia a la ubicación en memoria donde se encuentra ese objeto. Algunas características de los objetos son:
+
+  Mutabilidad: A diferencia de los primitivos, los objetos pueden modificarse después de su creación. Por ejemplo, puedes añadir, modificar o eliminar propiedades.
+
+  Colección de propiedades y métodos: Un objeto puede contener datos (propiedades) y funcionalidades (métodos).
+
+  Herencia prototípica: JavaScript utiliza prototipos para heredar propiedades y métodos entre objetos, lo que permite crear estructuras de datos más complejas y reutilizables.
+
+Dentro de la categoría de objetos se incluyen:
+
+**Objetos literales**: Se definen directamente usando pares de clave valor y permite almacenar diferentes atributos relacionados de manera flexible, por ejemplo,
+
+```default
+let persona = { nombre: "Ana", edad: 28 };
+```
+
+**Arrays**: Son objetos especializados para almacenar colecciones ordenadas de datos,
+
+```default
+let numeros = [1, 2, 3, 4];
+```
+    
+
+**Funciones**: En JavaScript, las funciones se consideran objetos de primera clase, lo que significa que pueden asignarse a variables, pasarse como argumentos o devolverse desde otras funciones,
+
+```{ojs}
+    function saludar() {
+        console.log("Hola");
+    }
+```
+Otros objetos: Como Date, RegExp, Map, Set, entre otros, que proporcionan funcionalidades específicas para manejar fechas, expresiones regulares y colecciones de valores.
+
+
+
+
+Referencia: 
+
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures>
+
+<https://brainstation.io/learn/javascript/data-types>
+
+<https://www.w3schools.com/js/js_typeof.asp>
+
+
+
+
 ## ¿Cuáles son las tres funciones de String en JS?
 
 ## ¿Qué es un condicional?
