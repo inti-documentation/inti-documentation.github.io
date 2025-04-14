@@ -240,6 +240,7 @@ Referencias
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else>
 
 <https://www.w3schools.com/js/js_if_else.asp>
+
 ## ¿Qué es un operador ternario?
 
 ![JS ternary](images/js_ternary.png)
