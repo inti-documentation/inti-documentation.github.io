@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>inti-documentation.github.io - JS - CKP7</title>
+<title>inti-documentation.github.io - JS - CKP8</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,8 +122,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./checkpoint7.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./js_checkpoint7.html" rel="" target="">
  <span class="menu-text">JS - CKP7</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./js_checkpoint8.html" rel="" target="" aria-current="page">
+ <span class="menu-text">JS - CKP8</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html" rel="" target="">
@@ -147,22 +151,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#cuestionario---javascript" id="toc-cuestionario---javascript" class="nav-link active" data-scroll-target="#cuestionario---javascript">Cuestionario - Javascript</a>
   <ul class="collapse">
-  <li><a href="#qué-diferencia-a-javascript-de-cualquier-otro-lenguaje-de-programación" id="toc-qué-diferencia-a-javascript-de-cualquier-otro-lenguaje-de-programación" class="nav-link" data-scroll-target="#qué-diferencia-a-javascript-de-cualquier-otro-lenguaje-de-programación">¿Qué diferencia a Javascript de cualquier otro lenguaje de programación?</a></li>
-  <li><a href="#cuáles-son-algunos-tipos-de-datos-js" id="toc-cuáles-son-algunos-tipos-de-datos-js" class="nav-link" data-scroll-target="#cuáles-son-algunos-tipos-de-datos-js">¿Cuáles son algunos tipos de datos JS?</a>
+  <li><a href="#cuáles-son-las-diferencias-entre-const-let-y-var" id="toc-cuáles-son-las-diferencias-entre-const-let-y-var" class="nav-link" data-scroll-target="#cuáles-son-las-diferencias-entre-const-let-y-var">¿Cuáles son las diferencias entre const, let y var?</a></li>
+  <li><a href="#qué-tipo-de-bucles-hay-en-js" id="toc-qué-tipo-de-bucles-hay-en-js" class="nav-link" data-scroll-target="#qué-tipo-de-bucles-hay-en-js">¿Qué tipo de bucles hay en JS?</a>
   <ul class="collapse">
   <li><a href="#tipos-primitivos" id="toc-tipos-primitivos" class="nav-link" data-scroll-target="#tipos-primitivos">Tipos Primitivos</a></li>
   <li><a href="#tipos-complejos-objetos" id="toc-tipos-complejos-objetos" class="nav-link" data-scroll-target="#tipos-complejos-objetos">Tipos Complejos (Objetos)</a></li>
   </ul></li>
-  <li><a href="#cuáles-son-las-tres-funciones-de-string-en-js" id="toc-cuáles-son-las-tres-funciones-de-string-en-js" class="nav-link" data-scroll-target="#cuáles-son-las-tres-funciones-de-string-en-js">¿Cuáles son las tres funciones de String en JS?</a></li>
-  <li><a href="#qué-es-un-condicional" id="toc-qué-es-un-condicional" class="nav-link" data-scroll-target="#qué-es-un-condicional">¿Qué es un condicional?</a></li>
-  <li><a href="#qué-es-un-operador-ternario" id="toc-qué-es-un-operador-ternario" class="nav-link" data-scroll-target="#qué-es-un-operador-ternario">¿Qué es un operador ternario?</a></li>
+  <li><a href="#qué-es-una-función-de-flecha" id="toc-qué-es-una-función-de-flecha" class="nav-link" data-scroll-target="#qué-es-una-función-de-flecha">¿Qué es una función de flecha?</a></li>
+  <li><a href="#qué-es-la-deconstrucción-de-variables" id="toc-qué-es-la-deconstrucción-de-variables" class="nav-link" data-scroll-target="#qué-es-la-deconstrucción-de-variables">¿Qué es la deconstrucción de variables?</a></li>
+  <li><a href="#qué-hace-el-operador-de-extensión-en-js" id="toc-qué-hace-el-operador-de-extensión-en-js" class="nav-link" data-scroll-target="#qué-hace-el-operador-de-extensión-en-js">¿Qué hace el operador de extensión en JS?</a></li>
   <li><a href="#cuál-es-la-diferencia-entre-una-declaración-de-función-y-una-expresión-de-función" id="toc-cuál-es-la-diferencia-entre-una-declaración-de-función-y-una-expresión-de-función" class="nav-link" data-scroll-target="#cuál-es-la-diferencia-entre-una-declaración-de-función-y-una-expresión-de-función">¿Cuál es la diferencia entre una declaración de función y una expresión de función?</a>
   <ul class="collapse">
   <li><a href="#declaración-de-función" id="toc-declaración-de-función" class="nav-link" data-scroll-target="#declaración-de-función">Declaración de función</a></li>
   <li><a href="#expresión-de-función" id="toc-expresión-de-función" class="nav-link" data-scroll-target="#expresión-de-función">Expresión de función</a></li>
   </ul></li>
-  <li><a href="#qué-es-la-palabra-clave-this-en-js" id="toc-qué-es-la-palabra-clave-this-en-js" class="nav-link" data-scroll-target="#qué-es-la-palabra-clave-this-en-js">¿Qué es la palabra clave “this” en JS?</a></li>
-  <li><a href="#ejercicio" id="toc-ejercicio" class="nav-link" data-scroll-target="#ejercicio">Ejercicio</a></li>
+  <li><a href="#qué-es-la-programación-orientada-a-objetos" id="toc-qué-es-la-programación-orientada-a-objetos" class="nav-link" data-scroll-target="#qué-es-la-programación-orientada-a-objetos">¿Qué es la programación orientada a objetos?</a></li>
+  <li><a href="#qué-es-una-promesa-en-js" id="toc-qué-es-una-promesa-en-js" class="nav-link" data-scroll-target="#qué-es-una-promesa-en-js">¿Qué es una promesa en JS?</a></li>
+  <li><a href="#qué-hacen-async-y-await-por-nosotros" id="toc-qué-hacen-async-y-await-por-nosotros" class="nav-link" data-scroll-target="#qué-hacen-async-y-await-por-nosotros">¿Qué hacen async y await por nosotros?</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
+  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -172,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">JS - CKP7</h1>
+<h1 class="title">JS - CKP8</h1>
 </div>
 
 
@@ -189,22 +199,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="cuestionario---javascript" class="level1">
 <h1>Cuestionario - Javascript</h1>
-<section id="qué-diferencia-a-javascript-de-cualquier-otro-lenguaje-de-programación" class="level2">
-<h2 class="anchored" data-anchor-id="qué-diferencia-a-javascript-de-cualquier-otro-lenguaje-de-programación">¿Qué diferencia a Javascript de cualquier otro lenguaje de programación?</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/js.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">JS icon</figcaption>
 </figure>
 </div>
+<section id="cuáles-son-las-diferencias-entre-const-let-y-var" class="level2">
+<h2 class="anchored" data-anchor-id="cuáles-son-las-diferencias-entre-const-let-y-var">¿Cuáles son las diferencias entre const, let y var?</h2>
 <p>Javascript se diferencia de otros lenguajes (como Java, Python, C, Ruby, etc.) en que es el único que puede ser interpretado por un web browser.</p>
 <p>La razón de esto es historica, en 1995 fue cuando creado por la empresa Netscape que era predominante en el mercado queria un lenguaje que pareciera como Java. Aunque inicialmente se penso para manejar Front-End y Back-End, solo ha sido exitosa en el Front-End. Aun después de la desaparición del browser de Netscape, las compañias siguientes han continuado el uso de Javascript.</p>
 <p>Referencias</p>
 <p><a href="https://snipcart.com/blog/why-javascript-benefits" class="uri">https://snipcart.com/blog/why-javascript-benefits</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Netscape" class="uri">https://en.wikipedia.org/wiki/Netscape</a></p>
 </section>
-<section id="cuáles-son-algunos-tipos-de-datos-js" class="level2">
-<h2 class="anchored" data-anchor-id="cuáles-son-algunos-tipos-de-datos-js">¿Cuáles son algunos tipos de datos JS?</h2>
+<section id="qué-tipo-de-bucles-hay-en-js" class="level2">
+<h2 class="anchored" data-anchor-id="qué-tipo-de-bucles-hay-en-js">¿Qué tipo de bucles hay en JS?</h2>
 <p>En JavaScript existen diferentes tipos de datos que se pueden clasificar principalmente en dos grandes categorías: tipos primitivos y tipos complejos (también llamados objetos). A continuación, se desarrolla cada uno de estos grupos junto con ejemplos y explicaciones de su funcionamiento.</p>
 <section id="tipos-primitivos" class="level3">
 <h3 class="anchored" data-anchor-id="tipos-primitivos">Tipos Primitivos</h3>
@@ -245,9 +255,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>let numeros = [1, 2, 3, 4];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Funciones</strong>: En JavaScript, las funciones se consideran objetos de primera clase, lo que significa que pueden asignarse a variables, pasarse como argumentos o devolverse desde otras funciones,</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-startfrom="93" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 92;"><span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">saludar</span>() {</span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Hola"</span>)<span class="op">;</span></span>
-<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3" data-startfrom="91" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 90;"><span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">saludar</span>() {</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Hola"</span>)<span class="op">;</span></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -261,8 +271,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://www.w3schools.com/js/js_typeof.asp" class="uri">https://www.w3schools.com/js/js_typeof.asp</a></p>
 </section>
 </section>
-<section id="cuáles-son-las-tres-funciones-de-string-en-js" class="level2">
-<h2 class="anchored" data-anchor-id="cuáles-son-las-tres-funciones-de-string-en-js">¿Cuáles son las tres funciones de String en JS?</h2>
+<section id="qué-es-una-función-de-flecha" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-una-función-de-flecha">¿Qué es una función de flecha?</h2>
 <p>En JS, los objeto de clase string representan texto y existen diferentes métodos que se resumen en la siguiente imagen.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -289,8 +299,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://www.w3schools.com/jsref/jsref_obj_string.asp" class="uri">https://www.w3schools.com/jsref/jsref_obj_string.asp</a></p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String</a></p>
 </section>
-<section id="qué-es-un-condicional" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-un-condicional">¿Qué es un condicional?</h2>
+<section id="qué-es-la-deconstrucción-de-variables" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-la-deconstrucción-de-variables">¿Qué es la deconstrucción de variables?</h2>
 <p>En JS, una operación condicional, como el nombre indica, permite tener diferentes caminos a tomar (bloques de código a ejecutar) en dependencia de si una condición o condiciones se cumplen.</p>
 <p>Esto se puede entender con un ejemplo cotidiano. Digamos que vamos caminando al trabajo de manera regular pero si es tarde tenemos que tomar el metro.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -368,8 +378,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else</a></p>
 <p><a href="https://www.w3schools.com/js/js_if_else.asp" class="uri">https://www.w3schools.com/js/js_if_else.asp</a></p>
 </section>
-<section id="qué-es-un-operador-ternario" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-un-operador-ternario">¿Qué es un operador ternario?</h2>
+<section id="qué-hace-el-operador-de-extensión-en-js" class="level2">
+<h2 class="anchored" data-anchor-id="qué-hace-el-operador-de-extensión-en-js">¿Qué hace el operador de extensión en JS?</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/js_ternary.png" class="img-fluid figure-img"></p>
@@ -451,8 +461,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://www.youtube.com/watch?v=kz_vwAF4NHI" class="uri">https://www.youtube.com/watch?v=kz_vwAF4NHI</a></p>
 </section>
 </section>
-<section id="qué-es-la-palabra-clave-this-en-js" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-la-palabra-clave-this-en-js">¿Qué es la palabra clave “this” en JS?</h2>
+<section id="qué-es-la-programación-orientada-a-objetos" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-la-programación-orientada-a-objetos">¿Qué es la programación orientada a objetos?</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/js_this.png" class="img-fluid figure-img"></p>
@@ -506,66 +516,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://www.w3schools.com/js/js_this.asp" class="uri">https://www.w3schools.com/js/js_this.asp</a></p>
 <p><a href="https://medium.com/@leoanimesh/javascript-this-keyword-explained-a62f3676fca1" class="uri">https://medium.com/@leoanimesh/javascript-this-keyword-explained-a62f3676fca1</a></p>
 </section>
-<section id="ejercicio" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio">Ejercicio</h2>
+<section id="qué-es-una-promesa-en-js" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-una-promesa-en-js">¿Qué es una promesa en JS?</h2>
+</section>
+<section id="qué-hacen-async-y-await-por-nosotros" class="level2">
+<h2 class="anchored" data-anchor-id="qué-hacen-async-y-await-por-nosotros">¿Qué hacen async y await por nosotros?</h2>
+</section>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<section id="ejercicio-1" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h3>
+<p>Crea un bucle for en JS que imprima cada nombre en esta lista.</p>
+<pre><code>  miLista = “velma”, “exploradora”, “jane”, “john”, “harry”</code></pre>
+<p>Crea un bucle while que recorra la misma lista y también imprima los nombres. Nota: Recuerda crear un contador para que el ciclo no sea infinito.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22" data-startfrom="449" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 448;"><span id="cb22-449"><a href="#cb22-449" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
-<span id="cb22-450"><a href="#cb22-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-451"><a href="#cb22-451" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
-<span id="cb22-452"><a href="#cb22-452" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
-<span id="cb22-453"><a href="#cb22-453" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
-<span id="cb22-454"><a href="#cb22-454" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb22-455"><a href="#cb22-455" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
-<span id="cb22-456"><a href="#cb22-456" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-457"><a href="#cb22-457" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
-<span id="cb22-458"><a href="#cb22-458" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
-<span id="cb22-459"><a href="#cb22-459" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
-<span id="cb22-460"><a href="#cb22-460" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb22-461"><a href="#cb22-461" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb22-462"><a href="#cb22-462" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-463"><a href="#cb22-463" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
-<span id="cb22-464"><a href="#cb22-464" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
-<span id="cb22-465"><a href="#cb22-465" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb22-466"><a href="#cb22-466" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb22-467"><a href="#cb22-467" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb22-468"><a href="#cb22-468" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
-<span id="cb22-469"><a href="#cb22-469" aria-hidden="true" tabindex="-1"></a>) {</span>
-<span id="cb22-470"><a href="#cb22-470" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
-<span id="cb22-471"><a href="#cb22-471" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb22-472"><a href="#cb22-472" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb22-473"><a href="#cb22-473" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-474"><a href="#cb22-474" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
-<span id="cb22-475"><a href="#cb22-475" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
-<span id="cb22-476"><a href="#cb22-476" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
-<span id="cb22-477"><a href="#cb22-477" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
-<span id="cb22-478"><a href="#cb22-478" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb22-479"><a href="#cb22-479" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb22-480"><a href="#cb22-480" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
-<span id="cb22-481"><a href="#cb22-481" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
-<span id="cb22-482"><a href="#cb22-482" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb22-483"><a href="#cb22-483" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
-<span id="cb22-484"><a href="#cb22-484" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb22-485"><a href="#cb22-485" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb22-486"><a href="#cb22-486" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-487"><a href="#cb22-487" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-488"><a href="#cb22-488" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-489"><a href="#cb22-489" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-490"><a href="#cb22-490" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
-<span id="cb22-491"><a href="#cb22-491" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
-<span id="cb22-492"><a href="#cb22-492" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-493"><a href="#cb22-493" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
-<span id="cb22-494"><a href="#cb22-494" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
-<span id="cb22-495"><a href="#cb22-495" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
-<span id="cb22-496"><a href="#cb22-496" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23" data-startfrom="442" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 441;"><span id="cb23-442"><a href="#cb23-442" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
+<span id="cb23-443"><a href="#cb23-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-444"><a href="#cb23-444" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
+<span id="cb23-445"><a href="#cb23-445" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
+<span id="cb23-446"><a href="#cb23-446" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
+<span id="cb23-447"><a href="#cb23-447" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb23-448"><a href="#cb23-448" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
+<span id="cb23-449"><a href="#cb23-449" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-450"><a href="#cb23-450" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
+<span id="cb23-451"><a href="#cb23-451" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
+<span id="cb23-452"><a href="#cb23-452" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
+<span id="cb23-453"><a href="#cb23-453" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb23-454"><a href="#cb23-454" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-455"><a href="#cb23-455" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-456"><a href="#cb23-456" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
+<span id="cb23-457"><a href="#cb23-457" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
+<span id="cb23-458"><a href="#cb23-458" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb23-459"><a href="#cb23-459" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb23-460"><a href="#cb23-460" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb23-461"><a href="#cb23-461" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
+<span id="cb23-462"><a href="#cb23-462" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="cb23-463"><a href="#cb23-463" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
+<span id="cb23-464"><a href="#cb23-464" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb23-465"><a href="#cb23-465" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-466"><a href="#cb23-466" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-467"><a href="#cb23-467" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
+<span id="cb23-468"><a href="#cb23-468" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
+<span id="cb23-469"><a href="#cb23-469" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
+<span id="cb23-470"><a href="#cb23-470" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb23-471"><a href="#cb23-471" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb23-472"><a href="#cb23-472" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb23-473"><a href="#cb23-473" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
+<span id="cb23-474"><a href="#cb23-474" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
+<span id="cb23-475"><a href="#cb23-475" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb23-476"><a href="#cb23-476" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
+<span id="cb23-477"><a href="#cb23-477" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb23-478"><a href="#cb23-478" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb23-479"><a href="#cb23-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-480"><a href="#cb23-480" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-481"><a href="#cb23-481" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb23-482"><a href="#cb23-482" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-483"><a href="#cb23-483" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
+<span id="cb23-484"><a href="#cb23-484" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
+<span id="cb23-485"><a href="#cb23-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-486"><a href="#cb23-486" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
+<span id="cb23-487"><a href="#cb23-487" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
+<span id="cb23-488"><a href="#cb23-488" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
+<span id="cb23-489"><a href="#cb23-489" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
-<p><a href="https://github.com/inti-documentation/inti-documentation.github.io/blob/main/checkpoint7_ejercicio.js">Enlace a fichero JS</a></p>
+<p><a href="https://github.com/inti-documentation/inti-documentation.github.io/blob/main/checkpoint8_ejercicio1.js">Enlace a fichero JS</a></p>
+</section>
+<section id="ejercicio-2" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h3>
+<p>Cree una función de flecha que devuelva “Hola mundo”.</p>
+<p><a href="https://github.com/inti-documentation/inti-documentation.github.io/blob/main/checkpoint8_ejercicio2.js">Enlace a fichero JS</a></p>
 
 
+</section>
 </section>
 </section>
 
