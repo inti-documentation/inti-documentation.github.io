@@ -8,8 +8,6 @@ title: "JS - CKP7"
 
 ## ¿Qué diferencia a Javascript de cualquier otro lenguaje de programación?
 
-
-
 Javascript se diferencia de otros lenguajes (como Java, Python, C, Ruby, etc.) en que es el único que puede ser interpretado por un web browser.
 
 La razón de esto es historica, en 1995 fue cuando creado por la empresa Netscape que era predominante en el mercado queria un lenguaje que pareciera como Java. Aunque inicialmente se penso para manejar Front-End y Back-End, solo ha sido exitosa en el Front-End. Aun después de la desaparición del browser de Netscape, las compañias siguientes han continuado el uso de Javascript.
@@ -28,9 +26,9 @@ En JavaScript existen diferentes tipos de datos que se pueden clasificar princip
 
 Los tipos primitivos son aquellos que se almacenan y se gestionan por valor. Esto significa que cuando asignas o pasas un valor primitivo, se copia literalmente su valor en memoria. Algunas características clave de los tipos primitivos son:
 
-  Inmutabilidad: Una vez creado, el valor primitivo no puede cambiar; en lugar de modificarlo, se crea uno nuevo si se asigna un valor distinto.
+Inmutabilidad: Una vez creado, el valor primitivo no puede cambiar; en lugar de modificarlo, se crea uno nuevo si se asigna un valor distinto.
 
-  Sin métodos propios: Aunque JavaScript permite acceder a métodos en tipos primitivos a través de un proceso llamado autoboxing (envoltura automática), en esencia estos valores no poseen métodos propios como los objetos.
+Sin métodos propios: Aunque JavaScript permite acceder a métodos en tipos primitivos a través de un proceso llamado autoboxing (envoltura automática), en esencia estos valores no poseen métodos propios como los objetos.
 
 Los tipos primitivos en JavaScript incluyen:
 
@@ -38,18 +36,15 @@ Los tipos primitivos en JavaScript incluyen:
 
 Números flotantes: Puedes trabajar con números muy pequeños y muy grandes, tanto positivos como negativos, que tienen decimales.
 
-Números enteros: Aunque puedes usar números enteros, JavaScript garantiza que sean precisos solo si están en el rango seguro, que es desde -(2^53 − 1) hasta 2^53 − 1.
-Si el número entero está fuera de este rango, ya no se representa con total precisión y se convierte en una aproximación de punto flotante.
+Números enteros: Aunque puedes usar números enteros, JavaScript garantiza que sean precisos solo si están en el rango seguro, que es desde -(2\^53 − 1) hasta 2\^53 − 1. Si el número entero está fuera de este rango, ya no se representa con total precisión y se convierte en una aproximación de punto flotante.
 
 Verificación: Puedes usar la función Number.isSafeInteger() para comprobar si un número entero está dentro de ese rango seguro.
 
 **String**: Cadenas de caracteres.
 
-Codificación y Posición:
-Los strings se codifican usando UTF-16, lo que significa que cada carácter se guarda como un valor numérico de 16 bits. Cada carácter ocupa una posición numerada, donde el primer carácter está en el índice 0, el siguiente en el 1, y así sucesivamente. La propiedad length de un string indica el número de unidades UTF-16, que puede no coincidir exactamente con la cantidad real de caracteres en todos los casos.
+Codificación y Posición: Los strings se codifican usando UTF-16, lo que significa que cada carácter se guarda como un valor numérico de 16 bits. Cada carácter ocupa una posición numerada, donde el primer carácter está en el índice 0, el siguiente en el 1, y así sucesivamente. La propiedad length de un string indica el número de unidades UTF-16, que puede no coincidir exactamente con la cantidad real de caracteres en todos los casos.
 
-Inmutabilidad:
-Las cadenas son inmutables, lo que significa que una vez creada una cadena, no se puede modificar directamente. Si necesitas cambiarla, las operaciones como extraer una parte del texto (usando substring()) o unir dos cadenas (con el operador + o concat()) generan una nueva cadena sin alterar la original.
+Inmutabilidad: Las cadenas son inmutables, lo que significa que una vez creada una cadena, no se puede modificar directamente. Si necesitas cambiarla, las operaciones como extraer una parte del texto (usando substring()) o unir dos cadenas (con el operador + o concat()) generan una nueva cadena sin alterar la original.
 
 **Boolean**: Valores lógicos true y false. Usualmene usados en operaciones con condicionales.
 
@@ -61,7 +56,7 @@ Las cadenas son inmutables, lo que significa que una vez creada una cadena, no s
 
 **BigInt**: Introducido en versiones más recientes (ES2020), permite trabajar con números enteros de gran magnitud que superan el límite del tipo Number.
 
-En la siguiente tabla se puede resumir los tipos primitivos, los valores que regresa y  correspondiente clase o tipo de objeto que lo contiene:
+En la siguiente tabla se puede resumir los tipos primitivos, los valores que regresa y correspondiente clase o tipo de objeto que lo contiene:
 
 ![JS types](images/js_types.png)
 
@@ -69,26 +64,25 @@ En la siguiente tabla se puede resumir los tipos primitivos, los valores que reg
 
 Los tipos complejos, o objetos, se gestionan por referencia. Esto significa que cuando asignas o pasas un objeto, lo que se copia es la referencia a la ubicación en memoria donde se encuentra ese objeto. Algunas características de los objetos son:
 
-  Mutabilidad: A diferencia de los primitivos, los objetos pueden modificarse después de su creación. Por ejemplo, puedes añadir, modificar o eliminar propiedades.
+Mutabilidad: A diferencia de los primitivos, los objetos pueden modificarse después de su creación. Por ejemplo, puedes añadir, modificar o eliminar propiedades.
 
-  Colección de propiedades y métodos: Un objeto puede contener datos (propiedades) y funcionalidades (métodos).
+Colección de propiedades y métodos: Un objeto puede contener datos (propiedades) y funcionalidades (métodos).
 
-  Herencia prototípica: JavaScript utiliza prototipos para heredar propiedades y métodos entre objetos, lo que permite crear estructuras de datos más complejas y reutilizables.
+Herencia prototípica: JavaScript utiliza prototipos para heredar propiedades y métodos entre objetos, lo que permite crear estructuras de datos más complejas y reutilizables.
 
 Dentro de la categoría de objetos se incluyen:
 
 **Objetos literales**: Se definen directamente usando pares de clave valor y permite almacenar diferentes atributos relacionados de manera flexible, por ejemplo,
 
-```default
+``` default
 let persona = { nombre: "Ana", edad: 28 };
 ```
 
 **Arrays**: Son objetos especializados para almacenar colecciones ordenadas de datos,
 
-```default
+``` default
 let numeros = [1, 2, 3, 4];
 ```
-    
 
 **Funciones**: En JavaScript, las funciones se consideran objetos de primera clase, lo que significa que pueden asignarse a variables, pasarse como argumentos o devolverse desde otras funciones,
 
@@ -97,19 +91,16 @@ let numeros = [1, 2, 3, 4];
         console.log("Hola");
     }
 ```
+
 Otros objetos: Como Date, RegExp, Map, Set, entre otros, que proporcionan funcionalidades específicas para manejar fechas, expresiones regulares y colecciones de valores.
 
-
-Referencia: 
+Referencia:
 
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures>
 
 <https://brainstation.io/learn/javascript/data-types>
 
 <https://www.w3schools.com/js/js_typeof.asp>
-
-
-
 
 ## ¿Cuáles son las tres funciones de String en JS?
 
@@ -121,17 +112,17 @@ Dentro de estos metodos encontramos funcionalidades que nos permiten manipular s
 
 Como ejemplo de lo múltiples metodos, vamos a asumir que hemos obtenido un texto en mínuscula pero necesitamos hacer la primera letra del titulo en mayúscula:
 
-```default
+``` default
 let titulo = "hola pequeños gatos";
 
 let tituloCapitalizado = titulo.charAt(0).toUpperCase() + titulo.slice(1);
 
 console.log(tituloCapitalizado);
-
 ```
+
 Ahora imaginamos que queremos hacer un split de texto, extraer el segundo objeto y removemos espacios en blanco usando trim().
 
-```default
+``` default
 
 let texto = "manzana, naranja, banana";
 
@@ -139,7 +130,6 @@ let texto = "manzana, naranja, banana";
 let partes = texto.split(",");
 
 let segundoObjeto = partes[1].trim();
-
 ```
 
 Referencias
@@ -160,7 +150,7 @@ Como vemos, el concepto de condicional es fácil de entender y lo usamos en nues
 
 Ahora en JS, la sintaxis seria:
 
-```default
+``` default
 
 let tiempoParaTrabajar = 35;
 let limiteCaminar = 30;
@@ -171,14 +161,13 @@ if (tiempoParaTrabajar > limiteCaminar) {
 } else {
   console.log(`Vamos en Metro que es tarde!`);
 }
-
 ```
 
-Ahora complicamos un poco más la lógica para mostrar el caso de una condicional dentro de una condicional. Por ejemplo, si fuera tarde tomamos el metro pero si es muy tarde vamos a tomar un taxi. 
+Ahora complicamos un poco más la lógica para mostrar el caso de una condicional dentro de una condicional. Por ejemplo, si fuera tarde tomamos el metro pero si es muy tarde vamos a tomar un taxi.
 
 ![Ejemplo condicional anidado](images/condition_ejemplo2.png)
 
-```default
+``` default
 
 let tiempoParaTrabajar = 35;
 let limiteCaminar = 30;
@@ -193,12 +182,11 @@ if (tiempoParaTrabajar > limiteCaminar) {
     console.log(`Vamos en Taxi que es muy tarde!`);
   }
 }
-
 ```
 
-En caso de que hubieran multiplies condiciones a probar usamos sintaxis: **"if...else if...else"**. 
+En caso de que hubieran multiplies condiciones a probar usamos sintaxis: **"if...else if...else"**.
 
-```default
+``` default
 if (condition1)
   statement1
 else if (condition2)
@@ -212,7 +200,7 @@ else
 
 Veamos un ejemplo donde dependencia de la edad pagamos un precio diferente en el cine
 
-```default
+``` default
 
 let edad = 15;         
 let precioBase = 10;   
@@ -234,7 +222,6 @@ if (edad < 12) {
 }
 
 //console.log("El precio de la entrada es: $" + precioFinal);
-
 ```
 
 Referencias
@@ -249,30 +236,32 @@ Referencias
 
 El operador condicional (ternario) es el único operador de JavaScript que toma tres operandos: una condición seguida de un signo de interrogación (?), luego una expresión que se ejecuta si la condición es verdadera y, a continuación, dos puntos (:) seguidos de la expresión que se ejecuta si la condición es falsa. Este operador se utiliza frecuentemente como una alternativa a la sentencia if...else.
 
-```default
+``` default
 condicion ? ExpresionEjecutaSiVerdadero : ExpresionEjecutaSiFalso
 ```
-Por ejemplo, imaginamos que hemos decidido comprar lecha cuando hay menos de 5 litros en casa (nos encanta hacer yogurt :D). 
+
+Por ejemplo, imaginamos que hemos decidido comprar lecha cuando hay menos de 5 litros en casa (nos encanta hacer yogurt :D).
 
 Primero veamos como seria usando condicional tipo **if ... else** :
 
-```default
+``` default
 
 if (lecheLitros >= 5) {
   console.log(`No comprar leche!`);
 } else {
   console.log(`Comprar leche!`);
 }
-
 ```
+
 Ahora veamos un seudo código de operación ternaria:
 
-```default
+``` default
 HayMenosQueUmbral ? ComprarLeche : NoComprarLeche
 ```
 
 En código seria algo como:
-```default
+
+``` default
 const umbral = 5;
 let lecheLitros = 26;
 const comprarLeche = lecheLitros >= umbral ? "No comprar leche" : "Comprar Leche";
@@ -289,7 +278,6 @@ Referencias
 
 <https://www.tpointtech.com/ternary-operator-in-java>
 
-
 ## ¿Cuál es la diferencia entre una declaración de función y una expresión de función?
 
 En JS, se pueden definir funciones de usando declaración de función y expresión de función. Vamos a ver ejemplos y diferencias.
@@ -300,15 +288,16 @@ La función se define usando la palabra clave **function**. Se le asigna un nomb
 
 Por ejemplo, creamos una función que suma dos números de la siguiente manera:
 
-```default
+``` default
 
 function sumarNumeros(num1,num2){
  return num1 + num2;
 }
 ```
-***Hoisting***.   Las declaraciones de funciones se elevan al inicio del contexto lo que permite llamar a la función antes de escribir la declaración en el código.
 
-```default
+***Hoisting***. Las declaraciones de funciones se elevan al inicio del contexto lo que permite llamar a la función antes de escribir la declaración en el código.
+
+``` default
 
 sumarNumeros(1,3);// 4
 
@@ -321,7 +310,7 @@ function sumarNumeros(num1,num2){
 
 En este caso, a una variable se le asigna la función que puede ser anónima o tener un nombre interno. Por ejemplo, en la siguiente expresión creamos la variable getRectArea que contiene una función anónima:
 
-```default
+``` default
 
 const getRectArea = function(width, height) {
   return width * height;
@@ -333,7 +322,7 @@ console.log(getRectArea(3, 4));
 
 Un ejemplo de función con nombre podria ser:
 
-```default
+``` default
 
 let funcionConNombre = function miFuncion() {
     console.log("Esta es una function expression con nombre.");
@@ -349,12 +338,11 @@ Un uso común de expresiones de función es cuando se requiere una función como
 
 ***Callbacks*** son funciones que se pasan como argumento a otra función y se ejecuta después de que ocurra un evento o se completa un proceso. Este tipo de mecánismos se usa en operaciones asíncronas como manejar eventos o esperar a una respuesta de API, ya que permite que el código continua su ejecución sin bloquearse. Por ejemplo, en en sieguiente código se espera a que ocurra un evento (click) y cuando esto ocurre, se imprime en consola un mensaje:
 
-```default
+``` default
 
 button.addEventListener("click", function (event) {
   console.log("button is clicked!");
 });
-
 ```
 
 Es importante observar que la secuencia de ejecución con callbacks no es la secuencia en la que estan definidas pero más bien en la secuencia en la que son llamadas.Esto permite ir llamando a funciones de manera muy dinámicas y en respuesta a las acciones de lo que podría ser las necesidades de un usuario en una web app.
@@ -369,32 +357,24 @@ Referencias
 
 <https://www.youtube.com/watch?v=kz_vwAF4NHI>
 
-
-
-
-
 ## ¿Qué es la palabra clave "this" en JS?
 
 ![JS this](images/js_this.png)
 
 ***This*** es una palabra clave utilizada dentro de funciones y clases. Hace referencia al objeto en cuestión. En el caso de que estamos creando una función, la palabra "this" se usa para representar o llamar al objeto que dicha función esta modificando. El objeto al que se refiere varia en dependencia de cómo y donde se llama a ***this***.
 
-
 Vamos a ver algunos ejemplos para entender mejor como usar ***this***:
 
-1. Al llamar fuera de función, se refire al objeto de ventana global.
+1.  Al llamar fuera de función, se refire al objeto de ventana global.
 
-
-```default
+``` default
 
 console.log('this alone', this); // [object Window]
-
 ```
 
-2. Al llamar dentro de un objeto, nos referimos al objeto.
+2.  Al llamar dentro de un objeto, nos referimos al objeto.
 
-
-```default
+``` default
 
 const person = {
     firstName: "John",
@@ -406,12 +386,11 @@ const person = {
 };
 
 console.log('this in object method', person.getThis());
-
 ```
 
 Y de la misma manera, podemos usar ***this*** para llamar a otras propiedades del objeto
 
-```default
+``` default
 const person = {
     firstName: "John",
     lastName : "Doe",
@@ -426,14 +405,12 @@ console.log('this in object method', person.getFullName());
 
 Hay otras posibles referencias de "this" que se resumen aqui:
 
-- En un método de un objeto, this se refiere al objeto.
-- Por sí solo, this se refiere al objeto global.
-- En una función, this se refiere al objeto global.
-- En una función en modo estricto, this es undefined.
-- En un evento, this se refiere al elemento que recibió el evento.
-- Métodos como call(), apply() y bind() pueden asignar this a cualquier objeto.
-
-
+-   En un método de un objeto, this se refiere al objeto.
+-   Por sí solo, this se refiere al objeto global.
+-   En una función, this se refiere al objeto global.
+-   En una función en modo estricto, this es undefined.
+-   En un evento, this se refiere al elemento que recibió el evento.
+-   Métodos como call(), apply() y bind() pueden asignar this a cualquier objeto.
 
 Referencias
 
@@ -443,8 +420,7 @@ Referencias
 
 <https://www.w3schools.com/js/js_this.asp>
 
-<https://medium.com/@leoanimesh/javascript-this-keyword-explained-a62f3676fca1>
-
+[https://medium.com/\@leoanimesh/javascript-this-keyword-explained-a62f3676fca1](https://medium.com/@leoanimesh/javascript-this-keyword-explained-a62f3676fca1){.uri}
 
 ## Ejercicio
 
@@ -501,7 +477,5 @@ if (
 
 
 ```
-      
 
 [Enlace a fichero JS](https://github.com/inti-documentation/inti-documentation.github.io/blob/main/checkpoint7_ejercicio.js)
-
