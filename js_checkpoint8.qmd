@@ -6,9 +6,20 @@ title: "JS - CKP8"
 
 ![JS icon](images/js.png)
 
+## ¿Qué tipo de bucles hay en JS?
+
+Los bucles son una manera de repetir un proceso. Los bucles más comunes son:
+
+* **For**: itera sobre una secuencia de elementos, como un array o un objeto.
+* **While**: repite proceso mientras se cumple una condición.Si no se cumple, no se corre el proceso ninguna vez.
+* **Do-While**: similar al bucle While, pero se ejecuta al menos una vez antes de evaluar la condición.
+
+
+Referencias
+
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration>
+
 ## ¿Cuáles son las diferencias entre const, let y var?
-
-
 
 Javascript se diferencia de otros lenguajes (como Java, Python, C, Ruby, etc.) en que es el único que puede ser interpretado por un web browser.
 
@@ -141,7 +152,6 @@ Referencias
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String>
 
 ## ¿Qué es la deconstrucción de variables?
-
 
 En JS, una operación condicional, como el nombre indica, permite tener diferentes caminos a tomar (bloques de código a ejecutar) en dependencia de si una condición o condiciones se cumplen.
 
@@ -435,7 +445,9 @@ Referencias
 
 Crea un bucle for en JS que imprima cada nombre en esta lista.
 
-      miLista = “velma”, “exploradora”, “jane”, “john”, “harry”
+```         
+  miLista = “velma”, “exploradora”, “jane”, “john”, “harry”
+```
 
 Crea un bucle while que recorra la misma lista y también imprima los nombres. Nota: Recuerda crear un contador para que el ciclo no sea infinito.
 
@@ -493,7 +505,6 @@ if (
 
 ```
 
-
 [Enlace a fichero JS](https://github.com/inti-documentation/inti-documentation.github.io/blob/main/checkpoint8_ejercicio1.js)
 
 ### Ejercicio 2
@@ -501,7 +512,3 @@ if (
 Cree una función de flecha que devuelva "Hola mundo".
 
 [Enlace a fichero JS](https://github.com/inti-documentation/inti-documentation.github.io/blob/main/checkpoint8_ejercicio2.js)
-
-
-
-

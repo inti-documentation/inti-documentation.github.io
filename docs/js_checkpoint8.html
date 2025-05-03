@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>inti-documentation.github.io - JS - CKP8</title>
+<title>JS - CKP8 – inti-documentation.github.io</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -104,39 +111,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">inti-documentation.github.io</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./js_checkpoint7.html" rel="" target="">
- <span class="menu-text">JS - CKP7</span></a>
+    <a class="nav-link" href="./js_checkpoint7.html"> 
+<span class="menu-text">JS - CKP7</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./js_checkpoint8.html" rel="" target="" aria-current="page">
- <span class="menu-text">JS - CKP8</span></a>
+    <a class="nav-link active" href="./js_checkpoint8.html" aria-current="page"> 
+<span class="menu-text">JS - CKP8</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -151,8 +158,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#cuestionario---javascript" id="toc-cuestionario---javascript" class="nav-link active" data-scroll-target="#cuestionario---javascript">Cuestionario - Javascript</a>
   <ul class="collapse">
+  <li><a href="#qué-tipo-de-bucles-hay-en-js" id="toc-qué-tipo-de-bucles-hay-en-js" class="nav-link" data-scroll-target="#qué-tipo-de-bucles-hay-en-js">¿Qué tipo de bucles hay en JS?</a></li>
   <li><a href="#cuáles-son-las-diferencias-entre-const-let-y-var" id="toc-cuáles-son-las-diferencias-entre-const-let-y-var" class="nav-link" data-scroll-target="#cuáles-son-las-diferencias-entre-const-let-y-var">¿Cuáles son las diferencias entre const, let y var?</a></li>
-  <li><a href="#qué-tipo-de-bucles-hay-en-js" id="toc-qué-tipo-de-bucles-hay-en-js" class="nav-link" data-scroll-target="#qué-tipo-de-bucles-hay-en-js">¿Qué tipo de bucles hay en JS?</a>
+  <li><a href="#qué-tipo-de-bucles-hay-en-js-1" id="toc-qué-tipo-de-bucles-hay-en-js-1" class="nav-link" data-scroll-target="#qué-tipo-de-bucles-hay-en-js-1">¿Qué tipo de bucles hay en JS?</a>
   <ul class="collapse">
   <li><a href="#tipos-primitivos" id="toc-tipos-primitivos" class="nav-link" data-scroll-target="#tipos-primitivos">Tipos Primitivos</a></li>
   <li><a href="#tipos-complejos-objetos" id="toc-tipos-complejos-objetos" class="nav-link" data-scroll-target="#tipos-complejos-objetos">Tipos Complejos (Objetos)</a></li>
@@ -195,16 +203,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="cuestionario---javascript" class="level1">
 <h1>Cuestionario - Javascript</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/js.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">JS icon</figcaption>
+<figcaption>JS icon</figcaption>
 </figure>
 </div>
+<section id="qué-tipo-de-bucles-hay-en-js" class="level2">
+<h2 class="anchored" data-anchor-id="qué-tipo-de-bucles-hay-en-js">¿Qué tipo de bucles hay en JS?</h2>
+<p>Los bucles son una manera de repetir un proceso. Los bucles más comunes son:</p>
+<ul>
+<li><strong>For</strong>: itera sobre una secuencia de elementos, como un array o un objeto.</li>
+<li><strong>While</strong>: repite proceso mientras se cumple una condición.Si no se cumple, no se corre el proceso ninguna vez.</li>
+<li><strong>Do-While</strong>: similar al bucle While, pero se ejecuta al menos una vez antes de evaluar la condición.</li>
+</ul>
+<p>Referencias</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration</a></p>
+</section>
 <section id="cuáles-son-las-diferencias-entre-const-let-y-var" class="level2">
 <h2 class="anchored" data-anchor-id="cuáles-son-las-diferencias-entre-const-let-y-var">¿Cuáles son las diferencias entre const, let y var?</h2>
 <p>Javascript se diferencia de otros lenguajes (como Java, Python, C, Ruby, etc.) en que es el único que puede ser interpretado por un web browser.</p>
@@ -213,8 +234,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://snipcart.com/blog/why-javascript-benefits" class="uri">https://snipcart.com/blog/why-javascript-benefits</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Netscape" class="uri">https://en.wikipedia.org/wiki/Netscape</a></p>
 </section>
-<section id="qué-tipo-de-bucles-hay-en-js" class="level2">
-<h2 class="anchored" data-anchor-id="qué-tipo-de-bucles-hay-en-js">¿Qué tipo de bucles hay en JS?</h2>
+<section id="qué-tipo-de-bucles-hay-en-js-1" class="level2">
+<h2 class="anchored" data-anchor-id="qué-tipo-de-bucles-hay-en-js-1">¿Qué tipo de bucles hay en JS?</h2>
 <p>En JavaScript existen diferentes tipos de datos que se pueden clasificar principalmente en dos grandes categorías: tipos primitivos y tipos complejos (también llamados objetos). A continuación, se desarrolla cada uno de estos grupos junto con ejemplos y explicaciones de su funcionamiento.</p>
 <section id="tipos-primitivos" class="level3">
 <h3 class="anchored" data-anchor-id="tipos-primitivos">Tipos Primitivos</h3>
@@ -238,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/js_types.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">JS types</figcaption>
+<figcaption>JS types</figcaption>
 </figure>
 </div>
 </section>
@@ -255,9 +276,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>let numeros = [1, 2, 3, 4];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Funciones</strong>: En JavaScript, las funciones se consideran objetos de primera clase, lo que significa que pueden asignarse a variables, pasarse como argumentos o devolverse desde otras funciones,</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-startfrom="91" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 90;"><span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">saludar</span>() {</span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Hola"</span>)<span class="op">;</span></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3" data-startfrom="102" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 101;"><span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">saludar</span>() {</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Hola"</span>)<span class="op">;</span></span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -277,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/js_string_methods.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">JS String methods</figcaption>
+<figcaption>JS String methods</figcaption>
 </figure>
 </div>
 <p>Dentro de estos metodos encontramos funcionalidades que nos permiten manipular strings que son muy utiles en la gestión de datos.</p>
@@ -306,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/condition_ejemplo1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Ejemplo condicional básico</figcaption>
+<figcaption>Ejemplo condicional básico</figcaption>
 </figure>
 </div>
 <p>Como vemos, el concepto de condicional es fácil de entender y lo usamos en nuestra vida cotidiana.</p>
@@ -325,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/condition_ejemplo2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Ejemplo condicional anidado</figcaption>
+<figcaption>Ejemplo condicional anidado</figcaption>
 </figure>
 </div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -383,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/js_ternary.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">JS ternary</figcaption>
+<figcaption>JS ternary</figcaption>
 </figure>
 </div>
 <p>El operador condicional (ternario) es el único operador de JavaScript que toma tres operandos: una condición seguida de un signo de interrogación (?), luego una expresión que se ejecuta si la condición es verdadera y, a continuación, dos puntos (:) seguidos de la expresión que se ejecuta si la condición es falsa. Este operador se utiliza frecuentemente como una alternativa a la sentencia if…else.</p>
@@ -466,7 +487,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/js_this.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">JS this</figcaption>
+<figcaption>JS this</figcaption>
 </figure>
 </div>
 <p><strong><em>This</em></strong> es una palabra clave utilizada dentro de funciones y clases. Hace referencia al objeto en cuestión. En el caso de que estamos creando una función, la palabra “this” se usa para representar o llamar al objeto que dicha función esta modificando. El objeto al que se refiere varia en dependencia de cómo y donde se llama a <strong><em>this</em></strong>.</p>
@@ -530,54 +551,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>  miLista = “velma”, “exploradora”, “jane”, “john”, “harry”</code></pre>
 <p>Crea un bucle while que recorra la misma lista y también imprima los nombres. Nota: Recuerda crear un contador para que el ciclo no sea infinito.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23" data-startfrom="442" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 441;"><span id="cb23-442"><a href="#cb23-442" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
-<span id="cb23-443"><a href="#cb23-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-444"><a href="#cb23-444" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
-<span id="cb23-445"><a href="#cb23-445" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
-<span id="cb23-446"><a href="#cb23-446" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
-<span id="cb23-447"><a href="#cb23-447" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb23-448"><a href="#cb23-448" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
-<span id="cb23-449"><a href="#cb23-449" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-450"><a href="#cb23-450" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
-<span id="cb23-451"><a href="#cb23-451" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
-<span id="cb23-452"><a href="#cb23-452" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
-<span id="cb23-453"><a href="#cb23-453" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb23-454"><a href="#cb23-454" aria-hidden="true" tabindex="-1"></a>}</span>
+<div class="sourceCode cell-code" id="cb23" data-startfrom="454" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 453;"><span id="cb23-454"><a href="#cb23-454" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
 <span id="cb23-455"><a href="#cb23-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-456"><a href="#cb23-456" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
-<span id="cb23-457"><a href="#cb23-457" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
-<span id="cb23-458"><a href="#cb23-458" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb23-459"><a href="#cb23-459" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb23-460"><a href="#cb23-460" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb23-461"><a href="#cb23-461" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
-<span id="cb23-462"><a href="#cb23-462" aria-hidden="true" tabindex="-1"></a>) {</span>
-<span id="cb23-463"><a href="#cb23-463" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
-<span id="cb23-464"><a href="#cb23-464" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb23-465"><a href="#cb23-465" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb23-466"><a href="#cb23-466" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-467"><a href="#cb23-467" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
-<span id="cb23-468"><a href="#cb23-468" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
-<span id="cb23-469"><a href="#cb23-469" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
-<span id="cb23-470"><a href="#cb23-470" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
-<span id="cb23-471"><a href="#cb23-471" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb23-472"><a href="#cb23-472" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb23-473"><a href="#cb23-473" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
-<span id="cb23-474"><a href="#cb23-474" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
-<span id="cb23-475"><a href="#cb23-475" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb23-476"><a href="#cb23-476" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
-<span id="cb23-477"><a href="#cb23-477" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb23-478"><a href="#cb23-478" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb23-479"><a href="#cb23-479" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-480"><a href="#cb23-480" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-481"><a href="#cb23-481" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb23-482"><a href="#cb23-482" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-483"><a href="#cb23-483" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
-<span id="cb23-484"><a href="#cb23-484" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
-<span id="cb23-485"><a href="#cb23-485" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-486"><a href="#cb23-486" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
-<span id="cb23-487"><a href="#cb23-487" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
-<span id="cb23-488"><a href="#cb23-488" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
-<span id="cb23-489"><a href="#cb23-489" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-456"><a href="#cb23-456" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
+<span id="cb23-457"><a href="#cb23-457" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
+<span id="cb23-458"><a href="#cb23-458" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
+<span id="cb23-459"><a href="#cb23-459" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb23-460"><a href="#cb23-460" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
+<span id="cb23-461"><a href="#cb23-461" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-462"><a href="#cb23-462" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
+<span id="cb23-463"><a href="#cb23-463" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
+<span id="cb23-464"><a href="#cb23-464" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
+<span id="cb23-465"><a href="#cb23-465" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb23-466"><a href="#cb23-466" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-467"><a href="#cb23-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-468"><a href="#cb23-468" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
+<span id="cb23-469"><a href="#cb23-469" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
+<span id="cb23-470"><a href="#cb23-470" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb23-471"><a href="#cb23-471" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb23-472"><a href="#cb23-472" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb23-473"><a href="#cb23-473" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
+<span id="cb23-474"><a href="#cb23-474" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="cb23-475"><a href="#cb23-475" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
+<span id="cb23-476"><a href="#cb23-476" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb23-477"><a href="#cb23-477" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-478"><a href="#cb23-478" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-479"><a href="#cb23-479" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
+<span id="cb23-480"><a href="#cb23-480" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
+<span id="cb23-481"><a href="#cb23-481" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
+<span id="cb23-482"><a href="#cb23-482" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb23-483"><a href="#cb23-483" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb23-484"><a href="#cb23-484" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb23-485"><a href="#cb23-485" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
+<span id="cb23-486"><a href="#cb23-486" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
+<span id="cb23-487"><a href="#cb23-487" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb23-488"><a href="#cb23-488" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
+<span id="cb23-489"><a href="#cb23-489" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb23-490"><a href="#cb23-490" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb23-491"><a href="#cb23-491" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-492"><a href="#cb23-492" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-493"><a href="#cb23-493" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb23-494"><a href="#cb23-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-495"><a href="#cb23-495" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
+<span id="cb23-496"><a href="#cb23-496" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
+<span id="cb23-497"><a href="#cb23-497" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-498"><a href="#cb23-498" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
+<span id="cb23-499"><a href="#cb23-499" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
+<span id="cb23-500"><a href="#cb23-500" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
+<span id="cb23-501"><a href="#cb23-501" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="declaration">
 
@@ -598,7 +619,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"    function saludar() {\n        console.log(\"Hola\");\n    }\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"// ejercicio.js\n\n/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes\nSi el número creado es mayor que 50, la consola registra \"¡El número es mayor que 50!\". \nSi es más pequeño, la consola registra \"¡El número es menor que 50!\"\n*/\nfunction myFunctionSumaMultiplica(num1, num2,num3,num4) {\n    \n// Verificar que se hayan pasado exactamente 4 argumentos\nif (arguments.length !== 4) {\n    console.log(\"Error de cantidad: se deben pasar 4 argumentos.\");\n    return;\n}\n\n// Verificar que todos sean números\nif (\n    typeof num1 !== 'number' ||\n    typeof num2 !== 'number' ||\n    typeof num3 !== 'number' ||\n    typeof num4 !== 'number'\n) {\n    console.log(\"Error de tipo: todos los 4 argumentos deben ser números.\");\n    return;\n}\n    \n    let suma1 = num1 + num2;\n    let suma2 = num3 + num4;\n    let producto = suma1 * suma2;\n    if (producto > 50) {\n        console.log(`¡El número ${producto} es mayor que 50!`);\n    }\n    else if (producto === 50) {\n        console.log(`¡El número ${producto} es igual a 50!`);\n    }\n    else {\n        console.log(`¡El número ${producto} es menor que 50!`);\n    }\n\n    \n  }\n\n//llama a la funcion y muestra el resultado en consola\n//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);\n\n// ejemplo con error de tipo\n//var resultado2 = myFunctionSumaMultiplica(2.5, 3, \"4\", 2);\n// ejemplo con error de cantidad de argumentos\n//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);\n\n\n\n"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IiAgICBmdW5jdGlvbiBzYWx1ZGFyKCkge1xuICAgICAgICBjb25zb2xlLmxvZyhcIkhvbGFcIik7XG4gICAgfVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gZWplcmNpY2lvLmpzXG5cbi8qY3JlYSBmdW5jaW9uIHF1ZSB0b21hIDQgYXJndW1lbnRvcywgc3VtYSBsb3MgMiBwcmltZXJvcyB5IG11bHRpcGxpY2EgbG9zIDIgc2lndWllbnRlc1xuU2kgZWwgbsO6bWVybyBjcmVhZG8gZXMgbWF5b3IgcXVlIDUwLCBsYSBjb25zb2xhIHJlZ2lzdHJhIFwiwqFFbCBuw7ptZXJvIGVzIG1heW9yIHF1ZSA1MCFcIi4gXG5TaSBlcyBtw6FzIHBlcXVlw7FvLCBsYSBjb25zb2xhIHJlZ2lzdHJhIFwiwqFFbCBuw7ptZXJvIGVzIG1lbm9yIHF1ZSA1MCFcIlxuKi9cbmZ1bmN0aW9uIG15RnVuY3Rpb25TdW1hTXVsdGlwbGljYShudW0xLCBudW0yLG51bTMsbnVtNCkge1xuICAgIFxuLy8gVmVyaWZpY2FyIHF1ZSBzZSBoYXlhbiBwYXNhZG8gZXhhY3RhbWVudGUgNCBhcmd1bWVudG9zXG5pZiAoYXJndW1lbnRzLmxlbmd0aCAhPT0gNCkge1xuICAgIGNvbnNvbGUubG9nKFwiRXJyb3IgZGUgY2FudGlkYWQ6IHNlIGRlYmVuIHBhc2FyIDQgYXJndW1lbnRvcy5cIik7XG4gICAgcmV0dXJuO1xufVxuXG4vLyBWZXJpZmljYXIgcXVlIHRvZG9zIHNlYW4gbsO6bWVyb3NcbmlmIChcbiAgICB0eXBlb2YgbnVtMSAhPT0gJ251bWJlcicgfHxcbiAgICB0eXBlb2YgbnVtMiAhPT0gJ251bWJlcicgfHxcbiAgICB0eXBlb2YgbnVtMyAhPT0gJ251bWJlcicgfHxcbiAgICB0eXBlb2YgbnVtNCAhPT0gJ251bWJlcidcbikge1xuICAgIGNvbnNvbGUubG9nKFwiRXJyb3IgZGUgdGlwbzogdG9kb3MgbG9zIDQgYXJndW1lbnRvcyBkZWJlbiBzZXIgbsO6bWVyb3MuXCIpO1xuICAgIHJldHVybjtcbn1cbiAgICBcbiAgICBsZXQgc3VtYTEgPSBudW0xICsgbnVtMjtcbiAgICBsZXQgc3VtYTIgPSBudW0zICsgbnVtNDtcbiAgICBsZXQgcHJvZHVjdG8gPSBzdW1hMSAqIHN1bWEyO1xuICAgIGlmIChwcm9kdWN0byA+IDUwKSB7XG4gICAgICAgIGNvbnNvbGUubG9nKGDCoUVsIG7Dum1lcm8gJHtwcm9kdWN0b30gZXMgbWF5b3IgcXVlIDUwIWApO1xuICAgIH1cbiAgICBlbHNlIGlmIChwcm9kdWN0byA9PT0gNTApIHtcbiAgICAgICAgY29uc29sZS5sb2coYMKhRWwgbsO6bWVybyAke3Byb2R1Y3RvfSBlcyBpZ3VhbCBhIDUwIWApO1xuICAgIH1cbiAgICBlbHNlIHtcbiAgICAgICAgY29uc29sZS5sb2coYMKhRWwgbsO6bWVybyAke3Byb2R1Y3RvfSBlcyBtZW5vciBxdWUgNTAhYCk7XG4gICAgfVxuXG4gICAgXG4gIH1cblxuLy9sbGFtYSBhIGxhIGZ1bmNpb24geSBtdWVzdHJhIGVsIHJlc3VsdGFkbyBlbiBjb25zb2xhXG4vL3ZhciByZXN1bHRhZG8gPSBteUZ1bmN0aW9uU3VtYU11bHRpcGxpY2EoMi41LCAzLCA0LCAyKTtcblxuLy8gZWplbXBsbyBjb24gZXJyb3IgZGUgdGlwb1xuLy92YXIgcmVzdWx0YWRvMiA9IG15RnVuY3Rpb25TdW1hTXVsdGlwbGljYSgyLjUsIDMsIFwiNFwiLCAyKTtcbi8vIGVqZW1wbG8gY29uIGVycm9yIGRlIGNhbnRpZGFkIGRlIGFyZ3VtZW50b3Ncbi8vdmFyIHJlc3VsdGFkbzMgPSBteUZ1bmN0aW9uU3VtYU11bHRpcGxpY2EoMi41LCAzLCA0KTtcblxuXG5cbiJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -643,18 +664,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -686,11 +696,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -700,8 +749,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -713,7 +771,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -757,6 +938,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -782,6 +964,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -842,6 +1050,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
