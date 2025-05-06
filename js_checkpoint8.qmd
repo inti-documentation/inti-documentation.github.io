@@ -21,15 +21,99 @@ Referencias
 
 ## ¿Cuáles son las diferencias entre const, let y var?
 
-Javascript se diferencia de otros lenguajes (como Java, Python, C, Ruby, etc.) en que es el único que puede ser interpretado por un web browser.
+En JavaScript, const, let y var se utilizan para declarar variables, pero tienen diferencias clave en su alcance y comportamiento (hoisting, reglas de reasignación):
 
-La razón de esto es historica, en 1995 fue cuando creado por la empresa Netscape que era predominante en el mercado queria un lenguaje que pareciera como Java. Aunque inicialmente se penso para manejar Front-End y Back-End, solo ha sido exitosa en el Front-End. Aun después de la desaparición del browser de Netscape, las compañias siguientes han continuado el uso de Javascript.
+Hoisting: Es un comportamiento donde las declaraciones de variables se mueven a la parte superior del ambito en el que se declaran.
+
+**var**: La variable declarada con var tiene un alcance de función o global, es decir, se aplica a toda la función en la que se declara. Puede ser redeclarada y reasignada.
+
+``` default
+var persona = { nombre: "Ana", edad: 28 };
+
+var persona = { nombre: "Fran", edad: 25 };
+
+```
+
+Ejemplo de Hoisting para var donde se tiene:
+
+``` default
+
+console.log(x); // undefined
+var x = 10;
+
+```
+Debido al hoisting, el código se ejecuta como si fuera la variable declarada y no asignada hasta después:
+
+``` default
+var x;
+console.log(x); // undefined
+x = 10;
+
+```
+
+**let**: La variable declarada con let tiene un alcance de bloque, es decir, se aplica solo dentro del bloque en el que se declara. Puede ser reasignada, pero no redeclarada.
+
+En el siguiente ejemplo se observa como si se llama a una variable declarada dentro de función y se intenta llamar fuera del bloque nos da error:
+
+``` default
+if (true) {
+    let nombre = "Juan";
+    console.log(nombre);
+}
+console.log(nombre); // Error: nombre is not defined
+
+```
+En otro ejemplo se usa let para declarar una variable global y luego otra local (dentro de función):
+
+``` default
+let edad = 25;
+if (true) {
+    let edad = 30; 
+    console.log(edad); // 30
+}
+console.log(edad); // 25
+
+```
+Se observa como la variable local solo es accesible dentro del bloque if y no afecta a la variable global.
+
+Hoisting para let funciona diferente que para var, ya que que con let no se inicializa la variable y causa un error:
+
+
+``` default
+console.log(number)
+// ReferenceError: Cannot access 'number' before initialization
+
+let number = 50
+```
+
+
+**const**: La variable declarada con const también tiene un alcance de bloque, pero no puede ser reasignada ni redeclarada. Su valor es constante.
+
+``` default
+const edad = 30; 
+edad = 35; // Error: Assignment to constant variable.
+
+```
+Hoisting para const es similar que para let donde no se inicializa variable y da error:
+
+``` default
+console.log(number)
+// ReferenceError: Cannot access 'number' before initialization
+
+const number = 50
+
+```
+
+Debido a que usar variables antes de declararlas puede causar problemas, algunas veces se recomienda seguir la regla **no-use-before-define** o lo que es definir primero y hasta después usar.
+
 
 Referencias
 
-<https://snipcart.com/blog/why-javascript-benefits>
+<https://www.geeksforgeeks.org/difference-between-var-let-and-const-keywords-in-javascript/>
 
-<https://en.wikipedia.org/wiki/Netscape>
+<https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/>
+
+<https://eslint.org/docs/latest/rules/no-use-before-define>
 
 ## ¿Qué tipo de bucles hay en JS?
 
