@@ -160,11 +160,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#qué-tipo-de-bucles-hay-en-js" id="toc-qué-tipo-de-bucles-hay-en-js" class="nav-link" data-scroll-target="#qué-tipo-de-bucles-hay-en-js">¿Qué tipo de bucles hay en JS?</a></li>
   <li><a href="#cuáles-son-las-diferencias-entre-const-let-y-var" id="toc-cuáles-son-las-diferencias-entre-const-let-y-var" class="nav-link" data-scroll-target="#cuáles-son-las-diferencias-entre-const-let-y-var">¿Cuáles son las diferencias entre const, let y var?</a></li>
-  <li><a href="#qué-tipo-de-bucles-hay-en-js-1" id="toc-qué-tipo-de-bucles-hay-en-js-1" class="nav-link" data-scroll-target="#qué-tipo-de-bucles-hay-en-js-1">¿Qué tipo de bucles hay en JS?</a>
-  <ul class="collapse">
-  <li><a href="#tipos-primitivos" id="toc-tipos-primitivos" class="nav-link" data-scroll-target="#tipos-primitivos">Tipos Primitivos</a></li>
-  <li><a href="#tipos-complejos-objetos" id="toc-tipos-complejos-objetos" class="nav-link" data-scroll-target="#tipos-complejos-objetos">Tipos Complejos (Objetos)</a></li>
-  </ul></li>
   <li><a href="#qué-es-una-función-de-flecha" id="toc-qué-es-una-función-de-flecha" class="nav-link" data-scroll-target="#qué-es-una-función-de-flecha">¿Qué es una función de flecha?</a></li>
   <li><a href="#qué-es-la-deconstrucción-de-variables" id="toc-qué-es-la-deconstrucción-de-variables" class="nav-link" data-scroll-target="#qué-es-la-deconstrucción-de-variables">¿Qué es la deconstrucción de variables?</a></li>
   <li><a href="#qué-hace-el-operador-de-extensión-en-js" id="toc-qué-hace-el-operador-de-extensión-en-js" class="nav-link" data-scroll-target="#qué-hace-el-operador-de-extensión-en-js">¿Qué hace el operador de extensión en JS?</a></li>
@@ -276,91 +271,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/" class="uri">https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/</a></p>
 <p><a href="https://eslint.org/docs/latest/rules/no-use-before-define" class="uri">https://eslint.org/docs/latest/rules/no-use-before-define</a></p>
 </section>
-<section id="qué-tipo-de-bucles-hay-en-js-1" class="level2">
-<h2 class="anchored" data-anchor-id="qué-tipo-de-bucles-hay-en-js-1">¿Qué tipo de bucles hay en JS?</h2>
-<p>En JavaScript existen diferentes tipos de datos que se pueden clasificar principalmente en dos grandes categorías: tipos primitivos y tipos complejos (también llamados objetos). A continuación, se desarrolla cada uno de estos grupos junto con ejemplos y explicaciones de su funcionamiento.</p>
-<section id="tipos-primitivos" class="level3">
-<h3 class="anchored" data-anchor-id="tipos-primitivos">Tipos Primitivos</h3>
-<p>Los tipos primitivos son aquellos que se almacenan y se gestionan por valor. Esto significa que cuando asignas o pasas un valor primitivo, se copia literalmente su valor en memoria. Algunas características clave de los tipos primitivos son:</p>
-<p>Inmutabilidad: Una vez creado, el valor primitivo no puede cambiar; en lugar de modificarlo, se crea uno nuevo si se asigna un valor distinto.</p>
-<p>Sin métodos propios: Aunque JavaScript permite acceder a métodos en tipos primitivos a través de un proceso llamado autoboxing (envoltura automática), en esencia estos valores no poseen métodos propios como los objetos.</p>
-<p>Los tipos primitivos en JavaScript incluyen:</p>
-<p><strong>Number</strong>: Para representar tanto enteros como números con decimales. Sin embargo tiene limites:</p>
-<p>Números flotantes: Puedes trabajar con números muy pequeños y muy grandes, tanto positivos como negativos, que tienen decimales.</p>
-<p>Números enteros: Aunque puedes usar números enteros, JavaScript garantiza que sean precisos solo si están en el rango seguro, que es desde -(2^53 − 1) hasta 2^53 − 1. Si el número entero está fuera de este rango, ya no se representa con total precisión y se convierte en una aproximación de punto flotante.</p>
-<p>Verificación: Puedes usar la función Number.isSafeInteger() para comprobar si un número entero está dentro de ese rango seguro.</p>
-<p><strong>String</strong>: Cadenas de caracteres.</p>
-<p>Codificación y Posición: Los strings se codifican usando UTF-16, lo que significa que cada carácter se guarda como un valor numérico de 16 bits. Cada carácter ocupa una posición numerada, donde el primer carácter está en el índice 0, el siguiente en el 1, y así sucesivamente. La propiedad length de un string indica el número de unidades UTF-16, que puede no coincidir exactamente con la cantidad real de caracteres en todos los casos.</p>
-<p>Inmutabilidad: Las cadenas son inmutables, lo que significa que una vez creada una cadena, no se puede modificar directamente. Si necesitas cambiarla, las operaciones como extraer una parte del texto (usando substring()) o unir dos cadenas (con el operador + o concat()) generan una nueva cadena sin alterar la original.</p>
-<p><strong>Boolean</strong>: Valores lógicos true y false. Usualmene usados en operaciones con condicionales.</p>
-<p><strong>Null</strong>: Representa la ausencia intencional de cualquier valor u objeto.</p>
-<p><strong>Undefined</strong>: Indica que una variable ha sido declarada pero aún no se le ha asignado ningún valor.</p>
-<p><strong>Symbol</strong>: Introducido en ES6, se utiliza para crear identificadores únicos para propiedades de objetos.</p>
-<p><strong>BigInt</strong>: Introducido en versiones más recientes (ES2020), permite trabajar con números enteros de gran magnitud que superan el límite del tipo Number.</p>
-<p>En la siguiente tabla se puede resumir los tipos primitivos, los valores que regresa y correspondiente clase o tipo de objeto que lo contiene:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/js_types.png" class="img-fluid figure-img"></p>
-<figcaption>JS types</figcaption>
-</figure>
-</div>
-</section>
-<section id="tipos-complejos-objetos" class="level3">
-<h3 class="anchored" data-anchor-id="tipos-complejos-objetos">Tipos Complejos (Objetos)</h3>
-<p>Los tipos complejos, o objetos, se gestionan por referencia. Esto significa que cuando asignas o pasas un objeto, lo que se copia es la referencia a la ubicación en memoria donde se encuentra ese objeto. Algunas características de los objetos son:</p>
-<p>Mutabilidad: A diferencia de los primitivos, los objetos pueden modificarse después de su creación. Por ejemplo, puedes añadir, modificar o eliminar propiedades.</p>
-<p>Colección de propiedades y métodos: Un objeto puede contener datos (propiedades) y funcionalidades (métodos).</p>
-<p>Herencia prototípica: JavaScript utiliza prototipos para heredar propiedades y métodos entre objetos, lo que permite crear estructuras de datos más complejas y reutilizables.</p>
-<p>Dentro de la categoría de objetos se incluyen:</p>
-<p><strong>Objetos literales</strong>: Se definen directamente usando pares de clave valor y permite almacenar diferentes atributos relacionados de manera flexible, por ejemplo,</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>let persona = { nombre: "Ana", edad: 28 };</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Arrays</strong>: Son objetos especializados para almacenar colecciones ordenadas de datos,</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>let numeros = [1, 2, 3, 4];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Funciones</strong>: En JavaScript, las funciones se consideran objetos de primera clase, lo que significa que pueden asignarse a variables, pasarse como argumentos o devolverse desde otras funciones,</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11" data-startfrom="186" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 185;"><span id="cb11-186"><a href="#cb11-186" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">saludar</span>() {</span>
-<span id="cb11-187"><a href="#cb11-187" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Hola"</span>)<span class="op">;</span></span>
-<span id="cb11-188"><a href="#cb11-188" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<p>Otros objetos: Como Date, RegExp, Map, Set, entre otros, que proporcionan funcionalidades específicas para manejar fechas, expresiones regulares y colecciones de valores.</p>
-<p>Referencia:</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures</a></p>
-<p><a href="https://brainstation.io/learn/javascript/data-types" class="uri">https://brainstation.io/learn/javascript/data-types</a></p>
-<p><a href="https://www.w3schools.com/js/js_typeof.asp" class="uri">https://www.w3schools.com/js/js_typeof.asp</a></p>
-</section>
-</section>
 <section id="qué-es-una-función-de-flecha" class="level2">
 <h2 class="anchored" data-anchor-id="qué-es-una-función-de-flecha">¿Qué es una función de flecha?</h2>
-<p>En JS, los objeto de clase string representan texto y existen diferentes métodos que se resumen en la siguiente imagen.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/js_string_methods.png" class="img-fluid figure-img"></p>
-<figcaption>JS String methods</figcaption>
-</figure>
-</div>
-<p>Dentro de estos metodos encontramos funcionalidades que nos permiten manipular strings que son muy utiles en la gestión de datos.</p>
-<p>Como ejemplo de lo múltiples metodos, vamos a asumir que hemos obtenido un texto en mínuscula pero necesitamos hacer la primera letra del titulo en mayúscula:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>let titulo = "hola pequeños gatos";</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>let tituloCapitalizado = titulo.charAt(0).toUpperCase() + titulo.slice(1);</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>console.log(tituloCapitalizado);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ahora imaginamos que queremos hacer un split de texto, extraer el segundo objeto y removemos espacios en blanco usando trim().</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>let texto = "manzana, naranja, banana";</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>// Dividir el texto en un array usando la coma (",") como separador</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>let partes = texto.split(",");</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>let segundoObjeto = partes[1].trim();</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Una función flecha es una forma concisa de definir una función en JavaScript. Se utiliza la sintaxis () =&gt; {} para crear una función anónima.</p>
+<p>Ejemplo de una función flecha que suma dos números:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>const sumar = (a, b) =&gt; a + b;</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>console.log(sumar(2, 3)); // 5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Función normal y anónima equivalentes</p>
+<p>La función flecha anterior es equivalente a la siguiente función normal:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>function sumar(a, b) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  return a + b;</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Y también es equivalente a la siguiente función anónima:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>var sumar = function(a, b) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  return a + b;</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Cuándo usar funciones flecha</strong></p>
+<p>Se recomienda usar funciones flecha en los siguientes casos:</p>
+<ul>
+<li>Funciones cortas y simples: Cuando la función es muy simple y no requiere una gran cantidad de código, las funciones flecha son ideales.</li>
+<li>Callbacks: Las funciones flecha son útiles como callbacks, ya que son más concisas y fáciles de leer.</li>
+<li>Funciones anónimas: Las funciones flecha son una forma natural de crear funciones anónimas.</li>
+<li>Map, filter, reduce: Las funciones flecha son ideales para usar con métodos de arrays como map, filter y reduce.</li>
+</ul>
+<p>Ejemplo de uso con map:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>const numbers = [1, 2, 3, 4, 5];</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>const doubles = numbers.map((num) =&gt; num * 2);</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>console.log(doubles); // [2, 4, 6, 8, 10]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Referencias</p>
-<p><a href="https://www.w3schools.com/jsref/jsref_obj_string.asp" class="uri">https://www.w3schools.com/jsref/jsref_obj_string.asp</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</a></p>
+<p><a href="https://www.w3schools.com/js/js_arrow_function.asp" class="uri">https://www.w3schools.com/js/js_arrow_function.asp</a></p>
+<p><a href="https://javascript.info/arrow-functions-basics" class="uri">https://javascript.info/arrow-functions-basics</a></p>
 </section>
 <section id="qué-es-la-deconstrucción-de-variables" class="level2">
 <h2 class="anchored" data-anchor-id="qué-es-la-deconstrucción-de-variables">¿Qué es la deconstrucción de variables?</h2>
@@ -374,6 +315,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Como vemos, el concepto de condicional es fácil de entender y lo usamos en nuestra vida cotidiana.</p>
 <p>Ahora en JS, la sintaxis seria:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>let tiempoParaTrabajar = 35;</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>let limiteCaminar = 30;</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>let limiteMetro = 15;</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>if (tiempoParaTrabajar &gt; limiteCaminar) {</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  console.log(`Vamos caminando!`);</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>} else {</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  console.log(`Vamos en Metro que es tarde!`);</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ahora complicamos un poco más la lógica para mostrar el caso de una condicional dentro de una condicional. Por ejemplo, si fuera tarde tomamos el metro pero si es muy tarde vamos a tomar un taxi.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/condition_ejemplo2.png" class="img-fluid figure-img"></p>
+<figcaption>Ejemplo condicional anidado</figcaption>
+</figure>
+</div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>let tiempoParaTrabajar = 35;</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>let limiteCaminar = 30;</span>
@@ -382,61 +340,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>if (tiempoParaTrabajar &gt; limiteCaminar) {</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  console.log(`Vamos caminando!`);</span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>} else {</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  console.log(`Vamos en Metro que es tarde!`);</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ahora complicamos un poco más la lógica para mostrar el caso de una condicional dentro de una condicional. Por ejemplo, si fuera tarde tomamos el metro pero si es muy tarde vamos a tomar un taxi.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/condition_ejemplo2.png" class="img-fluid figure-img"></p>
-<figcaption>Ejemplo condicional anidado</figcaption>
-</figure>
-</div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>let tiempoParaTrabajar = 35;</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>let limiteCaminar = 30;</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>let limiteMetro = 15;</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>if (tiempoParaTrabajar &gt; limiteCaminar) {</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  console.log(`Vamos caminando!`);</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>} else {</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  if (tiempoParaTrabajar &gt; limiteMetro){</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    console.log(`Vamos en Metro que es tarde!`);</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  } else {</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    console.log(`Vamos en Taxi que es muy tarde!`);</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  if (tiempoParaTrabajar &gt; limiteMetro){</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    console.log(`Vamos en Metro que es tarde!`);</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  } else {</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    console.log(`Vamos en Taxi que es muy tarde!`);</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En caso de que hubieran multiplies condiciones a probar usamos sintaxis: <strong>“if…else if…else”</strong>.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>if (condition1)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  statement1</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>else if (condition2)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  statement2</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>else if (condition3)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  statement3</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>// …</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>else</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  statementN</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>if (condition1)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  statement1</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>else if (condition2)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  statement2</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>else if (condition3)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  statement3</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>// …</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>else</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  statementN</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Veamos un ejemplo donde dependencia de la edad pagamos un precio diferente en el cine</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>let edad = 15;         </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>let precioBase = 10;   </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>let precioFinal;       </span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>// Aplicar descuento por edad</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>if (edad &lt; 12) {</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  precioFinal = precioBase * 0.5;</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>} else if (edad &gt;= 12 &amp;&amp; edad &lt; 18) {</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  precioFinal = precioBase * 0.75;</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>} else if (edad &gt;= 65) {</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  precioFinal = precioBase * 0.7;</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>} else {</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  precioFinal = precioBase;</span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>//console.log("El precio de la entrada es: $" + precioFinal);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>let edad = 15;         </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>let precioBase = 10;   </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>let precioFinal;       </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>// Aplicar descuento por edad</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>if (edad &lt; 12) {</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  precioFinal = precioBase * 0.5;</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>} else if (edad &gt;= 12 &amp;&amp; edad &lt; 18) {</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  precioFinal = precioBase * 0.75;</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>} else if (edad &gt;= 65) {</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  precioFinal = precioBase * 0.7;</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>} else {</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  precioFinal = precioBase;</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>//console.log("El precio de la entrada es: $" + precioFinal);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Referencias</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else</a></p>
 <p><a href="https://www.w3schools.com/js/js_if_else.asp" class="uri">https://www.w3schools.com/js/js_if_else.asp</a></p>
@@ -450,22 +391,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>El operador condicional (ternario) es el único operador de JavaScript que toma tres operandos: una condición seguida de un signo de interrogación (?), luego una expresión que se ejecuta si la condición es verdadera y, a continuación, dos puntos (:) seguidos de la expresión que se ejecuta si la condición es falsa. Este operador se utiliza frecuentemente como una alternativa a la sentencia if…else.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>condicion ? ExpresionEjecutaSiVerdadero : ExpresionEjecutaSiFalso</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>condicion ? ExpresionEjecutaSiVerdadero : ExpresionEjecutaSiFalso</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Por ejemplo, imaginamos que hemos decidido comprar lecha cuando hay menos de 5 litros en casa (nos encanta hacer yogurt :D).</p>
 <p>Primero veamos como seria usando condicional tipo <strong>if … else</strong> :</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>if (lecheLitros &gt;= 5) {</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  console.log(`No comprar leche!`);</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>} else {</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  console.log(`Comprar leche!`);</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>if (lecheLitros &gt;= 5) {</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  console.log(`No comprar leche!`);</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>} else {</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  console.log(`Comprar leche!`);</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ahora veamos un seudo código de operación ternaria:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>HayMenosQueUmbral ? ComprarLeche : NoComprarLeche</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>HayMenosQueUmbral ? ComprarLeche : NoComprarLeche</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En código seria algo como:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>const umbral = 5;</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>let lecheLitros = 26;</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>const comprarLeche = lecheLitros &gt;= umbral ? "No comprar leche" : "Comprar Leche";</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>console.log(comprarLeche); // "No comprar leche"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>const umbral = 5;</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>let lecheLitros = 26;</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>const comprarLeche = lecheLitros &gt;= umbral ? "No comprar leche" : "Comprar Leche";</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>console.log(comprarLeche); // "No comprar leche"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Como vemos, la operación ternaria nos ofrece una manera de simplificar el código y la lectura en ciertos casos donde las condiciones son simples.</p>
 <p>Referencias</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator</a></p>
@@ -479,43 +420,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="declaración-de-función">Declaración de función</h3>
 <p>La función se define usando la palabra clave <strong>function</strong>. Se le asigna un nombre y se pueden llamar y reusar en varios sitios.</p>
 <p>Por ejemplo, creamos una función que suma dos números de la siguiente manera:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>function sumarNumeros(num1,num2){</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a> return num1 + num2;</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>function sumarNumeros(num1,num2){</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a> return num1 + num2;</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong><em>Hoisting</em></strong>. Las declaraciones de funciones se elevan al inicio del contexto lo que permite llamar a la función antes de escribir la declaración en el código.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>sumarNumeros(1,3);// 4</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>function sumarNumeros(num1,num2){</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a> return num1 + num2;</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>sumarNumeros(1,3);// 4</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>function sumarNumeros(num1,num2){</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a> return num1 + num2;</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="expresión-de-función" class="level3">
 <h3 class="anchored" data-anchor-id="expresión-de-función">Expresión de función</h3>
 <p>En este caso, a una variable se le asigna la función que puede ser anónima o tener un nombre interno. Por ejemplo, en la siguiente expresión creamos la variable getRectArea que contiene una función anónima:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>const getRectArea = function(width, height) {</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  return width * height;</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>};</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>console.log(getRectArea(3, 4));</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>// Expected output: 12</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Un ejemplo de función con nombre podria ser:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>const getRectArea = function(width, height) {</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  return width * height;</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>let funcionConNombre = function miFuncion() {</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    console.log("Esta es una function expression con nombre.");</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>};</span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>console.log(getRectArea(3, 4));</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>// Expected output: 12</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Un ejemplo de función con nombre podria ser:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>let funcionConNombre = function miFuncion() {</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    console.log("Esta es una function expression con nombre.");</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>};</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>funcionConNombre();  //</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>// Expected output: Esta es una function expression con nombre</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>funcionConNombre();  //</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>// Expected output: Esta es una function expression con nombre</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong><em>No hosting</em></strong>. Lo que quiere decir que no se eleva y se tiene usar después de la asignación.</p>
 <p>Un uso común de expresiones de función es cuando se requiere una función como valor como cuando se usan callbacks.</p>
 <p><strong><em>Callbacks</em></strong> son funciones que se pasan como argumento a otra función y se ejecuta después de que ocurra un evento o se completa un proceso. Este tipo de mecánismos se usa en operaciones asíncronas como manejar eventos o esperar a una respuesta de API, ya que permite que el código continua su ejecución sin bloquearse. Por ejemplo, en en sieguiente código se espera a que ocurra un evento (click) y cuando esto ocurre, se imprime en consola un mensaje:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>button.addEventListener("click", function (event) {</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  console.log("button is clicked!");</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>});</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>button.addEventListener("click", function (event) {</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  console.log("button is clicked!");</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>});</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Es importante observar que la secuencia de ejecución con callbacks no es la secuencia en la que estan definidas pero más bien en la secuencia en la que son llamadas.Esto permite ir llamando a funciones de manera muy dinámicas y en respuesta a las acciones de lo que podría ser las necesidades de un usuario en una web app.</p>
 <p>Referencias</p>
 <p><a href="https://www.w3schools.com/js/js_function_definition.asp" class="uri">https://www.w3schools.com/js/js_function_definition.asp</a></p>
@@ -537,33 +478,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Al llamar fuera de función, se refire al objeto de ventana global.</li>
 </ol>
-<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>console.log('this alone', this); // [object Window]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>console.log('this alone', this); // [object Window]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Al llamar dentro de un objeto, nos referimos al objeto.</li>
 </ol>
-<div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>const person = {</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    firstName: "John",</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    lastName : "Doe",</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    id       : 5566,</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    getThis : function() {</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>      return this;</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>};</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>console.log('this in object method', person.getThis());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>const person = {</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    firstName: "John",</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    lastName : "Doe",</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    id       : 5566,</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    getThis : function() {</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>      return this;</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>};</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>console.log('this in object method', person.getThis());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Y de la misma manera, podemos usar <strong><em>this</em></strong> para llamar a otras propiedades del objeto</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>const person = {</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    firstName: "John",</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    lastName : "Doe",</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    id       : 5566,</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    getFullName : function() {</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>      return this.name + ' ' + this.lastName;</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>};</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>console.log('this in object method', person.getFullName());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>const person = {</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    firstName: "John",</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    lastName : "Doe",</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    id       : 5566,</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    getFullName : function() {</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>      return this.name + ' ' + this.lastName;</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>};</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>console.log('this in object method', person.getFullName());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Hay otras posibles referencias de “this” que se resumen aqui:</p>
 <ul>
 <li>En un método de un objeto, this se refiere al objeto.</li>
@@ -593,56 +534,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>  miLista = “velma”, “exploradora”, “jane”, “john”, “harry”</code></pre>
 <p>Crea un bucle while que recorra la misma lista y también imprima los nombres. Nota: Recuerda crear un contador para que el ciclo no sea infinito.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31" data-startfrom="538" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 537;"><span id="cb31-538"><a href="#cb31-538" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
-<span id="cb31-539"><a href="#cb31-539" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-540"><a href="#cb31-540" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
-<span id="cb31-541"><a href="#cb31-541" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
-<span id="cb31-542"><a href="#cb31-542" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
-<span id="cb31-543"><a href="#cb31-543" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb31-544"><a href="#cb31-544" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
-<span id="cb31-545"><a href="#cb31-545" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb31-546"><a href="#cb31-546" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
-<span id="cb31-547"><a href="#cb31-547" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
-<span id="cb31-548"><a href="#cb31-548" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
-<span id="cb31-549"><a href="#cb31-549" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb31-550"><a href="#cb31-550" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-551"><a href="#cb31-551" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-552"><a href="#cb31-552" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
-<span id="cb31-553"><a href="#cb31-553" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
-<span id="cb31-554"><a href="#cb31-554" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb31-555"><a href="#cb31-555" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb31-556"><a href="#cb31-556" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb31-557"><a href="#cb31-557" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
-<span id="cb31-558"><a href="#cb31-558" aria-hidden="true" tabindex="-1"></a>) {</span>
-<span id="cb31-559"><a href="#cb31-559" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
-<span id="cb31-560"><a href="#cb31-560" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb31-561"><a href="#cb31-561" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-562"><a href="#cb31-562" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb31-563"><a href="#cb31-563" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
-<span id="cb31-564"><a href="#cb31-564" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
-<span id="cb31-565"><a href="#cb31-565" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
-<span id="cb31-566"><a href="#cb31-566" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
-<span id="cb31-567"><a href="#cb31-567" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb31-568"><a href="#cb31-568" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb31-569"><a href="#cb31-569" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
-<span id="cb31-570"><a href="#cb31-570" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
-<span id="cb31-571"><a href="#cb31-571" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb31-572"><a href="#cb31-572" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
-<span id="cb31-573"><a href="#cb31-573" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb31-574"><a href="#cb31-574" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb31-575"><a href="#cb31-575" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-576"><a href="#cb31-576" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb31-577"><a href="#cb31-577" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb31-578"><a href="#cb31-578" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-579"><a href="#cb31-579" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
-<span id="cb31-580"><a href="#cb31-580" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
-<span id="cb31-581"><a href="#cb31-581" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-582"><a href="#cb31-582" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
-<span id="cb31-583"><a href="#cb31-583" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
-<span id="cb31-584"><a href="#cb31-584" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
-<span id="cb31-585"><a href="#cb31-585" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30" data-startfrom="480" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 479;"><span id="cb30-480"><a href="#cb30-480" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
+<span id="cb30-481"><a href="#cb30-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-482"><a href="#cb30-482" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
+<span id="cb30-483"><a href="#cb30-483" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
+<span id="cb30-484"><a href="#cb30-484" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
+<span id="cb30-485"><a href="#cb30-485" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb30-486"><a href="#cb30-486" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
+<span id="cb30-487"><a href="#cb30-487" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb30-488"><a href="#cb30-488" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
+<span id="cb30-489"><a href="#cb30-489" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
+<span id="cb30-490"><a href="#cb30-490" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
+<span id="cb30-491"><a href="#cb30-491" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb30-492"><a href="#cb30-492" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb30-493"><a href="#cb30-493" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-494"><a href="#cb30-494" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
+<span id="cb30-495"><a href="#cb30-495" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
+<span id="cb30-496"><a href="#cb30-496" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb30-497"><a href="#cb30-497" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb30-498"><a href="#cb30-498" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb30-499"><a href="#cb30-499" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
+<span id="cb30-500"><a href="#cb30-500" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="cb30-501"><a href="#cb30-501" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
+<span id="cb30-502"><a href="#cb30-502" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb30-503"><a href="#cb30-503" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb30-504"><a href="#cb30-504" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb30-505"><a href="#cb30-505" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
+<span id="cb30-506"><a href="#cb30-506" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
+<span id="cb30-507"><a href="#cb30-507" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
+<span id="cb30-508"><a href="#cb30-508" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb30-509"><a href="#cb30-509" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb30-510"><a href="#cb30-510" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-511"><a href="#cb30-511" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
+<span id="cb30-512"><a href="#cb30-512" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
+<span id="cb30-513"><a href="#cb30-513" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-514"><a href="#cb30-514" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
+<span id="cb30-515"><a href="#cb30-515" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb30-516"><a href="#cb30-516" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-517"><a href="#cb30-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-518"><a href="#cb30-518" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb30-519"><a href="#cb30-519" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb30-520"><a href="#cb30-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-521"><a href="#cb30-521" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
+<span id="cb30-522"><a href="#cb30-522" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
+<span id="cb30-523"><a href="#cb30-523" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-524"><a href="#cb30-524" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
+<span id="cb30-525"><a href="#cb30-525" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
+<span id="cb30-526"><a href="#cb30-526" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
+<span id="cb30-527"><a href="#cb30-527" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-2" data-nodetype="declaration">
+<div id="ojs-cell-1" data-nodetype="declaration">
 
 </div>
 </div>
@@ -661,7 +602,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IiAgICBmdW5jdGlvbiBzYWx1ZGFyKCkge1xuICAgICAgICBjb25zb2xlLmxvZyhcIkhvbGFcIik7XG4gICAgfVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gZWplcmNpY2lvLmpzXG5cbi8qY3JlYSBmdW5jaW9uIHF1ZSB0b21hIDQgYXJndW1lbnRvcywgc3VtYSBsb3MgMiBwcmltZXJvcyB5IG11bHRpcGxpY2EgbG9zIDIgc2lndWllbnRlc1xuU2kgZWwgbsO6bWVybyBjcmVhZG8gZXMgbWF5b3IgcXVlIDUwLCBsYSBjb25zb2xhIHJlZ2lzdHJhIFwiwqFFbCBuw7ptZXJvIGVzIG1heW9yIHF1ZSA1MCFcIi4gXG5TaSBlcyBtw6FzIHBlcXVlw7FvLCBsYSBjb25zb2xhIHJlZ2lzdHJhIFwiwqFFbCBuw7ptZXJvIGVzIG1lbm9yIHF1ZSA1MCFcIlxuKi9cbmZ1bmN0aW9uIG15RnVuY3Rpb25TdW1hTXVsdGlwbGljYShudW0xLCBudW0yLG51bTMsbnVtNCkge1xuICAgIFxuLy8gVmVyaWZpY2FyIHF1ZSBzZSBoYXlhbiBwYXNhZG8gZXhhY3RhbWVudGUgNCBhcmd1bWVudG9zXG5pZiAoYXJndW1lbnRzLmxlbmd0aCAhPT0gNCkge1xuICAgIGNvbnNvbGUubG9nKFwiRXJyb3IgZGUgY2FudGlkYWQ6IHNlIGRlYmVuIHBhc2FyIDQgYXJndW1lbnRvcy5cIik7XG4gICAgcmV0dXJuO1xufVxuXG4vLyBWZXJpZmljYXIgcXVlIHRvZG9zIHNlYW4gbsO6bWVyb3NcbmlmIChcbiAgICB0eXBlb2YgbnVtMSAhPT0gJ251bWJlcicgfHxcbiAgICB0eXBlb2YgbnVtMiAhPT0gJ251bWJlcicgfHxcbiAgICB0eXBlb2YgbnVtMyAhPT0gJ251bWJlcicgfHxcbiAgICB0eXBlb2YgbnVtNCAhPT0gJ251bWJlcidcbikge1xuICAgIGNvbnNvbGUubG9nKFwiRXJyb3IgZGUgdGlwbzogdG9kb3MgbG9zIDQgYXJndW1lbnRvcyBkZWJlbiBzZXIgbsO6bWVyb3MuXCIpO1xuICAgIHJldHVybjtcbn1cbiAgICBcbiAgICBsZXQgc3VtYTEgPSBudW0xICsgbnVtMjtcbiAgICBsZXQgc3VtYTIgPSBudW0zICsgbnVtNDtcbiAgICBsZXQgcHJvZHVjdG8gPSBzdW1hMSAqIHN1bWEyO1xuICAgIGlmIChwcm9kdWN0byA+IDUwKSB7XG4gICAgICAgIGNvbnNvbGUubG9nKGDCoUVsIG7Dum1lcm8gJHtwcm9kdWN0b30gZXMgbWF5b3IgcXVlIDUwIWApO1xuICAgIH1cbiAgICBlbHNlIGlmIChwcm9kdWN0byA9PT0gNTApIHtcbiAgICAgICAgY29uc29sZS5sb2coYMKhRWwgbsO6bWVybyAke3Byb2R1Y3RvfSBlcyBpZ3VhbCBhIDUwIWApO1xuICAgIH1cbiAgICBlbHNlIHtcbiAgICAgICAgY29uc29sZS5sb2coYMKhRWwgbsO6bWVybyAke3Byb2R1Y3RvfSBlcyBtZW5vciBxdWUgNTAhYCk7XG4gICAgfVxuXG4gICAgXG4gIH1cblxuLy9sbGFtYSBhIGxhIGZ1bmNpb24geSBtdWVzdHJhIGVsIHJlc3VsdGFkbyBlbiBjb25zb2xhXG4vL3ZhciByZXN1bHRhZG8gPSBteUZ1bmN0aW9uU3VtYU11bHRpcGxpY2EoMi41LCAzLCA0LCAyKTtcblxuLy8gZWplbXBsbyBjb24gZXJyb3IgZGUgdGlwb1xuLy92YXIgcmVzdWx0YWRvMiA9IG15RnVuY3Rpb25TdW1hTXVsdGlwbGljYSgyLjUsIDMsIFwiNFwiLCAyKTtcbi8vIGVqZW1wbG8gY29uIGVycm9yIGRlIGNhbnRpZGFkIGRlIGFyZ3VtZW50b3Ncbi8vdmFyIHJlc3VsdGFkbzMgPSBteUZ1bmN0aW9uU3VtYU11bHRpcGxpY2EoMi41LCAzLCA0KTtcblxuXG5cbiJ9XX0=
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIGVqZXJjaWNpby5qc1xuXG4vKmNyZWEgZnVuY2lvbiBxdWUgdG9tYSA0IGFyZ3VtZW50b3MsIHN1bWEgbG9zIDIgcHJpbWVyb3MgeSBtdWx0aXBsaWNhIGxvcyAyIHNpZ3VpZW50ZXNcblNpIGVsIG7Dum1lcm8gY3JlYWRvIGVzIG1heW9yIHF1ZSA1MCwgbGEgY29uc29sYSByZWdpc3RyYSBcIsKhRWwgbsO6bWVybyBlcyBtYXlvciBxdWUgNTAhXCIuIFxuU2kgZXMgbcOhcyBwZXF1ZcOxbywgbGEgY29uc29sYSByZWdpc3RyYSBcIsKhRWwgbsO6bWVybyBlcyBtZW5vciBxdWUgNTAhXCJcbiovXG5mdW5jdGlvbiBteUZ1bmN0aW9uU3VtYU11bHRpcGxpY2EobnVtMSwgbnVtMixudW0zLG51bTQpIHtcbiAgICBcbi8vIFZlcmlmaWNhciBxdWUgc2UgaGF5YW4gcGFzYWRvIGV4YWN0YW1lbnRlIDQgYXJndW1lbnRvc1xuaWYgKGFyZ3VtZW50cy5sZW5ndGggIT09IDQpIHtcbiAgICBjb25zb2xlLmxvZyhcIkVycm9yIGRlIGNhbnRpZGFkOiBzZSBkZWJlbiBwYXNhciA0IGFyZ3VtZW50b3MuXCIpO1xuICAgIHJldHVybjtcbn1cblxuLy8gVmVyaWZpY2FyIHF1ZSB0b2RvcyBzZWFuIG7Dum1lcm9zXG5pZiAoXG4gICAgdHlwZW9mIG51bTEgIT09ICdudW1iZXInIHx8XG4gICAgdHlwZW9mIG51bTIgIT09ICdudW1iZXInIHx8XG4gICAgdHlwZW9mIG51bTMgIT09ICdudW1iZXInIHx8XG4gICAgdHlwZW9mIG51bTQgIT09ICdudW1iZXInXG4pIHtcbiAgICBjb25zb2xlLmxvZyhcIkVycm9yIGRlIHRpcG86IHRvZG9zIGxvcyA0IGFyZ3VtZW50b3MgZGViZW4gc2VyIG7Dum1lcm9zLlwiKTtcbiAgICByZXR1cm47XG59XG4gICAgXG4gICAgbGV0IHN1bWExID0gbnVtMSArIG51bTI7XG4gICAgbGV0IHN1bWEyID0gbnVtMyArIG51bTQ7XG4gICAgbGV0IHByb2R1Y3RvID0gc3VtYTEgKiBzdW1hMjtcbiAgICBpZiAocHJvZHVjdG8gPiA1MCkge1xuICAgICAgICBjb25zb2xlLmxvZyhgwqFFbCBuw7ptZXJvICR7cHJvZHVjdG99IGVzIG1heW9yIHF1ZSA1MCFgKTtcbiAgICB9XG4gICAgZWxzZSBpZiAocHJvZHVjdG8gPT09IDUwKSB7XG4gICAgICAgIGNvbnNvbGUubG9nKGDCoUVsIG7Dum1lcm8gJHtwcm9kdWN0b30gZXMgaWd1YWwgYSA1MCFgKTtcbiAgICB9XG4gICAgZWxzZSB7XG4gICAgICAgIGNvbnNvbGUubG9nKGDCoUVsIG7Dum1lcm8gJHtwcm9kdWN0b30gZXMgbWVub3IgcXVlIDUwIWApO1xuICAgIH1cblxuICAgIFxuICB9XG5cbi8vbGxhbWEgYSBsYSBmdW5jaW9uIHkgbXVlc3RyYSBlbCByZXN1bHRhZG8gZW4gY29uc29sYVxuLy92YXIgcmVzdWx0YWRvID0gbXlGdW5jdGlvblN1bWFNdWx0aXBsaWNhKDIuNSwgMywgNCwgMik7XG5cbi8vIGVqZW1wbG8gY29uIGVycm9yIGRlIHRpcG9cbi8vdmFyIHJlc3VsdGFkbzIgPSBteUZ1bmN0aW9uU3VtYU11bHRpcGxpY2EoMi41LCAzLCBcIjRcIiwgMik7XG4vLyBlamVtcGxvIGNvbiBlcnJvciBkZSBjYW50aWRhZCBkZSBhcmd1bWVudG9zXG4vL3ZhciByZXN1bHRhZG8zID0gbXlGdW5jdGlvblN1bWFNdWx0aXBsaWNhKDIuNSwgMywgNCk7XG5cblxuXG4ifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
