@@ -8,6 +8,8 @@ title: "JS - CKP8"
 
 ## ¿Qué tipo de bucles hay en JS?
 
+![Tomado de https://www.linkedin.com/pulse/loop-while-dowhile-javascript-hadi-soufan/](images/js_while_vs_dowhile.png)
+
 Los bucles son una manera de repetir un proceso. Los bucles más comunes son:
 
 * **For**: itera sobre una secuencia de elementos, como un array o un objeto.
@@ -15,9 +17,100 @@ Los bucles son una manera de repetir un proceso. Los bucles más comunes son:
 * **Do-While**: similar al bucle While, pero se ejecuta al menos una vez antes de evaluar la condición.
 
 
+Veamos ahora detalle de cada tipo de bucle y ejemplos de cada uno.
+
+1. Bucle For
+
+El bucle for es el más común y se utiliza para ejecutar un bloque de código un número determinado de veces. La sintaxis básica es:
+
+``` default
+for (inicialización; condición; incremento) {
+  // código a ejecutar
+}
+``` 
+
+Donde:
+
+inicialización: es la expresión que se ejecuta antes de comenzar el bucle.
+condición: es la expresión que se evalúa en cada iteración para determinar si el bucle debe continuar.
+incremento: es la expresión que se ejecuta al final de cada iteración para actualizar la variable de control.
+
+Ejemplo:
+
+``` default
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+// Salida: 0, 1, 2, 3, 4
+
+``` 
+
+2. Bucle While
+
+El bucle while se utiliza para ejecutar un bloque de código mientras se cumple una condición determinada. La sintaxis básica es:
+
+``` default
+while (condición) {
+  // código a ejecutar
+}
+```
+
+Donde condición es la expresión que se evalúa en cada iteración para determinar si el bucle debe continuar.
+
+Ejemplo:
+
+``` default
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+// Salida: 0, 1, 2, 3, 4
+
+```
+
+3. Bucle Do-While
+
+El bucle do-while es similar al bucle while, pero se ejecuta al menos una vez antes de evaluar la condición. La sintaxis básica es:
+
+``` default
+do {
+  // código a ejecutar
+} while (condición);
+
+```
+
+Donde condición es la expresión que se evalúa en cada iteración para determinar si el bucle debe continuar.
+
+El bucle Do-While se ejecuta de la siguiente manera:
+
+- Se ejecuta el código dentro del bloque do al menos una vez.
+- Luego, se evalúa la condición en la cláusula while.
+- Si la condición es true, se vuelve a ejecutar el código dentro del bloque do.
+- Si la condición es false, el bucle termina.
+
+Ejemplo:
+
+``` default
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+// Salida: 0, 1, 2, 3, 4
+```
+
+En este ejemplo, el bucle Do-While se ejecuta al menos una vez, imprimiendo el valor de i (0). Luego, se evalúa la condición i < 5, que es true, por lo que se vuelve a ejecutar el código dentro del bloque do, imprimiendo el valor de i (1). Esto continúa hasta que i sea 5, momento en el que la condición es false y el bucle termina.
+
+La principal diferencia entre While y Do-While es que Do-While se ejecuta al menos una vez, mientras que While puede no ejecutarse nunca si la condición inicial es false.
+
 Referencias
 
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration>
+
+<https://www.w3schools.com/jsref/jsref_dowhile.asp>
+
+<https://www.linkedin.com/pulse/loop-while-dowhile-javascript-hadi-soufan/>
 
 ## ¿Cuáles son las diferencias entre const, let y var?
 

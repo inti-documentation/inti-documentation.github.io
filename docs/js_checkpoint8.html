@@ -207,59 +207,121 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="qué-tipo-de-bucles-hay-en-js" class="level2">
 <h2 class="anchored" data-anchor-id="qué-tipo-de-bucles-hay-en-js">¿Qué tipo de bucles hay en JS?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/js_while_vs_dowhile.png" class="img-fluid figure-img"></p>
+<figcaption>Tomado de https://www.linkedin.com/pulse/loop-while-dowhile-javascript-hadi-soufan/</figcaption>
+</figure>
+</div>
 <p>Los bucles son una manera de repetir un proceso. Los bucles más comunes son:</p>
 <ul>
 <li><strong>For</strong>: itera sobre una secuencia de elementos, como un array o un objeto.</li>
 <li><strong>While</strong>: repite proceso mientras se cumple una condición.Si no se cumple, no se corre el proceso ninguna vez.</li>
 <li><strong>Do-While</strong>: similar al bucle While, pero se ejecuta al menos una vez antes de evaluar la condición.</li>
 </ul>
+<p>Veamos ahora detalle de cada tipo de bucle y ejemplos de cada uno.</p>
+<ol type="1">
+<li>Bucle For</li>
+</ol>
+<p>El bucle for es el más común y se utiliza para ejecutar un bloque de código un número determinado de veces. La sintaxis básica es:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>for (inicialización; condición; incremento) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  // código a ejecutar</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Donde:</p>
+<p>inicialización: es la expresión que se ejecuta antes de comenzar el bucle. condición: es la expresión que se evalúa en cada iteración para determinar si el bucle debe continuar. incremento: es la expresión que se ejecuta al final de cada iteración para actualizar la variable de control.</p>
+<p>Ejemplo:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>for (let i = 0; i &lt; 5; i++) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  console.log(i);</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>// Salida: 0, 1, 2, 3, 4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Bucle While</li>
+</ol>
+<p>El bucle while se utiliza para ejecutar un bloque de código mientras se cumple una condición determinada. La sintaxis básica es:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>while (condición) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  // código a ejecutar</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Donde condición es la expresión que se evalúa en cada iteración para determinar si el bucle debe continuar.</p>
+<p>Ejemplo:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>let i = 0;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>while (i &lt; 5) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  console.log(i);</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  i++;</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>// Salida: 0, 1, 2, 3, 4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Bucle Do-While</li>
+</ol>
+<p>El bucle do-while es similar al bucle while, pero se ejecuta al menos una vez antes de evaluar la condición. La sintaxis básica es:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>do {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  // código a ejecutar</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>} while (condición);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Donde condición es la expresión que se evalúa en cada iteración para determinar si el bucle debe continuar.</p>
+<p>El bucle Do-While se ejecuta de la siguiente manera:</p>
+<ul>
+<li>Se ejecuta el código dentro del bloque do al menos una vez.</li>
+<li>Luego, se evalúa la condición en la cláusula while.</li>
+<li>Si la condición es true, se vuelve a ejecutar el código dentro del bloque do.</li>
+<li>Si la condición es false, el bucle termina.</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>let i = 0;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>do {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  console.log(i);</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  i++;</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>} while (i &lt; 5);</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>// Salida: 0, 1, 2, 3, 4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, el bucle Do-While se ejecuta al menos una vez, imprimiendo el valor de i (0). Luego, se evalúa la condición i &lt; 5, que es true, por lo que se vuelve a ejecutar el código dentro del bloque do, imprimiendo el valor de i (1). Esto continúa hasta que i sea 5, momento en el que la condición es false y el bucle termina.</p>
+<p>La principal diferencia entre While y Do-While es que Do-While se ejecuta al menos una vez, mientras que While puede no ejecutarse nunca si la condición inicial es false.</p>
 <p>Referencias</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration</a></p>
+<p><a href="https://www.w3schools.com/jsref/jsref_dowhile.asp" class="uri">https://www.w3schools.com/jsref/jsref_dowhile.asp</a></p>
+<p><a href="https://www.linkedin.com/pulse/loop-while-dowhile-javascript-hadi-soufan/" class="uri">https://www.linkedin.com/pulse/loop-while-dowhile-javascript-hadi-soufan/</a></p>
 </section>
 <section id="cuáles-son-las-diferencias-entre-const-let-y-var" class="level2">
 <h2 class="anchored" data-anchor-id="cuáles-son-las-diferencias-entre-const-let-y-var">¿Cuáles son las diferencias entre const, let y var?</h2>
 <p>En JavaScript, const, let y var se utilizan para declarar variables, pero tienen diferencias clave en su alcance y comportamiento (hoisting, reglas de reasignación):</p>
 <p>Hoisting: Es un comportamiento donde las declaraciones de variables se mueven a la parte superior del ambito en el que se declaran.</p>
 <p><strong>var</strong>: La variable declarada con var tiene un alcance de función o global, es decir, se aplica a toda la función en la que se declara. Puede ser redeclarada y reasignada.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>var persona = { nombre: "Ana", edad: 28 };</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>var persona = { nombre: "Fran", edad: 25 };</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>var persona = { nombre: "Ana", edad: 28 };</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>var persona = { nombre: "Fran", edad: 25 };</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ejemplo de Hoisting para var donde se tiene:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>console.log(x); // undefined</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>var x = 10;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>console.log(x); // undefined</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>var x = 10;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Debido al hoisting, el código se ejecuta como si fuera la variable declarada y no asignada hasta después:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>var x;</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>console.log(x); // undefined</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x = 10;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>var x;</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>console.log(x); // undefined</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>x = 10;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>let</strong>: La variable declarada con let tiene un alcance de bloque, es decir, se aplica solo dentro del bloque en el que se declara. Puede ser reasignada, pero no redeclarada.</p>
 <p>En el siguiente ejemplo se observa como si se llama a una variable declarada dentro de función y se intenta llamar fuera del bloque nos da error:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>if (true) {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    let nombre = "Juan";</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    console.log(nombre);</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>console.log(nombre); // Error: nombre is not defined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>if (true) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    let nombre = "Juan";</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    console.log(nombre);</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>console.log(nombre); // Error: nombre is not defined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En otro ejemplo se usa let para declarar una variable global y luego otra local (dentro de función):</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>let edad = 25;</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>if (true) {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    let edad = 30; </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    console.log(edad); // 30</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>console.log(edad); // 25</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>let edad = 25;</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>if (true) {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    let edad = 30; </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    console.log(edad); // 30</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>console.log(edad); // 25</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se observa como la variable local solo es accesible dentro del bloque if y no afecta a la variable global.</p>
 <p>Hoisting para let funciona diferente que para var, ya que que con let no se inicializa la variable y causa un error:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>console.log(number)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>// ReferenceError: Cannot access 'number' before initialization</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>let number = 50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>console.log(number)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>// ReferenceError: Cannot access 'number' before initialization</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>let number = 50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>const</strong>: La variable declarada con const también tiene un alcance de bloque, pero no puede ser reasignada ni redeclarada. Su valor es constante.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>const edad = 30; </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>edad = 35; // Error: Assignment to constant variable.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>const edad = 30; </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>edad = 35; // Error: Assignment to constant variable.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Hoisting para const es similar que para let donde no se inicializa variable y da error:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>console.log(number)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>// ReferenceError: Cannot access 'number' before initialization</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>const number = 50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>console.log(number)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>// ReferenceError: Cannot access 'number' before initialization</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>const number = 50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Debido a que usar variables antes de declararlas puede causar problemas, algunas veces se recomienda seguir la regla <strong>no-use-before-define</strong> o lo que es definir primero y hasta después usar.</p>
 <p>Referencias</p>
 <p><a href="https://www.geeksforgeeks.org/difference-between-var-let-and-const-keywords-in-javascript/" class="uri">https://www.geeksforgeeks.org/difference-between-var-let-and-const-keywords-in-javascript/</a></p>
@@ -270,34 +332,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="qué-es-una-función-de-flecha">¿Qué es una función de flecha?</h2>
 <p>Una función flecha es una forma concisa de definir una función en JavaScript. Se utiliza la sintaxis () =&gt; {} para crear una función anónima.</p>
 <p>Ejemplo de una función normal (function declaration) que suma dos números:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>function sumar(a, b) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  return a + b;</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>function sumar(a, b) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  return a + b;</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>La versión con función anónima:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>var sumar = function(a, b) {</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  return a + b;</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>var sumar = function(a, b) {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  return a + b;</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ahora miramos versión de función flecha equivalente:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>const sumar = (a, b) =&gt; a + b;</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>console.log(sumar(2, 3)); // 5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>const sumar = (a, b) =&gt; a + b;</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>console.log(sumar(2, 3)); // 5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Variantes</strong></p>
 <p>Hay algunas variantes, por ejemplo los parentesis en los argumentos. En la función anterior usamos como argumentos (a,b) que nos regresa el resultado de expresión (a+b) pero en caso de que hubiera un solo argumento, los parentesis pueden ser omitidos. Por ejemplo en la siguiente expression la función puede ser escrita con o sin parentesis.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>let double = n =&gt; n * 2;</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>// igual que: let double = (n) =&gt; n * 2;</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>// Muy similar a funcion anónima: let double = function(n) { return n * 2 }</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>alert( double(3) ); // 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>let double = n =&gt; n * 2;</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>// igual que: let double = (n) =&gt; n * 2;</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>// Muy similar a funcion anónima: let double = function(n) { return n * 2 }</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>alert( double(3) ); // 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En caso de que no hubiera argumentos, los parentesis tienen que estar vacios. Por ejemplo:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>let saluda = () =&gt; alert("Hola");</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>saluda();</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>let saluda = () =&gt; alert("Hola");</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>saluda();</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Multilinea</strong>.En caso de que se tenga que realizar varias expresiones dentro de la función se usa “{}” para englobar la diferentes lineas y se debe incluir “return” para que nos regrese algo, justo como en función normal. Veamos un ejemplo donde se evalua que los valores pasados a función son positivos y luego calcula el área:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>const calcularArea = (base, altura) =&gt; {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  if (base &lt;= 0 || altura &lt;= 0) {</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    throw new Error("La base y la altura deben ser números positivos");</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  const area = base * altura;</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  return area;</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>const calcularArea = (base, altura) =&gt; {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  if (base &lt;= 0 || altura &lt;= 0) {</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    throw new Error("La base y la altura deben ser números positivos");</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  const area = base * altura;</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  return area;</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Cuándo usar funciones flecha</strong></p>
 <p>Se recomienda usar funciones flecha en los siguientes casos:</p>
 <ul>
@@ -307,9 +369,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Map, filter, reduce: Las funciones flecha son ideales para usar con métodos de arrays como map, filter y reduce.</li>
 </ul>
 <p>Ejemplo de uso con map:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>const numbers = [1, 2, 3, 4, 5];</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>const doubles = numbers.map((num) =&gt; num * 2);</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>console.log(doubles); // [2, 4, 6, 8, 10]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>const numbers = [1, 2, 3, 4, 5];</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>const doubles = numbers.map((num) =&gt; num * 2);</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>console.log(doubles); // [2, 4, 6, 8, 10]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Referencias</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</a></p>
 <p><a href="https://www.w3schools.com/js/js_arrow_function.asp" class="uri">https://www.w3schools.com/js/js_arrow_function.asp</a></p>
@@ -328,46 +390,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Se utiliza la sintaxis para array: <code>[variable1, variable2, ...] = array</code>.</p>
 <p>La deconstrucción de variables es útil para simplificar el código y evitar la necesidad de acceder a las propiedades de un objeto o los elementos de un array mediante su índice o nombre.</p>
 <p>Veamos como funciona con algunos ejemplos:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Deconstrucción de objeto</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> { <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Juan"</span><span class="op">,</span> <span class="dt">edad</span><span class="op">:</span> <span class="dv">30</span> }<span class="op">;</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> { nombre<span class="op">,</span> edad } <span class="op">=</span> persona<span class="op">;</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nombre)<span class="op">;</span> <span class="co">// Output: "Juan"</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(edad)<span class="op">;</span> <span class="co">// Output: 30</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Deconstrucción de objeto</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> { <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Juan"</span><span class="op">,</span> <span class="dt">edad</span><span class="op">:</span> <span class="dv">30</span> }<span class="op">;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> { nombre<span class="op">,</span> edad } <span class="op">=</span> persona<span class="op">;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nombre)<span class="op">;</span> <span class="co">// Output: "Juan"</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(edad)<span class="op">;</span> <span class="co">// Output: 30</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Y para un array tenemos:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Deconstrucción de array</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> frutas <span class="op">=</span> [<span class="st">"manzana"</span><span class="op">,</span> <span class="st">"banana"</span><span class="op">,</span> <span class="st">"naranja"</span>]<span class="op">;</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> [fruta1<span class="op">,</span> fruta2<span class="op">,</span> fruta3] <span class="op">=</span> frutas<span class="op">;</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(fruta1)<span class="op">;</span> <span class="co">// Output: "manzana"</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(fruta2)<span class="op">;</span> <span class="co">// Output: "banana"</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(fruta3)<span class="op">;</span> <span class="co">// Output: "naranja"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Deconstrucción de array</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> frutas <span class="op">=</span> [<span class="st">"manzana"</span><span class="op">,</span> <span class="st">"banana"</span><span class="op">,</span> <span class="st">"naranja"</span>]<span class="op">;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> [fruta1<span class="op">,</span> fruta2<span class="op">,</span> fruta3] <span class="op">=</span> frutas<span class="op">;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(fruta1)<span class="op">;</span> <span class="co">// Output: "manzana"</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(fruta2)<span class="op">;</span> <span class="co">// Output: "banana"</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(fruta3)<span class="op">;</span> <span class="co">// Output: "naranja"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Valores predeterminados</strong></p>
 <p>A una variable se le puede asignar un valor predeterminado, en el caso de que el valor desempacado del arreglo sea undefined.</p>
 <p>Veamos un ejemplo para objeto donde se desestructura el objeto persona y se asignan valores predeterminados a las variables nombre, edad y pais. Si el objeto persona no tiene una propiedad con el nombre correspondiente, se asigna el valor predeterminado.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> { <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Juan"</span><span class="op">,</span> <span class="dt">edad</span><span class="op">:</span> <span class="dv">30</span> }<span class="op">;</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> { nombre <span class="op">=</span> <span class="st">"Desconocido"</span><span class="op">,</span> edad <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> pais <span class="op">=</span> <span class="st">"No especificado"</span> } <span class="op">=</span> persona<span class="op">;</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nombre)<span class="op">;</span> <span class="co">// "Juan"</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(edad)<span class="op">;</span>   <span class="co">// 30</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(pais)<span class="op">;</span>   <span class="co">// "No especificado"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> { <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Juan"</span><span class="op">,</span> <span class="dt">edad</span><span class="op">:</span> <span class="dv">30</span> }<span class="op">;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> { nombre <span class="op">=</span> <span class="st">"Desconocido"</span><span class="op">,</span> edad <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> pais <span class="op">=</span> <span class="st">"No especificado"</span> } <span class="op">=</span> persona<span class="op">;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nombre)<span class="op">;</span> <span class="co">// "Juan"</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(edad)<span class="op">;</span>   <span class="co">// 30</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(pais)<span class="op">;</span>   <span class="co">// "No especificado"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ahora veamos un ejemplo usando array donde se desestructura el array colores y se asignan valores predeterminados a las variables primero, segundo y tercero. Si el array colores no tiene suficientes elementos, se asignan los valores predeterminados a las variables restantes.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>const colores = ["rojo", "azul"];</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>const [primero = "negro", segundo = "blanco", tercero = "gris"] = colores;</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>console.log(primero); // "rojo"</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>console.log(segundo); // "azul"</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>console.log(tercero); // "gris"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>const colores = ["rojo", "azul"];</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>const [primero = "negro", segundo = "blanco", tercero = "gris"] = colores;</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>console.log(primero); // "rojo"</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>console.log(segundo); // "azul"</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>console.log(tercero); // "gris"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Ignorar valores devueltos</strong></p>
 <p>Se puede ignorar los valores que no interesan para evitar crear variables que no se usan y hay varias opciones. Aqui unos ejemplos:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>// ❌ Malo, asignación de variable inútil</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>const [ignore, keep] = ['ignore', 'keep']; // La variable "ignore" no se utiliza</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>// ✅ Bueno, espacio en blanco</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>const [, keep] = ['ignore', 'keep']; // Se ignora el primer valor</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>// ✅ Bueno, guion bajo</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>const [_ignore, keep] = ['ignore', 'keep']; // Se ignora el primer valor y se indica con "_"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>// ❌ Malo, asignación de variable inútil</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>const [ignore, keep] = ['ignore', 'keep']; // La variable "ignore" no se utiliza</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>// ✅ Bueno, espacio en blanco</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>const [, keep] = ['ignore', 'keep']; // Se ignora el primer valor</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>// ✅ Bueno, guion bajo</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>const [_ignore, keep] = ['ignore', 'keep']; // Se ignora el primer valor y se indica con "_"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Referencias</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring</a></p>
 <p><a href="https://www.w3schools.com/js/js_destructuring.asp" class="uri">https://www.w3schools.com/js/js_destructuring.asp</a></p>
@@ -377,17 +439,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="qué-hace-el-operador-de-extensión-en-js" class="level2">
 <h2 class="anchored" data-anchor-id="qué-hace-el-operador-de-extensión-en-js">¿Qué hace el operador de extensión en JS?</h2>
 <p>El operador de extensión o spread syntax(<code>...</code>) se utiliza para expandir un array o un objeto en una nueva estructura de datos. La sintaxis extendida permite a un elemento iterable tal como un arreglo o cadena ser expandido en lugares donde cero o más argumentos (para llamadas de función) o elementos (para Array literales) son esperados, o a un objeto ser expandido en lugares donde cero o más pares de valores clave (para literales Tipo Objeto) son esperados.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Expansión de array</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> numeros <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nuevosNumeros <span class="op">=</span> [<span class="op">...</span>numeros<span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nuevosNumeros)<span class="op">;</span> <span class="co">// Output: [1, 2, 3, 4, 5, 6]</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Expansión de objeto</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> { <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Juan"</span><span class="op">,</span> <span class="dt">edad</span><span class="op">:</span> <span class="dv">30</span> }<span class="op">;</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nuevaPersona <span class="op">=</span> { <span class="op">...</span>persona<span class="op">,</span> <span class="dt">direccion</span><span class="op">:</span> <span class="st">"Calle 123"</span> }<span class="op">;</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nuevaPersona)<span class="op">;</span> <span class="co">// Output: { nombre: "Juan", edad: 30, direccion: "Calle 123" }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Expansión de array</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> numeros <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nuevosNumeros <span class="op">=</span> [<span class="op">...</span>numeros<span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nuevosNumeros)<span class="op">;</span> <span class="co">// Output: [1, 2, 3, 4, 5, 6]</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Expansión de objeto</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> { <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Juan"</span><span class="op">,</span> <span class="dt">edad</span><span class="op">:</span> <span class="dv">30</span> }<span class="op">;</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nuevaPersona <span class="op">=</span> { <span class="op">...</span>persona<span class="op">,</span> <span class="dt">direccion</span><span class="op">:</span> <span class="st">"Calle 123"</span> }<span class="op">;</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nuevaPersona)<span class="op">;</span> <span class="co">// Output: { nombre: "Juan", edad: 30, direccion: "Calle 123" }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>El operador de extensión es útil para crear copias de arrays y objetos, y para combinar datos de diferentes fuentes.</p>
 <p><strong>Crear copias</strong></p>
 <p>En el contexto de crear copias, se utiliza para crear una copia superficial de un array o un objeto.</p>
@@ -395,36 +457,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Copiar arrays</li>
 </ul>
 <p>Para copiar un array, puedes utilizar el operador de propagación de la siguiente manera:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> original <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> copia <span class="op">=</span> [<span class="op">...</span>original]<span class="op">;</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(copia)<span class="op">;</span> <span class="co">// [1, 2, 3]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> original <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> copia <span class="op">=</span> [<span class="op">...</span>original]<span class="op">;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(copia)<span class="op">;</span> <span class="co">// [1, 2, 3]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, se crea una copia del array original utilizando el operador de propagación (…). La copia se almacena en la variable copia.</p>
 <ul>
 <li>Copiar objetos</li>
 </ul>
 <p>De manera similar, puedes copiar un objeto utilizando el operador de propagación:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> original <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> copia <span class="op">=</span> { <span class="op">...</span>original }<span class="op">;</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(copia)<span class="op">;</span> <span class="co">// { a: 1, b: 2 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> original <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> copia <span class="op">=</span> { <span class="op">...</span>original }<span class="op">;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(copia)<span class="op">;</span> <span class="co">// { a: 1, b: 2 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Si te preguntas que es una copia superficial aqui se explica. La copia creada con el operador de propagación se llama “copia superficial” (o “shallow copy” en inglés) porque solo copia los valores de las propiedades del objeto o los elementos del array de manera directa, sin copiar los objetos o arrays anidados.</p>
 <p>En otras palabras, si el objeto o array original contiene referencias a otros objetos o arrays, la copia solo copiará las referencias, no los objetos o arrays en sí mismos. Esto significa que si se modifica el objeto o array original, la copia también se verá afectada, ya que ambos comparten las mismas referencias.</p>
 <p>Aquí hay un ejemplo:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> original <span class="op">=</span> {</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">b</span><span class="op">:</span> [<span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">c</span><span class="op">:</span> { <span class="dt">d</span><span class="op">:</span> <span class="dv">4</span> }</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> copia <span class="op">=</span> { <span class="op">...</span>original }<span class="op">;</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>copia<span class="op">.</span><span class="at">b</span><span class="op">.</span><span class="fu">push</span>(<span class="dv">5</span>)<span class="op">;</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>copia<span class="op">.</span><span class="at">c</span><span class="op">.</span><span class="at">d</span> <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(original)<span class="op">;</span> <span class="co">// { a: 1, b: [2, 3, 5], c: { d: 6 } }</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(copia)<span class="op">;</span> <span class="co">// { a: 1, b: [2, 3, 5], c: { d: 6 } }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> original <span class="op">=</span> {</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">b</span><span class="op">:</span> [<span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">c</span><span class="op">:</span> { <span class="dt">d</span><span class="op">:</span> <span class="dv">4</span> }</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> copia <span class="op">=</span> { <span class="op">...</span>original }<span class="op">;</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>copia<span class="op">.</span><span class="at">b</span><span class="op">.</span><span class="fu">push</span>(<span class="dv">5</span>)<span class="op">;</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>copia<span class="op">.</span><span class="at">c</span><span class="op">.</span><span class="at">d</span> <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(original)<span class="op">;</span> <span class="co">// { a: 1, b: [2, 3, 5], c: { d: 6 } }</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(copia)<span class="op">;</span> <span class="co">// { a: 1, b: [2, 3, 5], c: { d: 6 } }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, el objeto original se ve afectada por las modificaciones realizadas en el objeto copia, ya que ambos comparten las mismas referencias a los arrays y objetos anidados.</p>
 <p>Para crear una copia profunda (o “deep copy”) que no comparta referencias con el objeto original, se necesitan técnicas más avanzadas, como la recursividad o la utilización de bibliotecas como Lodash</p>
 <p><strong>Combinar datos</strong></p>
@@ -433,93 +495,93 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Combinar arrays</li>
 </ul>
 <p>Para combinar dos o más arrays, puedes utilizar el operador de propagación de la siguiente manera:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> array1 <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> array2 <span class="op">=</span> [<span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> [<span class="op">...</span>array1<span class="op">,</span> <span class="op">...</span>array2]<span class="op">;</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// [1, 2, 3, 4, 5, 6]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> array1 <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> array2 <span class="op">=</span> [<span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> [<span class="op">...</span>array1<span class="op">,</span> <span class="op">...</span>array2]<span class="op">;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// [1, 2, 3, 4, 5, 6]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, se combinan los arrays array1 y array2 en un nuevo array llamado combinado.</p>
 <ul>
 <li>Combinar objetos</li>
 </ul>
 <p>De manera similar, puedes combinar dos o más objetos utilizando el operador de propagación:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto2 <span class="op">=</span> { <span class="dt">c</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">d</span><span class="op">:</span> <span class="dv">4</span> }<span class="op">;</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> {<span class="op">...</span>objeto1<span class="op">,</span> <span class="op">...</span>objeto2}<span class="op">;</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// { a: 1, b: 2, c: 3, d: 4 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto2 <span class="op">=</span> { <span class="dt">c</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">d</span><span class="op">:</span> <span class="dv">4</span> }<span class="op">;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> {<span class="op">...</span>objeto1<span class="op">,</span> <span class="op">...</span>objeto2}<span class="op">;</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// { a: 1, b: 2, c: 3, d: 4 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, se combinan los objetos objeto1 y objeto2 en un nuevo objeto llamado combinado.</p>
 <p>Combinar arrays y objetos.También puedes combinar arrays y objetos utilizando el operador de propagación:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> array <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">5</span> }<span class="op">;</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> [<span class="op">...</span>array<span class="op">,</span> objeto]<span class="op">;</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// [1, 2, 3, { a: 4, b: 5 }]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> array <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">5</span> }<span class="op">;</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> [<span class="op">...</span>array<span class="op">,</span> objeto]<span class="op">;</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// [1, 2, 3, { a: 4, b: 5 }]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, se combina el array array con el objeto objeto en un nuevo array llamado combinado.</p>
 <p>Sobrescritura de propiedades</p>
 <p>Cuando se combinan objetos utilizando el operador de propagación, si dos o más objetos tienen propiedades con el mismo nombre, la propiedad del objeto que se combina en segundo lugar sobrescribirá la propiedad del objeto que se combina en primer lugar.</p>
 <p>Aquí hay un ejemplo:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto2 <span class="op">=</span> { <span class="dt">b</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">c</span><span class="op">:</span> <span class="dv">4</span> }<span class="op">;</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> {<span class="op">...</span>objeto1<span class="op">,</span> <span class="op">...</span>objeto2}<span class="op">;</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// { a: 1, b: 3, c: 4 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto2 <span class="op">=</span> { <span class="dt">b</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">c</span><span class="op">:</span> <span class="dv">4</span> }<span class="op">;</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> {<span class="op">...</span>objeto1<span class="op">,</span> <span class="op">...</span>objeto2}<span class="op">;</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// { a: 1, b: 3, c: 4 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, la propiedad b del objeto objeto2 sobrescribe la propiedad b del objeto objeto1, por lo que el valor de b en el objeto combinado es 3, no 2.</p>
 <p>Es importante tener en cuenta que esto se aplica a todas las propiedades que se combinan, no solo a las que tienen el mismo nombre. Si un objeto tiene una propiedad que no existe en el otro objeto, se agregará al objeto combinado sin problemas.</p>
 <p>Aquí hay un ejemplo con múltiples objetos:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto2 <span class="op">=</span> { <span class="dt">b</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">c</span><span class="op">:</span> <span class="dv">4</span> }<span class="op">;</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto3 <span class="op">=</span> { <span class="dt">c</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">d</span><span class="op">:</span> <span class="dv">6</span> }<span class="op">;</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> {<span class="op">...</span>objeto1<span class="op">,</span> <span class="op">...</span>objeto2<span class="op">,</span> <span class="op">...</span>objeto3}<span class="op">;</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// { a: 1, b: 3, c: 5, d: 6 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto2 <span class="op">=</span> { <span class="dt">b</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">c</span><span class="op">:</span> <span class="dv">4</span> }<span class="op">;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto3 <span class="op">=</span> { <span class="dt">c</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">d</span><span class="op">:</span> <span class="dv">6</span> }<span class="op">;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> {<span class="op">...</span>objeto1<span class="op">,</span> <span class="op">...</span>objeto2<span class="op">,</span> <span class="op">...</span>objeto3}<span class="op">;</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// { a: 1, b: 3, c: 5, d: 6 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, la propiedad b del objeto objeto2 sobrescribe la propiedad b del objeto objeto1, y la propiedad c del objeto objeto3 sobrescribe la propiedad c del objeto objeto2. El objeto combinado tiene las propiedades de todos los objetos, con las sobrescrituras correspondientes.</p>
 <p><strong>En llamadas de función</strong></p>
 <p>El operador de propagación (spread syntax) se puede utilizar en llamadas de función para pasar argumentos de manera flexible y conveniente.</p>
 <p>Pasar argumentos como array</p>
 <p>En JavaScript, cuando se llama a una función, se pueden pasar argumentos de manera individual, como en el siguiente ejemplo:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(a<span class="op">,</span> b<span class="op">,</span> c) {</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b <span class="op">+</span> c<span class="op">;</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> resultado <span class="op">=</span> <span class="fu">suma</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>)<span class="op">;</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(resultado)<span class="op">;</span> <span class="co">// 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(a<span class="op">,</span> b<span class="op">,</span> c) {</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b <span class="op">+</span> c<span class="op">;</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> resultado <span class="op">=</span> <span class="fu">suma</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>)<span class="op">;</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(resultado)<span class="op">;</span> <span class="co">// 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Sin embargo, si se tiene un array de valores que se desean pasar como argumentos, se puede utilizar el operador de propagación para “desempacar” el array y pasar sus elementos como argumentos individuales:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(a<span class="op">,</span> b<span class="op">,</span> c) {</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b <span class="op">+</span> c<span class="op">;</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> valores <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> resultado <span class="op">=</span> <span class="fu">suma</span>(<span class="op">...</span>valores)<span class="op">;</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(resultado)<span class="op">;</span> <span class="co">// 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(a<span class="op">,</span> b<span class="op">,</span> c) {</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b <span class="op">+</span> c<span class="op">;</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> valores <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> resultado <span class="op">=</span> <span class="fu">suma</span>(<span class="op">...</span>valores)<span class="op">;</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(resultado)<span class="op">;</span> <span class="co">// 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, el operador de propagación (…) se utiliza para “desempacar” el array valores y pasar sus elementos como argumentos individuales a la función suma.</p>
 <p>otra aplicación importante del operador de propagación en funciones: permitir que una función acepte un número variable de argumentos.</p>
 <p>Funciones con un número variable de argumentos</p>
 <p>En JavaScript, se puede definir una función que acepte un número variable de argumentos utilizando el operador de propagación en la lista de parámetros. Esto se conoce como “rest parameter” (parámetro de resto).</p>
 <p>Aquí hay un ejemplo:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(<span class="op">...</span>numeros) {</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> numeros<span class="op">.</span><span class="fu">reduce</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> a <span class="op">+</span> b<span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">suma</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>))<span class="op">;</span> <span class="co">// 6</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">suma</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>))<span class="op">;</span> <span class="co">// 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(<span class="op">...</span>numeros) {</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> numeros<span class="op">.</span><span class="fu">reduce</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> a <span class="op">+</span> b<span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">suma</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>))<span class="op">;</span> <span class="co">// 6</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">suma</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>))<span class="op">;</span> <span class="co">// 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, la función suma acepta un número variable de argumentos, que se almacenan en el array numeros. La función utiliza el método reduce para sumar todos los números en el array y devolver el resultado.</p>
 <p>El operador de propagación (…) se utiliza para indicar que el parámetro numeros es un parámetro de resto, que puede aceptar cualquier número de argumentos.</p>
 <p>De esta manera, la función suma puede ser llamada con cualquier número de argumentos, y siempre devolverá la suma de todos los números pasados como argumentos.</p>
 <p>Otro ejemplo</p>
 <p>Aquí hay otro ejemplo de una función que utiliza el operador de propagación para aceptar un número variable de argumentos:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">max</span>(<span class="op">...</span>numeros) {</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>numeros)<span class="op">;</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>))<span class="op">;</span> <span class="co">// 3</span></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>))<span class="op">;</span> <span class="co">// 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">max</span>(<span class="op">...</span>numeros) {</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>numeros)<span class="op">;</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>))<span class="op">;</span> <span class="co">// 3</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>))<span class="op">;</span> <span class="co">// 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, la función max acepta un número variable de argumentos y devuelve el máximo de todos los números pasados como argumentos.</p>
 <p>Referencias</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax</a></p>
@@ -536,32 +598,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Sintaxis de objeto literal.</li>
 </ol>
 <p>Esta es la forma más común de crear objetos en JavaScript. Se utiliza la sintaxis {} para crear un objeto y se pueden agregar propiedades y métodos utilizando la sintaxis clave: valor</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Ejemplo de objeto en JavaScript</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> {</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Ernesto"</span><span class="op">,</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">edad</span><span class="op">:</span> <span class="dv">41</span><span class="op">,</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">profesion</span><span class="op">:</span> <span class="st">"ingeniero ambiental"</span><span class="op">,</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">saludar</span><span class="op">:</span> <span class="kw">function</span>() {</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Hola, me llamo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">nombre</span><span class="sc">}</span><span class="vs">, tengo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">edad</span><span class="sc">}</span><span class="vs"> años y trabajo como </span><span class="sc">${</span>profesion<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>persona<span class="op">.</span><span class="fu">saludar</span>()<span class="op">;</span> <span class="co">// Output: "Hola, me llamo Ernesto, tengo 41 años y trabajo como ingeniero ambiental"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Ejemplo de objeto en JavaScript</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> {</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Ernesto"</span><span class="op">,</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">edad</span><span class="op">:</span> <span class="dv">41</span><span class="op">,</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">profesion</span><span class="op">:</span> <span class="st">"ingeniero ambiental"</span><span class="op">,</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">saludar</span><span class="op">:</span> <span class="kw">function</span>() {</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Hola, me llamo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">nombre</span><span class="sc">}</span><span class="vs">, tengo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">edad</span><span class="sc">}</span><span class="vs"> años y trabajo como </span><span class="sc">${</span>profesion<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>persona<span class="op">.</span><span class="fu">saludar</span>()<span class="op">;</span> <span class="co">// Output: "Hola, me llamo Ernesto, tengo 41 años y trabajo como ingeniero ambiental"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, se crea un objeto persona con tres propiedades: nombre, edad, profesión y el método saludar. La propiedad saludar es un método que se puede llamar para saludar.</p>
 <ol start="2" type="1">
 <li>Constructores.</li>
 </ol>
 <p>Los constructores son funciones especiales que se utilizan para crear objetos. Se utilizan la palabra clave new para crear un objeto a partir de un constructor.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Persona</span>(nombre<span class="op">,</span> edad<span class="op">,</span> profesion) {</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">nombre</span> <span class="op">=</span> nombre<span class="op">;</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">edad</span> <span class="op">=</span> edad<span class="op">;</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">profesion</span> <span class="op">=</span> profesion<span class="op">;</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">saludar</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Hola, me llamo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">nombre</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> <span class="kw">new</span> <span class="fu">Persona</span>(<span class="st">'Ines'</span><span class="op">,</span> <span class="dv">30</span><span class="op">,</span> <span class="st">"Doctora"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Persona</span>(nombre<span class="op">,</span> edad<span class="op">,</span> profesion) {</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">nombre</span> <span class="op">=</span> nombre<span class="op">;</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">edad</span> <span class="op">=</span> edad<span class="op">;</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">profesion</span> <span class="op">=</span> profesion<span class="op">;</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">saludar</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Hola, me llamo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">nombre</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> <span class="kw">new</span> <span class="fu">Persona</span>(<span class="st">'Ines'</span><span class="op">,</span> <span class="dv">30</span><span class="op">,</span> <span class="st">"Doctora"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, se define un constructor Persona que toma tres parámetros: nombre, edad y profesión. El constructor crea un objeto con las propiedades nombre, edad, profesión y el método saludar. Luego, se crea un objeto persona utilizando el constructor Persona y la palabra clave new.</p>
 <p><strong>Diferencias entre la sintaxis de objeto literal y los constructores</strong></p>
 <p>La principal diferencia entre la sintaxis de objeto literal y los constructores es la forma en que se crean los objetos. La sintaxis de objeto literal es más concisa y fácil de leer, mientras que los constructores ofrecen más flexibilidad y permiten la creación de objetos con propiedades y métodos dinámicos.</p>
@@ -569,52 +631,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>La herencia es un concepto fundamental en la Programación Orientada a Objetos (OOP) que permite crear una nueva clase a partir de una clase existente, heredando sus propiedades y métodos. En JavaScript, la herencia se puede implementar utilizando la palabra clave extends y la función constructor.</p>
 <p>Ejemplo de herencia</p>
 <p>Supongamos que tenemos una clase Vehiculo que tiene propiedades como marca, modelo y año, y métodos como arrancar y detener. Queremos crear una clase Coche que herede las propiedades y métodos de Vehiculo y agregue algunas propiedades y métodos adicionales.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Clase Vehiculo</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Vehiculo {</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(marca<span class="op">,</span> modelo<span class="op">,</span> año) {</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">marca</span> <span class="op">=</span> marca<span class="op">;</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">=</span> modelo<span class="op">;</span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">año</span> <span class="op">=</span> año<span class="op">;</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrancar</span>() {</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`El vehículo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">marca</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">modelo</span><span class="sc">}</span><span class="vs"> está arrancando`</span>)<span class="op">;</span></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">detener</span>() {</span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`El vehículo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">marca</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">modelo</span><span class="sc">}</span><span class="vs"> está deteniendo`</span>)<span class="op">;</span></span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a><span class="co">// Clase Coche que hereda de Vehiculo</span></span>
-<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Coche <span class="kw">extends</span> Vehiculo {</span>
-<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(marca<span class="op">,</span> modelo<span class="op">,</span> año<span class="op">,</span> puertas) {</span>
-<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">super</span>(marca<span class="op">,</span> modelo<span class="op">,</span> año)<span class="op">;</span></span>
-<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">puertas</span> <span class="op">=</span> puertas<span class="op">;</span></span>
-<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abrirPuertas</span>() {</span>
-<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Se abren las </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">puertas</span><span class="sc">}</span><span class="vs"> puertas del coche </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">marca</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">modelo</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
-<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Clase Vehiculo</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Vehiculo {</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(marca<span class="op">,</span> modelo<span class="op">,</span> año) {</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">marca</span> <span class="op">=</span> marca<span class="op">;</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">=</span> modelo<span class="op">;</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">año</span> <span class="op">=</span> año<span class="op">;</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrancar</span>() {</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`El vehículo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">marca</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">modelo</span><span class="sc">}</span><span class="vs"> está arrancando`</span>)<span class="op">;</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">detener</span>() {</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`El vehículo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">marca</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">modelo</span><span class="sc">}</span><span class="vs"> está deteniendo`</span>)<span class="op">;</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a><span class="co">// Clase Coche que hereda de Vehiculo</span></span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Coche <span class="kw">extends</span> Vehiculo {</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(marca<span class="op">,</span> modelo<span class="op">,</span> año<span class="op">,</span> puertas) {</span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">super</span>(marca<span class="op">,</span> modelo<span class="op">,</span> año)<span class="op">;</span></span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">puertas</span> <span class="op">=</span> puertas<span class="op">;</span></span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abrirPuertas</span>() {</span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Se abren las </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">puertas</span><span class="sc">}</span><span class="vs"> puertas del coche </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">marca</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">modelo</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>La clase Coche hereda de Vehiculo utilizando la palabra clave extends. El constructor de Coche llama al constructor de Vehiculo utilizando la función super, pasando los parámetros marca, modelo y año. Luego, inicializa la propiedad puertas propia de la clase Coche.</p>
 <p>La función super se utiliza para llamar al constructor de la clase padre (en este caso, Vehiculo) y heredar sus propiedades y métodos. De esta manera, la clase Coche tiene acceso a las propiedades y métodos de Vehiculo, como marca, modelo, año, arrancar y detener, y puede agregar sus propias propiedades y métodos, como puertas y abrirPuertas.</p>
 <p>A continuación se presenta ejemplo de como usar clase Coche que hereda de vehiculo:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Crear un objeto de la clase Coche</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> miCoche <span class="op">=</span> <span class="kw">new</span> <span class="fu">Coche</span>(<span class="st">'Toyota'</span><span class="op">,</span> <span class="st">'Corolla'</span><span class="op">,</span> <span class="dv">2015</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Llamar a los métodos heredados de Vehiculo</span></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>miCoche<span class="op">.</span><span class="fu">arrancar</span>()<span class="op">;</span> <span class="co">// El vehículo Toyota Corolla está arrancando</span></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>miCoche<span class="op">.</span><span class="fu">detener</span>()<span class="op">;</span> <span class="co">// El vehículo Toyota Corolla está deteniendo</span></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="co">// Llamar al método propio de Coche</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>miCoche<span class="op">.</span><span class="fu">abrirPuertas</span>()<span class="op">;</span> <span class="co">// Se abren las 4 puertas del coche Toyota Corolla</span></span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Acceder a las propiedades</span></span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">marca</span>)<span class="op">;</span> <span class="co">// Toyota</span></span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">modelo</span>)<span class="op">;</span> <span class="co">// Corolla</span></span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">año</span>)<span class="op">;</span> <span class="co">// 2015</span></span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">puertas</span>)<span class="op">;</span> <span class="co">// 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Crear un objeto de la clase Coche</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> miCoche <span class="op">=</span> <span class="kw">new</span> <span class="fu">Coche</span>(<span class="st">'Toyota'</span><span class="op">,</span> <span class="st">'Corolla'</span><span class="op">,</span> <span class="dv">2015</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Llamar a los métodos heredados de Vehiculo</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>miCoche<span class="op">.</span><span class="fu">arrancar</span>()<span class="op">;</span> <span class="co">// El vehículo Toyota Corolla está arrancando</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>miCoche<span class="op">.</span><span class="fu">detener</span>()<span class="op">;</span> <span class="co">// El vehículo Toyota Corolla está deteniendo</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="co">// Llamar al método propio de Coche</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>miCoche<span class="op">.</span><span class="fu">abrirPuertas</span>()<span class="op">;</span> <span class="co">// Se abren las 4 puertas del coche Toyota Corolla</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Acceder a las propiedades</span></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">marca</span>)<span class="op">;</span> <span class="co">// Toyota</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">modelo</span>)<span class="op">;</span> <span class="co">// Corolla</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">año</span>)<span class="op">;</span> <span class="co">// 2015</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">puertas</span>)<span class="op">;</span> <span class="co">// 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En este ejemplo, creamos un objeto miCoche de la clase Coche, pasando los parámetros marca, modelo, año y puertas. Luego, llamamos a los métodos heredados de Vehiculo, como arrancar y detener, y al método propio de Coche, como abrirPuertas.</p>
 <p>Referencias</p>
 <p><a href="https://www.w3schools.com/js/js_object_constructors.asp" class="uri">https://www.w3schools.com/js/js_object_constructors.asp</a></p>
@@ -636,54 +698,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>  miLista = “velma”, “exploradora”, “jane”, “john”, “harry”</code></pre>
 <p>Crea un bucle while que recorra la misma lista y también imprima los nombres. Nota: Recuerda crear un contador para que el ciclo no sea infinito.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39" data-startfrom="693" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 692;"><span id="cb39-693"><a href="#cb39-693" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
-<span id="cb39-694"><a href="#cb39-694" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-695"><a href="#cb39-695" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
-<span id="cb39-696"><a href="#cb39-696" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
-<span id="cb39-697"><a href="#cb39-697" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
-<span id="cb39-698"><a href="#cb39-698" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb39-699"><a href="#cb39-699" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
-<span id="cb39-700"><a href="#cb39-700" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb39-701"><a href="#cb39-701" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
-<span id="cb39-702"><a href="#cb39-702" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
-<span id="cb39-703"><a href="#cb39-703" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
-<span id="cb39-704"><a href="#cb39-704" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb39-705"><a href="#cb39-705" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb39-706"><a href="#cb39-706" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-707"><a href="#cb39-707" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
-<span id="cb39-708"><a href="#cb39-708" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
-<span id="cb39-709"><a href="#cb39-709" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb39-710"><a href="#cb39-710" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb39-711"><a href="#cb39-711" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb39-712"><a href="#cb39-712" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
-<span id="cb39-713"><a href="#cb39-713" aria-hidden="true" tabindex="-1"></a>) {</span>
-<span id="cb39-714"><a href="#cb39-714" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
-<span id="cb39-715"><a href="#cb39-715" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb39-716"><a href="#cb39-716" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb39-717"><a href="#cb39-717" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb39-718"><a href="#cb39-718" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
-<span id="cb39-719"><a href="#cb39-719" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
-<span id="cb39-720"><a href="#cb39-720" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
-<span id="cb39-721"><a href="#cb39-721" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
-<span id="cb39-722"><a href="#cb39-722" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb39-723"><a href="#cb39-723" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb39-724"><a href="#cb39-724" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
-<span id="cb39-725"><a href="#cb39-725" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
-<span id="cb39-726"><a href="#cb39-726" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb39-727"><a href="#cb39-727" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
-<span id="cb39-728"><a href="#cb39-728" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb39-729"><a href="#cb39-729" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb39-730"><a href="#cb39-730" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-731"><a href="#cb39-731" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb39-732"><a href="#cb39-732" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb39-733"><a href="#cb39-733" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-734"><a href="#cb39-734" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
-<span id="cb39-735"><a href="#cb39-735" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
-<span id="cb39-736"><a href="#cb39-736" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-737"><a href="#cb39-737" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
-<span id="cb39-738"><a href="#cb39-738" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
-<span id="cb39-739"><a href="#cb39-739" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
-<span id="cb39-740"><a href="#cb39-740" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45" data-startfrom="786" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 785;"><span id="cb45-786"><a href="#cb45-786" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
+<span id="cb45-787"><a href="#cb45-787" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-788"><a href="#cb45-788" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
+<span id="cb45-789"><a href="#cb45-789" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
+<span id="cb45-790"><a href="#cb45-790" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
+<span id="cb45-791"><a href="#cb45-791" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb45-792"><a href="#cb45-792" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
+<span id="cb45-793"><a href="#cb45-793" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb45-794"><a href="#cb45-794" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
+<span id="cb45-795"><a href="#cb45-795" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
+<span id="cb45-796"><a href="#cb45-796" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
+<span id="cb45-797"><a href="#cb45-797" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb45-798"><a href="#cb45-798" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb45-799"><a href="#cb45-799" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-800"><a href="#cb45-800" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
+<span id="cb45-801"><a href="#cb45-801" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
+<span id="cb45-802"><a href="#cb45-802" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb45-803"><a href="#cb45-803" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb45-804"><a href="#cb45-804" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb45-805"><a href="#cb45-805" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
+<span id="cb45-806"><a href="#cb45-806" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="cb45-807"><a href="#cb45-807" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
+<span id="cb45-808"><a href="#cb45-808" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb45-809"><a href="#cb45-809" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb45-810"><a href="#cb45-810" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb45-811"><a href="#cb45-811" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
+<span id="cb45-812"><a href="#cb45-812" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
+<span id="cb45-813"><a href="#cb45-813" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
+<span id="cb45-814"><a href="#cb45-814" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb45-815"><a href="#cb45-815" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb45-816"><a href="#cb45-816" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb45-817"><a href="#cb45-817" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
+<span id="cb45-818"><a href="#cb45-818" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
+<span id="cb45-819"><a href="#cb45-819" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb45-820"><a href="#cb45-820" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
+<span id="cb45-821"><a href="#cb45-821" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb45-822"><a href="#cb45-822" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb45-823"><a href="#cb45-823" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-824"><a href="#cb45-824" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb45-825"><a href="#cb45-825" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb45-826"><a href="#cb45-826" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-827"><a href="#cb45-827" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
+<span id="cb45-828"><a href="#cb45-828" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
+<span id="cb45-829"><a href="#cb45-829" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-830"><a href="#cb45-830" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
+<span id="cb45-831"><a href="#cb45-831" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
+<span id="cb45-832"><a href="#cb45-832" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
+<span id="cb45-833"><a href="#cb45-833" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
