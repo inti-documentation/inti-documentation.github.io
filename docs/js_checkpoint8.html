@@ -164,7 +164,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#qué-es-la-deconstrucción-de-variables" id="toc-qué-es-la-deconstrucción-de-variables" class="nav-link" data-scroll-target="#qué-es-la-deconstrucción-de-variables">¿Qué es la deconstrucción de variables?</a></li>
   <li><a href="#qué-hace-el-operador-de-extensión-en-js" id="toc-qué-hace-el-operador-de-extensión-en-js" class="nav-link" data-scroll-target="#qué-hace-el-operador-de-extensión-en-js">¿Qué hace el operador de extensión en JS?</a></li>
   <li><a href="#qué-es-la-programación-orientada-a-objetos" id="toc-qué-es-la-programación-orientada-a-objetos" class="nav-link" data-scroll-target="#qué-es-la-programación-orientada-a-objetos">¿Qué es la programación orientada a objetos?</a></li>
-  <li><a href="#qué-es-una-promesa-en-js" id="toc-qué-es-una-promesa-en-js" class="nav-link" data-scroll-target="#qué-es-una-promesa-en-js">¿Qué es una promesa en JS?</a></li>
+  <li><a href="#qué-es-una-promesa-en-js" id="toc-qué-es-una-promesa-en-js" class="nav-link" data-scroll-target="#qué-es-una-promesa-en-js">¿Qué es una promesa en JS?</a>
+  <ul class="collapse">
+  <li><a href="#manejo-de-la-promesa-resuelta" id="toc-manejo-de-la-promesa-resuelta" class="nav-link" data-scroll-target="#manejo-de-la-promesa-resuelta">Manejo de la promesa resuelta</a></li>
+  <li><a href="#manejo-de-errores" id="toc-manejo-de-errores" class="nav-link" data-scroll-target="#manejo-de-errores">Manejo de errores</a></li>
+  <li><a href="#encadenamiento-de-promesas" id="toc-encadenamiento-de-promesas" class="nav-link" data-scroll-target="#encadenamiento-de-promesas">Encadenamiento de promesas</a></li>
+  <li><a href="#estados-de-un-objeto-promesa-en-javascript" id="toc-estados-de-un-objeto-promesa-en-javascript" class="nav-link" data-scroll-target="#estados-de-un-objeto-promesa-en-javascript">Estados de un Objeto Promesa en JavaScript</a></li>
+  <li><a href="#propiedades-de-un-objeto-promesa" id="toc-propiedades-de-un-objeto-promesa" class="nav-link" data-scroll-target="#propiedades-de-un-objeto-promesa">Propiedades de un Objeto Promesa</a></li>
+  </ul></li>
   <li><a href="#qué-hacen-async-y-await-por-nosotros" id="toc-qué-hacen-async-y-await-por-nosotros" class="nav-link" data-scroll-target="#qué-hacen-async-y-await-por-nosotros">¿Qué hacen async y await por nosotros?</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a>
   <ul class="collapse">
@@ -686,6 +693,134 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="qué-es-una-promesa-en-js" class="level2">
 <h2 class="anchored" data-anchor-id="qué-es-una-promesa-en-js">¿Qué es una promesa en JS?</h2>
+<p>Las promesas en JavaScript son un mecanismo para manejar operaciones asíncronas, como solicitudes de red, lecturas de archivos o bases de datos, de manera más eficiente y fácil de entender. Una promesa es un objeto que representa una operación que puede tener éxito o fallar, y proporciona una forma de manejar el resultado de esa operación de manera asíncrona.</p>
+<p>En resumen, las promesas permiten:</p>
+<ul>
+<li>Manejar operaciones asíncronas de manera más fácil y legible</li>
+<li>Proporcionar una forma de manejar errores y excepciones de manera más efectiva</li>
+<li>Permitir la composición de operaciones asíncronas de manera más sencilla</li>
+</ul>
+<p>Una promesa en JavaScript se crea utilizando la clase Promise y se puede resolver o rechazar. Cuando se crea una promesa, se puede proporcionar una función que se ejecutará cuando la promesa se resuelva o se rechace.</p>
+<p>La sintaxis básica para crear una promesa es:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> promesa <span class="op">=</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// código que se ejecuta</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// si todo sale bien, se llama a resolve()</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">// si hay un error, se llama a reject()</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Donde resolve y reject son funciones que se pasan como parámetros a la función constructora de la promesa.</p>
+<ul>
+<li>resolve: se llama cuando la operación se completa con éxito, y se pasa el resultado de la operación como parámetro.</li>
+<li>reject: se llama cuando la operación falla, y se pasa el error como parámetro.</li>
+</ul>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> promesa <span class="op">=</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// simulamos una operación que tarda 2 segundos</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">resolve</span>(<span class="st">"Operación completada con éxito"</span>)<span class="op">;</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> <span class="dv">2000</span>)<span class="op">;</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, la promesa se resuelve después de 2 segundos y se pasa el mensaje “Operación completada con éxito” como parámetro a la función resolve.</p>
+<section id="manejo-de-la-promesa-resuelta" class="level3">
+<h3 class="anchored" data-anchor-id="manejo-de-la-promesa-resuelta">Manejo de la promesa resuelta</h3>
+<p>Una vez que la promesa se resuelve, se puede manejar el resultado utilizando el método then(). El método then() se llama con la función que se ejecutará cuando la promesa se resuelva.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> promesa <span class="op">=</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// simulamos una operación que tarda 2 segundos</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">resolve</span>(<span class="st">"Operación completada con éxito"</span>)<span class="op">;</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> <span class="dv">2000</span>)<span class="op">;</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>promesa<span class="op">.</span><span class="fu">then</span>((resultado) <span class="kw">=&gt;</span> {</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(resultado)<span class="op">;</span> <span class="co">// "Operación completada con éxito"</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, el método then() se llama con una función que recibe el resultado de la promesa como parámetro. La función se ejecuta cuando la promesa se resuelve y se imprime el resultado en la consola.</p>
+</section>
+<section id="manejo-de-errores" class="level3">
+<h3 class="anchored" data-anchor-id="manejo-de-errores">Manejo de errores</h3>
+<p>Si la promesa se rechaza, se puede manejar el error utilizando el método catch(). El método catch() se llama con la función que se ejecutará cuando la promesa se rechace.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> promesa <span class="op">=</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// simulamos una operación que falla</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reject</span>(<span class="st">"Error en la operación"</span>)<span class="op">;</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>promesa<span class="op">.</span><span class="fu">catch</span>((error) <span class="kw">=&gt;</span> {</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(error)<span class="op">;</span> <span class="co">// "Error en la operación"</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, el método catch() se llama con una función que recibe el error como parámetro. La función se ejecuta cuando la promesa se rechaza y se imprime el error en la consola.</p>
+</section>
+<section id="encadenamiento-de-promesas" class="level3">
+<h3 class="anchored" data-anchor-id="encadenamiento-de-promesas">Encadenamiento de promesas</h3>
+<p>El encadenamiento de promesas es una técnica que permite combinar varias operaciones asíncronas en una sola cadena de promesas. Esto permite manejar operaciones complejas de manera más fácil y legible.</p>
+<p>La idea básica es que cada promesa devuelve otra promesa, lo que permite encadenar varias operaciones asíncronas. El método <code>then()</code> devuelve una nueva promesa que se puede utilizar para encadenar otra operación.</p>
+<p>Aquí hay un ejemplo:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> promesa1 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// simulamos una operación que tarda 2 segundos</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">resolve</span>(<span class="st">"Operación 1 completada con éxito"</span>)<span class="op">;</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span> <span class="dv">2000</span>)<span class="op">;</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> promesa2 <span class="op">=</span> promesa1<span class="op">.</span><span class="fu">then</span>((resultado) <span class="kw">=&gt;</span> {</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(resultado)<span class="op">;</span> <span class="co">// "Operación 1 completada con éxito"</span></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">new</span> <span class="bu">Promise</span>((resolve<span class="op">,</span> reject) <span class="kw">=&gt;</span> {</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// simulamos otra operación que tarda 3 segundos</span></span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>    <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">resolve</span>(<span class="st">"Operación 2 completada con éxito"</span>)<span class="op">;</span></span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span> <span class="dv">3000</span>)<span class="op">;</span></span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>promesa2<span class="op">.</span><span class="fu">then</span>((resultado) <span class="kw">=&gt;</span> {</span>
+<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(resultado)<span class="op">;</span> <span class="co">// "Operación 2 completada con éxito"</span></span>
+<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, <code>promesa1</code> se resuelve después de 2 segundos y devuelve una cadena de texto. Luego, <code>promesa1</code> se pasa al método <code>then()</code>, que devuelve <code>promesa2</code>. <code>promesa2</code> se resuelve después de 3 segundos y devuelve otra cadena de texto.</p>
+<p>El encadenamiento de promesas permite manejar operaciones asíncronas de manera más fácil y legible. En lugar de tener que anidar callbacks dentro de callbacks, se pueden encadenar promesas para crear una cadena de operaciones asíncronas.</p>
+<p><strong>Ventajas del encadenamiento de promesas</strong></p>
+<p>El encadenamiento de promesas tiene varias ventajas:</p>
+<ul>
+<li>Mejora la legibilidad del código: el código es más fácil de leer y entender.</li>
+<li>Reduce la complejidad: el encadenamiento de promesas reduce la complejidad del código y hace que sea más fácil de mantener.</li>
+<li>Mejora la gestión de errores: el encadenamiento de promesas permite manejar errores de manera más efectiva.</li>
+</ul>
+<p>Ahora vamos a usar una promesa con catch error en el contexto de usar una API (application programming interface) para que quede más claro como se usan en la práctica</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch</span>(<span class="st">'https://api.example.com/users/1'</span>)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a> <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">json</span>())</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a> <span class="op">.</span><span class="fu">then</span>(usuario <span class="kw">=&gt;</span> {</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Nombre del usuario: </span><span class="sc">${</span>usuario<span class="op">.</span><span class="at">name</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a> <span class="op">.</span><span class="fu">catch</span>(error <span class="kw">=&gt;</span> {</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="vs">`Error: </span><span class="sc">${</span>error<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, como hemos comentado usa el método then que devuelve una nueva promesa que se puede utilizar para encadenar otra operación. Si la llamada funciona, la promesa se transforma a json, luego se extrae nombre del usuario y se imprime en consola. Si no funciona la llamda debido a un problema de red o de API se atrapa y se imprime. Hay que tomar en cuenta que cuando ocurre un problema es muy importante saber interpretarlo. Los tipos de errores mas comunes y su significado se pueden ver en la siguiente figura:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/http_status_code.png" class="img-fluid figure-img"></p>
+<figcaption>HTTP status code</figcaption>
+</figure>
+</div>
+</section>
+<section id="estados-de-un-objeto-promesa-en-javascript" class="level3">
+<h3 class="anchored" data-anchor-id="estados-de-un-objeto-promesa-en-javascript">Estados de un Objeto Promesa en JavaScript</h3>
+<p>Un objeto Promesa en JavaScript puede estar en uno de los siguientes estados:</p>
+<ul>
+<li>Pending (Pendiente): Es el estado inicial de la promesa, cuando se está ejecutando la operación asíncrona. En este estado, el resultado es undefined.</li>
+<li>Fulfilled (Cumplida): Es el estado en el que la promesa se ha resuelto con éxito. En este estado, el resultado es un valor.</li>
+<li>Rejected (Rechazada): Es el estado en el que la promesa se ha rechazado con un error. En este estado, el resultado es un objeto de error.</li>
+</ul>
+</section>
+<section id="propiedades-de-un-objeto-promesa" class="level3">
+<h3 class="anchored" data-anchor-id="propiedades-de-un-objeto-promesa">Propiedades de un Objeto Promesa</h3>
+<p>Un objeto Promesa tiene dos propiedades:</p>
+<ul>
+<li>State (Estado): Indica el estado actual de la promesa (Pending, Fulfilled o Rejected).</li>
+<li>Result (Resultado): Es el valor o error que se devuelve cuando la promesa se resuelve o rechaza.</li>
+</ul>
+<p>Referencias</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise</a></p>
+<p><a href="https://www.w3schools.com/js/js_promise.asp" class="uri">https://www.w3schools.com/js/js_promise.asp</a></p>
+<p><a href="https://www.linkedin.com/pulse/http-response-status-codes-mominur-rahman-yl89c/" class="uri">https://www.linkedin.com/pulse/http-response-status-codes-mominur-rahman-yl89c/</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status" class="uri">https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status</a></p>
+</section>
 </section>
 <section id="qué-hacen-async-y-await-por-nosotros" class="level2">
 <h2 class="anchored" data-anchor-id="qué-hacen-async-y-await-por-nosotros">¿Qué hacen async y await por nosotros?</h2>
@@ -698,54 +833,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>  miLista = “velma”, “exploradora”, “jane”, “john”, “harry”</code></pre>
 <p>Crea un bucle while que recorra la misma lista y también imprima los nombres. Nota: Recuerda crear un contador para que el ciclo no sea infinito.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45" data-startfrom="786" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 785;"><span id="cb45-786"><a href="#cb45-786" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
-<span id="cb45-787"><a href="#cb45-787" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-788"><a href="#cb45-788" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
-<span id="cb45-789"><a href="#cb45-789" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
-<span id="cb45-790"><a href="#cb45-790" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
-<span id="cb45-791"><a href="#cb45-791" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb45-792"><a href="#cb45-792" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
-<span id="cb45-793"><a href="#cb45-793" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb45-794"><a href="#cb45-794" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
-<span id="cb45-795"><a href="#cb45-795" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
-<span id="cb45-796"><a href="#cb45-796" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
-<span id="cb45-797"><a href="#cb45-797" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb45-798"><a href="#cb45-798" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb45-799"><a href="#cb45-799" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-800"><a href="#cb45-800" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
-<span id="cb45-801"><a href="#cb45-801" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
-<span id="cb45-802"><a href="#cb45-802" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb45-803"><a href="#cb45-803" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb45-804"><a href="#cb45-804" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb45-805"><a href="#cb45-805" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
-<span id="cb45-806"><a href="#cb45-806" aria-hidden="true" tabindex="-1"></a>) {</span>
-<span id="cb45-807"><a href="#cb45-807" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
-<span id="cb45-808"><a href="#cb45-808" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb45-809"><a href="#cb45-809" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb45-810"><a href="#cb45-810" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb45-811"><a href="#cb45-811" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
-<span id="cb45-812"><a href="#cb45-812" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
-<span id="cb45-813"><a href="#cb45-813" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
-<span id="cb45-814"><a href="#cb45-814" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
-<span id="cb45-815"><a href="#cb45-815" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb45-816"><a href="#cb45-816" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb45-817"><a href="#cb45-817" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
-<span id="cb45-818"><a href="#cb45-818" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
-<span id="cb45-819"><a href="#cb45-819" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb45-820"><a href="#cb45-820" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
-<span id="cb45-821"><a href="#cb45-821" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb45-822"><a href="#cb45-822" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb45-823"><a href="#cb45-823" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-824"><a href="#cb45-824" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb45-825"><a href="#cb45-825" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb45-826"><a href="#cb45-826" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-827"><a href="#cb45-827" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
-<span id="cb45-828"><a href="#cb45-828" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
-<span id="cb45-829"><a href="#cb45-829" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-830"><a href="#cb45-830" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
-<span id="cb45-831"><a href="#cb45-831" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
-<span id="cb45-832"><a href="#cb45-832" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
-<span id="cb45-833"><a href="#cb45-833" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51" data-startfrom="949" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 948;"><span id="cb51-949"><a href="#cb51-949" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
+<span id="cb51-950"><a href="#cb51-950" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-951"><a href="#cb51-951" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
+<span id="cb51-952"><a href="#cb51-952" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
+<span id="cb51-953"><a href="#cb51-953" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
+<span id="cb51-954"><a href="#cb51-954" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb51-955"><a href="#cb51-955" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
+<span id="cb51-956"><a href="#cb51-956" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb51-957"><a href="#cb51-957" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
+<span id="cb51-958"><a href="#cb51-958" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
+<span id="cb51-959"><a href="#cb51-959" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
+<span id="cb51-960"><a href="#cb51-960" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb51-961"><a href="#cb51-961" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb51-962"><a href="#cb51-962" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-963"><a href="#cb51-963" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
+<span id="cb51-964"><a href="#cb51-964" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
+<span id="cb51-965"><a href="#cb51-965" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb51-966"><a href="#cb51-966" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb51-967"><a href="#cb51-967" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb51-968"><a href="#cb51-968" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
+<span id="cb51-969"><a href="#cb51-969" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="cb51-970"><a href="#cb51-970" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
+<span id="cb51-971"><a href="#cb51-971" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb51-972"><a href="#cb51-972" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb51-973"><a href="#cb51-973" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb51-974"><a href="#cb51-974" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
+<span id="cb51-975"><a href="#cb51-975" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
+<span id="cb51-976"><a href="#cb51-976" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
+<span id="cb51-977"><a href="#cb51-977" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb51-978"><a href="#cb51-978" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb51-979"><a href="#cb51-979" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb51-980"><a href="#cb51-980" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
+<span id="cb51-981"><a href="#cb51-981" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
+<span id="cb51-982"><a href="#cb51-982" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb51-983"><a href="#cb51-983" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
+<span id="cb51-984"><a href="#cb51-984" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb51-985"><a href="#cb51-985" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb51-986"><a href="#cb51-986" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-987"><a href="#cb51-987" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb51-988"><a href="#cb51-988" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb51-989"><a href="#cb51-989" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-990"><a href="#cb51-990" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
+<span id="cb51-991"><a href="#cb51-991" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
+<span id="cb51-992"><a href="#cb51-992" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-993"><a href="#cb51-993" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
+<span id="cb51-994"><a href="#cb51-994" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
+<span id="cb51-995"><a href="#cb51-995" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
+<span id="cb51-996"><a href="#cb51-996" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 

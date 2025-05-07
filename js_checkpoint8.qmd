@@ -769,6 +769,169 @@ Referencias
 
 ## ¿Qué es una promesa en JS?
 
+Las promesas en JavaScript son un mecanismo para manejar operaciones asíncronas, como solicitudes de red, lecturas de archivos o bases de datos, de manera más eficiente y fácil de entender. Una promesa es un objeto que representa una operación que puede tener éxito o fallar, y proporciona una forma de manejar el resultado de esa operación de manera asíncrona.
+
+En resumen, las promesas permiten:
+
+- Manejar operaciones asíncronas de manera más fácil y legible
+- Proporcionar una forma de manejar errores y excepciones de manera más efectiva
+- Permitir la composición de operaciones asíncronas de manera más sencilla
+
+
+Una promesa en JavaScript se crea utilizando la clase Promise y se puede resolver o rechazar. Cuando se crea una promesa, se puede proporcionar una función que se ejecutará cuando la promesa se resuelva o se rechace.
+
+La sintaxis básica para crear una promesa es:
+```javascript
+const promesa = new Promise((resolve, reject) => {
+  // código que se ejecuta
+  // si todo sale bien, se llama a resolve()
+  // si hay un error, se llama a reject()
+});
+```
+
+Donde resolve y reject son funciones que se pasan como parámetros a la función constructora de la promesa.
+
+- resolve: se llama cuando la operación se completa con éxito, y se pasa el resultado de la operación como parámetro.
+- reject: se llama cuando la operación falla, y se pasa el error como parámetro.
+
+Por ejemplo:
+
+```javascript
+const promesa = new Promise((resolve, reject) => {
+  // simulamos una operación que tarda 2 segundos
+  setTimeout(() => {
+    resolve("Operación completada con éxito");
+  }, 2000);
+});
+
+```
+
+En este ejemplo, la promesa se resuelve después de 2 segundos y se pasa el mensaje "Operación completada con éxito" como parámetro a la función resolve.
+
+### Manejo de la promesa resuelta
+
+Una vez que la promesa se resuelve, se puede manejar el resultado utilizando el método then(). El método then() se llama con la función que se ejecutará cuando la promesa se resuelva.
+
+```javascript
+const promesa = new Promise((resolve, reject) => {
+  // simulamos una operación que tarda 2 segundos
+  setTimeout(() => {
+    resolve("Operación completada con éxito");
+  }, 2000);
+});
+
+promesa.then((resultado) => {
+  console.log(resultado); // "Operación completada con éxito"
+});
+
+```
+
+En este ejemplo, el método then() se llama con una función que recibe el resultado de la promesa como parámetro. La función se ejecuta cuando la promesa se resuelve y se imprime el resultado en la consola.
+
+### Manejo de errores
+
+Si la promesa se rechaza, se puede manejar el error utilizando el método catch(). El método catch() se llama con la función que se ejecutará cuando la promesa se rechace.
+
+```javascript
+const promesa = new Promise((resolve, reject) => {
+  // simulamos una operación que falla
+  reject("Error en la operación");
+});
+
+promesa.catch((error) => {
+  console.error(error); // "Error en la operación"
+});
+
+```
+
+En este ejemplo, el método catch() se llama con una función que recibe el error como parámetro. La función se ejecuta cuando la promesa se rechaza y se imprime el error en la consola.
+
+
+### Encadenamiento de promesas
+
+El encadenamiento de promesas es una técnica que permite combinar varias operaciones asíncronas en una sola cadena de promesas. Esto permite manejar operaciones complejas de manera más fácil y legible.
+
+La idea básica es que cada promesa devuelve otra promesa, lo que permite encadenar varias operaciones asíncronas. El método `then()` devuelve una nueva promesa que se puede utilizar para encadenar otra operación.
+
+Aquí hay un ejemplo:
+```javascript
+const promesa1 = new Promise((resolve, reject) => {
+  // simulamos una operación que tarda 2 segundos
+  setTimeout(() => {
+    resolve("Operación 1 completada con éxito");
+  }, 2000);
+});
+
+const promesa2 = promesa1.then((resultado) => {
+  console.log(resultado); // "Operación 1 completada con éxito"
+  return new Promise((resolve, reject) => {
+    // simulamos otra operación que tarda 3 segundos
+    setTimeout(() => {
+      resolve("Operación 2 completada con éxito");
+    }, 3000);
+  });
+});
+
+promesa2.then((resultado) => {
+  console.log(resultado); // "Operación 2 completada con éxito"
+});
+```
+En este ejemplo, `promesa1` se resuelve después de 2 segundos y devuelve una cadena de texto. Luego, `promesa1` se pasa al método `then()`, que devuelve `promesa2`. `promesa2` se resuelve después de 3 segundos y devuelve otra cadena de texto.
+
+El encadenamiento de promesas permite manejar operaciones asíncronas de manera más fácil y legible. En lugar de tener que anidar callbacks dentro de callbacks, se pueden encadenar promesas para crear una cadena de operaciones asíncronas.
+
+**Ventajas del encadenamiento de promesas**
+
+El encadenamiento de promesas tiene varias ventajas:
+
+* Mejora la legibilidad del código: el código es más fácil de leer y entender.
+* Reduce la complejidad: el encadenamiento de promesas reduce la complejidad del código y hace que sea más fácil de mantener.
+* Mejora la gestión de errores: el encadenamiento de promesas permite manejar errores de manera más efectiva.
+
+Ahora vamos a usar una promesa con catch error en el contexto de usar una API (application programming interface) para que quede más claro como se usan en la práctica
+
+```javascript
+fetch('https://api.example.com/users/1')
+ .then(response => response.json())
+ .then(usuario => {
+    console.log(`Nombre del usuario: ${usuario.name}`);
+  })
+ .catch(error => {
+    console.error(`Error: ${error}`);
+  });
+```
+En este ejemplo, como hemos comentado usa el método then que devuelve una nueva promesa que se puede utilizar para encadenar otra operación.
+Si la llamada funciona, la promesa se transforma a json, luego se extrae nombre del usuario y se imprime en consola. Si no funciona la llamda debido a un problema de red o de API se atrapa y se imprime. Hay que tomar en cuenta que cuando ocurre un problema es muy importante saber interpretarlo. Los tipos de errores mas comunes y su significado se pueden ver en la siguiente figura:
+
+![HTTP status code](images/http_status_code.png)
+
+### Estados de un Objeto Promesa en JavaScript
+
+Un objeto Promesa en JavaScript puede estar en uno de los siguientes estados:
+
+- Pending (Pendiente): Es el estado inicial de la promesa, cuando se está ejecutando la operación asíncrona. En este estado, el resultado es undefined.
+- Fulfilled (Cumplida): Es el estado en el que la promesa se ha resuelto con éxito. En este estado, el resultado es un valor.
+- Rejected (Rechazada): Es el estado en el que la promesa se ha rechazado con un error. En este estado, el resultado es un objeto de error.
+
+### Propiedades de un Objeto Promesa
+
+Un objeto Promesa tiene dos propiedades:
+
+- State (Estado): Indica el estado actual de la promesa (Pending, Fulfilled o Rejected).
+- Result (Resultado): Es el valor o error que se devuelve cuando la promesa se resuelve o rechaza.
+
+
+Referencias
+
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise>
+
+<https://www.w3schools.com/js/js_promise.asp>
+
+<https://www.linkedin.com/pulse/http-response-status-codes-mominur-rahman-yl89c/>
+
+<https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status>
+
+
 ## ¿Qué hacen async y await por nosotros?
 
 ## Ejercicios
