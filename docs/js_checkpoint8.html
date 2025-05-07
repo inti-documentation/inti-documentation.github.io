@@ -100,8 +100,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -173,11 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#propiedades-de-un-objeto-promesa" id="toc-propiedades-de-un-objeto-promesa" class="nav-link" data-scroll-target="#propiedades-de-un-objeto-promesa">Propiedades de un Objeto Promesa</a></li>
   </ul></li>
   <li><a href="#qué-hacen-async-y-await-por-nosotros" id="toc-qué-hacen-async-y-await-por-nosotros" class="nav-link" data-scroll-target="#qué-hacen-async-y-await-por-nosotros">¿Qué hacen async y await por nosotros?</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a>
-  <ul class="collapse">
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
-  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
-  </ul></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -919,90 +913,19 @@ Se puede manejar los errores de manera más fácil utilizando try-catch.</code><
 </section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
-<section id="ejercicio-1" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h3>
-<p>Crea un bucle for en JS que imprima cada nombre en esta lista.</p>
-<pre><code>  miLista = “velma”, “exploradora”, “jane”, “john”, “harry”</code></pre>
-<p>Crea un bucle while que recorra la misma lista y también imprima los nombres. Nota: Recuerda crear un contador para que el ciclo no sea infinito.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb57" data-startfrom="1086" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1085;"><span id="cb57-1086"><a href="#cb57-1086" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
-<span id="cb57-1087"><a href="#cb57-1087" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-1088"><a href="#cb57-1088" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
-<span id="cb57-1089"><a href="#cb57-1089" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
-<span id="cb57-1090"><a href="#cb57-1090" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
-<span id="cb57-1091"><a href="#cb57-1091" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb57-1092"><a href="#cb57-1092" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
-<span id="cb57-1093"><a href="#cb57-1093" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb57-1094"><a href="#cb57-1094" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
-<span id="cb57-1095"><a href="#cb57-1095" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
-<span id="cb57-1096"><a href="#cb57-1096" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
-<span id="cb57-1097"><a href="#cb57-1097" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb57-1098"><a href="#cb57-1098" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb57-1099"><a href="#cb57-1099" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-1100"><a href="#cb57-1100" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
-<span id="cb57-1101"><a href="#cb57-1101" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
-<span id="cb57-1102"><a href="#cb57-1102" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb57-1103"><a href="#cb57-1103" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb57-1104"><a href="#cb57-1104" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb57-1105"><a href="#cb57-1105" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
-<span id="cb57-1106"><a href="#cb57-1106" aria-hidden="true" tabindex="-1"></a>) {</span>
-<span id="cb57-1107"><a href="#cb57-1107" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
-<span id="cb57-1108"><a href="#cb57-1108" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb57-1109"><a href="#cb57-1109" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb57-1110"><a href="#cb57-1110" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb57-1111"><a href="#cb57-1111" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
-<span id="cb57-1112"><a href="#cb57-1112" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
-<span id="cb57-1113"><a href="#cb57-1113" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
-<span id="cb57-1114"><a href="#cb57-1114" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
-<span id="cb57-1115"><a href="#cb57-1115" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb57-1116"><a href="#cb57-1116" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb57-1117"><a href="#cb57-1117" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
-<span id="cb57-1118"><a href="#cb57-1118" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
-<span id="cb57-1119"><a href="#cb57-1119" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb57-1120"><a href="#cb57-1120" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
-<span id="cb57-1121"><a href="#cb57-1121" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb57-1122"><a href="#cb57-1122" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb57-1123"><a href="#cb57-1123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-1124"><a href="#cb57-1124" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb57-1125"><a href="#cb57-1125" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb57-1126"><a href="#cb57-1126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-1127"><a href="#cb57-1127" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
-<span id="cb57-1128"><a href="#cb57-1128" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
-<span id="cb57-1129"><a href="#cb57-1129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-1130"><a href="#cb57-1130" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
-<span id="cb57-1131"><a href="#cb57-1131" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
-<span id="cb57-1132"><a href="#cb57-1132" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
-<span id="cb57-1133"><a href="#cb57-1133" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-1" data-nodetype="declaration">
-
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/checkpoint8_ejercicios_con_quoka.png" class="img-fluid figure-img"></p>
+<figcaption>Ejercicios code</figcaption>
+</figure>
 </div>
-</div>
-</div>
-<p><a href="https://github.com/inti-documentation/inti-documentation.github.io/blob/main/checkpoint8_ejercicio1.js">Enlace a fichero JS</a></p>
-</section>
-<section id="ejercicio-2" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h3>
-<p>Cree una función de flecha que devuelva “Hola mundo”.</p>
-<p><a href="https://github.com/inti-documentation/inti-documentation.github.io/blob/main/checkpoint8_ejercicio2.js">Enlace a fichero JS</a></p>
+<p><a href="https://github.com/inti-documentation/inti-documentation.github.io/blob/main/checkpoint8_ejercicios.js">Enlace a fichero JS</a></p>
 
 
-</section>
 </section>
 </section>
 
 </main> <!-- /main -->
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIGVqZXJjaWNpby5qc1xuXG4vKmNyZWEgZnVuY2lvbiBxdWUgdG9tYSA0IGFyZ3VtZW50b3MsIHN1bWEgbG9zIDIgcHJpbWVyb3MgeSBtdWx0aXBsaWNhIGxvcyAyIHNpZ3VpZW50ZXNcblNpIGVsIG7Dum1lcm8gY3JlYWRvIGVzIG1heW9yIHF1ZSA1MCwgbGEgY29uc29sYSByZWdpc3RyYSBcIsKhRWwgbsO6bWVybyBlcyBtYXlvciBxdWUgNTAhXCIuIFxuU2kgZXMgbcOhcyBwZXF1ZcOxbywgbGEgY29uc29sYSByZWdpc3RyYSBcIsKhRWwgbsO6bWVybyBlcyBtZW5vciBxdWUgNTAhXCJcbiovXG5mdW5jdGlvbiBteUZ1bmN0aW9uU3VtYU11bHRpcGxpY2EobnVtMSwgbnVtMixudW0zLG51bTQpIHtcbiAgICBcbi8vIFZlcmlmaWNhciBxdWUgc2UgaGF5YW4gcGFzYWRvIGV4YWN0YW1lbnRlIDQgYXJndW1lbnRvc1xuaWYgKGFyZ3VtZW50cy5sZW5ndGggIT09IDQpIHtcbiAgICBjb25zb2xlLmxvZyhcIkVycm9yIGRlIGNhbnRpZGFkOiBzZSBkZWJlbiBwYXNhciA0IGFyZ3VtZW50b3MuXCIpO1xuICAgIHJldHVybjtcbn1cblxuLy8gVmVyaWZpY2FyIHF1ZSB0b2RvcyBzZWFuIG7Dum1lcm9zXG5pZiAoXG4gICAgdHlwZW9mIG51bTEgIT09ICdudW1iZXInIHx8XG4gICAgdHlwZW9mIG51bTIgIT09ICdudW1iZXInIHx8XG4gICAgdHlwZW9mIG51bTMgIT09ICdudW1iZXInIHx8XG4gICAgdHlwZW9mIG51bTQgIT09ICdudW1iZXInXG4pIHtcbiAgICBjb25zb2xlLmxvZyhcIkVycm9yIGRlIHRpcG86IHRvZG9zIGxvcyA0IGFyZ3VtZW50b3MgZGViZW4gc2VyIG7Dum1lcm9zLlwiKTtcbiAgICByZXR1cm47XG59XG4gICAgXG4gICAgbGV0IHN1bWExID0gbnVtMSArIG51bTI7XG4gICAgbGV0IHN1bWEyID0gbnVtMyArIG51bTQ7XG4gICAgbGV0IHByb2R1Y3RvID0gc3VtYTEgKiBzdW1hMjtcbiAgICBpZiAocHJvZHVjdG8gPiA1MCkge1xuICAgICAgICBjb25zb2xlLmxvZyhgwqFFbCBuw7ptZXJvICR7cHJvZHVjdG99IGVzIG1heW9yIHF1ZSA1MCFgKTtcbiAgICB9XG4gICAgZWxzZSBpZiAocHJvZHVjdG8gPT09IDUwKSB7XG4gICAgICAgIGNvbnNvbGUubG9nKGDCoUVsIG7Dum1lcm8gJHtwcm9kdWN0b30gZXMgaWd1YWwgYSA1MCFgKTtcbiAgICB9XG4gICAgZWxzZSB7XG4gICAgICAgIGNvbnNvbGUubG9nKGDCoUVsIG7Dum1lcm8gJHtwcm9kdWN0b30gZXMgbWVub3IgcXVlIDUwIWApO1xuICAgIH1cblxuICAgIFxuICB9XG5cbi8vbGxhbWEgYSBsYSBmdW5jaW9uIHkgbXVlc3RyYSBlbCByZXN1bHRhZG8gZW4gY29uc29sYVxuLy92YXIgcmVzdWx0YWRvID0gbXlGdW5jdGlvblN1bWFNdWx0aXBsaWNhKDIuNSwgMywgNCwgMik7XG5cbi8vIGVqZW1wbG8gY29uIGVycm9yIGRlIHRpcG9cbi8vdmFyIHJlc3VsdGFkbzIgPSBteUZ1bmN0aW9uU3VtYU11bHRpcGxpY2EoMi41LCAzLCBcIjRcIiwgMik7XG4vLyBlamVtcGxvIGNvbiBlcnJvciBkZSBjYW50aWRhZCBkZSBhcmd1bWVudG9zXG4vL3ZhciByZXN1bHRhZG8zID0gbXlGdW5jdGlvblN1bWFNdWx0aXBsaWNhKDIuNSwgMywgNCk7XG5cblxuXG4ifV19
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../..";
-window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
