@@ -121,17 +121,7 @@ Referencias
 
 Una función flecha es una forma concisa de definir una función en JavaScript. Se utiliza la sintaxis () => {} para crear una función anónima.
 
-Ejemplo de una función flecha que suma dos números:
-
-``` default
-const sumar = (a, b) => a + b;
-console.log(sumar(2, 3)); // 5
-```
-
-
-Función normal y anónima equivalentes
-
-La función flecha anterior es equivalente a la siguiente función normal:
+Ejemplo de una función normal (function declaration) que suma dos números:
 
 ``` default
 function sumar(a, b) {
@@ -140,7 +130,7 @@ function sumar(a, b) {
 
 ```
 
-Y también es equivalente a la siguiente función anónima:
+La versión con función anónima:
 
 ``` default
 var sumar = function(a, b) {
@@ -148,6 +138,47 @@ var sumar = function(a, b) {
 }
 
 ```
+
+Ahora miramos versión de función flecha equivalente:
+
+
+``` default
+const sumar = (a, b) => a + b;
+console.log(sumar(2, 3)); // 5
+```
+**Variantes**
+
+Hay algunas variantes, por ejemplo los parentesis en los argumentos. En la función anterior usamos como argumentos (a,b) que nos regresa el resultado de expresión (a+b) pero en caso de que hubiera un solo argumento, los parentesis pueden ser omitidos. Por ejemplo en la siguiente expression la función puede ser escrita con o sin parentesis.
+
+``` default
+let double = n => n * 2;
+// igual que: let double = (n) => n * 2;
+// Muy similar a funcion anónima: let double = function(n) { return n * 2 }
+
+alert( double(3) ); // 6
+```
+
+En caso de que no hubiera argumentos, los parentesis tienen que estar vacios. Por ejemplo:
+
+``` default
+let saluda = () => alert("Hola");
+saluda();
+```
+
+**Multilinea**.En caso de que se tenga que realizar varias expresiones dentro de la función se usa "{}" para englobar la diferentes lineas y se debe incluir "return" para que nos regrese algo, justo como en función normal. Veamos un ejemplo donde se evalua que los valores pasados a función son positivos y luego calcula el área:
+
+``` default
+const calcularArea = (base, altura) => {
+  if (base <= 0 || altura <= 0) {
+    throw new Error("La base y la altura deben ser números positivos");
+  }
+  const area = base * altura;
+  return area;
+}
+```
+
+
+
 
 **Cuándo usar funciones flecha**
 
@@ -179,95 +210,93 @@ Referencias
 
 ## ¿Qué es la deconstrucción de variables?
 
-En JS, una operación condicional, como el nombre indica, permite tener diferentes caminos a tomar (bloques de código a ejecutar) en dependencia de si una condición o condiciones se cumplen.
+![Tomado de www.samanthaming.com](images/js_deconstruction.png)
 
-Esto se puede entender con un ejemplo cotidiano. Digamos que vamos caminando al trabajo de manera regular pero si es tarde tenemos que tomar el metro.
+La deconstrucción de variables es una forma de asignar valores a variables a partir de un objeto o un array. 
 
-![Ejemplo condicional básico](images/condition_ejemplo1.png)
+Se utiliza la sintaxis para objeto:
+      `{ variable1, variable2, ... } = objeto`
 
-Como vemos, el concepto de condicional es fácil de entender y lo usamos en nuestra vida cotidiana.
+Se utiliza la sintaxis para array:
+      `[variable1, variable2, ...] = array`.
+      
+La deconstrucción de variables es útil para simplificar el código y evitar la necesidad de acceder a las propiedades de un objeto o los elementos de un array mediante su índice o nombre.
 
-Ahora en JS, la sintaxis seria:
+Veamos como funciona con algunos ejemplos:
 
-``` default
+```javascript
+// Deconstrucción de objeto
+const persona = { nombre: "Juan", edad: 30 };
+const { nombre, edad } = persona;
 
-let tiempoParaTrabajar = 35;
-let limiteCaminar = 30;
-let limiteMetro = 15;
+console.log(nombre); // Output: "Juan"
+console.log(edad); // Output: 30
 
-if (tiempoParaTrabajar > limiteCaminar) {
-  console.log(`Vamos caminando!`);
-} else {
-  console.log(`Vamos en Metro que es tarde!`);
-}
 ```
 
-Ahora complicamos un poco más la lógica para mostrar el caso de una condicional dentro de una condicional. Por ejemplo, si fuera tarde tomamos el metro pero si es muy tarde vamos a tomar un taxi.
+Y para un array tenemos:
+```javascript
+// Deconstrucción de array
+const frutas = ["manzana", "banana", "naranja"];
+const [fruta1, fruta2, fruta3] = frutas;
 
-![Ejemplo condicional anidado](images/condition_ejemplo2.png)
-
-``` default
-
-let tiempoParaTrabajar = 35;
-let limiteCaminar = 30;
-let limiteMetro = 15;
-
-if (tiempoParaTrabajar > limiteCaminar) {
-  console.log(`Vamos caminando!`);
-} else {
-  if (tiempoParaTrabajar > limiteMetro){
-    console.log(`Vamos en Metro que es tarde!`);
-  } else {
-    console.log(`Vamos en Taxi que es muy tarde!`);
-  }
-}
+console.log(fruta1); // Output: "manzana"
+console.log(fruta2); // Output: "banana"
+console.log(fruta3); // Output: "naranja"
 ```
 
-En caso de que hubieran multiplies condiciones a probar usamos sintaxis: **"if...else if...else"**.
+**Valores predeterminados**
+
+A una variable se le puede asignar un valor predeterminado, en el caso de que el valor desempacado del arreglo sea undefined.
+
+Veamos un ejemplo para objeto donde se desestructura el objeto persona y se asignan valores predeterminados a las variables nombre, edad y pais. Si el objeto persona no tiene una propiedad con el nombre correspondiente, se asigna el valor predeterminado.
+
+```javascript
+const persona = { nombre: "Juan", edad: 30 };
+const { nombre = "Desconocido", edad = 0, pais = "No especificado" } = persona;
+
+console.log(nombre); // "Juan"
+console.log(edad);   // 30
+console.log(pais);   // "No especificado"
+```
+Ahora veamos un ejemplo usando array donde se desestructura el array colores y se asignan valores predeterminados a las variables primero, segundo y tercero. Si el array colores no tiene suficientes elementos, se asignan los valores predeterminados a las variables restantes.
 
 ``` default
-if (condition1)
-  statement1
-else if (condition2)
-  statement2
-else if (condition3)
-  statement3
-// …
-else
-  statementN
+const colores = ["rojo", "azul"];
+const [primero = "negro", segundo = "blanco", tercero = "gris"] = colores;
+
+console.log(primero); // "rojo"
+console.log(segundo); // "azul"
+console.log(tercero); // "gris"
+
 ```
 
-Veamos un ejemplo donde dependencia de la edad pagamos un precio diferente en el cine
+**Ignorar valores devueltos**
+
+Se puede ignorar los valores que no interesan para evitar crear variables que no se usan y hay varias opciones. Aqui unos ejemplos:
 
 ``` default
+// ❌ Malo, asignación de variable inútil
+const [ignore, keep] = ['ignore', 'keep']; // La variable "ignore" no se utiliza
 
-let edad = 15;         
-let precioBase = 10;   
-let precioFinal;       
+// ✅ Bueno, espacio en blanco
+const [, keep] = ['ignore', 'keep']; // Se ignora el primer valor
 
-// Aplicar descuento por edad
-if (edad < 12) {
-  
-  precioFinal = precioBase * 0.5;
-} else if (edad >= 12 && edad < 18) {
- 
-  precioFinal = precioBase * 0.75;
-} else if (edad >= 65) {
-  
-  precioFinal = precioBase * 0.7;
-} else {
- 
-  precioFinal = precioBase;
-}
+// ✅ Bueno, guion bajo
+const [_ignore, keep] = ['ignore', 'keep']; // Se ignora el primer valor y se indica con "_"
 
-//console.log("El precio de la entrada es: $" + precioFinal);
-```
+``` 
+
 
 Referencias
 
-<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else>
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring>
 
-<https://www.w3schools.com/js/js_if_else.asp>
+<https://www.w3schools.com/js/js_destructuring.asp>
+
+<https://dmitripavlutin.com/javascript-object-destructuring/>
+
+<https://www.samanthaming.com/tidbits/13-skip-values-in-destructuring/>
 
 ## ¿Qué hace el operador de extensión en JS?
 
