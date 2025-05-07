@@ -300,185 +300,272 @@ Referencias
 
 ## ¿Qué hace el operador de extensión en JS?
 
-![JS ternary](images/js_ternary.png)
+El operador de extensión o spread syntax(`...`)  se utiliza para expandir un array o un objeto en una nueva estructura de datos. La sintaxis extendida permite a un elemento iterable tal como un arreglo o cadena ser expandido en lugares donde cero o más argumentos (para llamadas de función) o elementos (para Array literales) son esperados, o a un objeto ser expandido en lugares donde cero o más pares de valores clave (para literales Tipo Objeto) son esperados.
 
-El operador condicional (ternario) es el único operador de JavaScript que toma tres operandos: una condición seguida de un signo de interrogación (?), luego una expresión que se ejecuta si la condición es verdadera y, a continuación, dos puntos (:) seguidos de la expresión que se ejecuta si la condición es falsa. Este operador se utiliza frecuentemente como una alternativa a la sentencia if...else.
+```javascript
+// Expansión de array
+const numeros = [1, 2, 3];
+const nuevosNumeros = [...numeros, 4, 5, 6];
 
-``` default
-condicion ? ExpresionEjecutaSiVerdadero : ExpresionEjecutaSiFalso
+console.log(nuevosNumeros); // Output: [1, 2, 3, 4, 5, 6]
+
+// Expansión de objeto
+const persona = { nombre: "Juan", edad: 30 };
+const nuevaPersona = { ...persona, direccion: "Calle 123" };
+
+console.log(nuevaPersona); // Output: { nombre: "Juan", edad: 30, direccion: "Calle 123" }
+```
+El operador de extensión es útil para crear copias de arrays y objetos, y para combinar datos de diferentes fuentes.
+
+
+**Crear copias**
+
+En el contexto de crear copias, se utiliza para crear una copia superficial de un array o un objeto.
+
+- Copiar arrays
+
+Para copiar un array, puedes utilizar el operador de propagación de la siguiente manera:
+
+```javascript
+const original = [1, 2, 3];
+const copia = [...original];
+
+console.log(copia); // [1, 2, 3]
+
 ```
 
-Por ejemplo, imaginamos que hemos decidido comprar lecha cuando hay menos de 5 litros en casa (nos encanta hacer yogurt :D).
+En este ejemplo, se crea una copia del array original utilizando el operador de propagación (...). La copia se almacena en la variable copia.
 
-Primero veamos como seria usando condicional tipo **if ... else** :
+- Copiar objetos
 
-``` default
+De manera similar, puedes copiar un objeto utilizando el operador de propagación:
 
-if (lecheLitros >= 5) {
-  console.log(`No comprar leche!`);
-} else {
-  console.log(`Comprar leche!`);
+```javascript
+const original = { a: 1, b: 2 };
+const copia = { ...original };
+
+console.log(copia); // { a: 1, b: 2 }
+```
+
+Si te preguntas que es una copia superficial aqui se explica. La copia creada con el operador de propagación se llama "copia superficial" (o "shallow copy" en inglés) porque solo copia los valores de las propiedades del objeto o los elementos del array de manera directa, sin copiar los objetos o arrays anidados.
+
+En otras palabras, si el objeto o array original contiene referencias a otros objetos o arrays, la copia solo copiará las referencias, no los objetos o arrays en sí mismos. Esto significa que si se modifica el objeto o array original, la copia también se verá afectada, ya que ambos comparten las mismas referencias.
+
+Aquí hay un ejemplo:
+
+```javascript
+
+const original = {
+  a: 1,
+  b: [2, 3],
+  c: { d: 4 }
+};
+
+const copia = { ...original };
+
+copia.b.push(5);
+copia.c.d = 6;
+
+console.log(original); // { a: 1, b: [2, 3, 5], c: { d: 6 } }
+console.log(copia); // { a: 1, b: [2, 3, 5], c: { d: 6 } }
+
+```
+
+En este ejemplo, el objeto original se ve afectada por las modificaciones realizadas en el objeto copia, ya que ambos comparten las mismas referencias a los arrays y objetos anidados.
+
+Para crear una copia profunda (o "deep copy") que no comparta referencias con el objeto original, se necesitan técnicas más avanzadas, como la recursividad o la utilización de bibliotecas como Lodash
+
+**Combinar datos**
+
+El operador de propagación (spread syntax) también se puede utilizar para combinar datos de diferentes fuentes en un nuevo array o objeto.
+
+- Combinar arrays
+
+Para combinar dos o más arrays, puedes utilizar el operador de propagación de la siguiente manera:
+
+```javascript
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+
+const combinado = [...array1, ...array2];
+
+console.log(combinado); // [1, 2, 3, 4, 5, 6]
+
+```
+
+En este ejemplo, se combinan los arrays array1 y array2 en un nuevo array llamado combinado.
+
+- Combinar objetos
+
+De manera similar, puedes combinar dos o más objetos utilizando el operador de propagación:
+
+```javascript
+const objeto1 = { a: 1, b: 2 };
+const objeto2 = { c: 3, d: 4 };
+
+const combinado = {...objeto1, ...objeto2};
+
+console.log(combinado); // { a: 1, b: 2, c: 3, d: 4 }
+
+```
+
+En este ejemplo, se combinan los objetos objeto1 y objeto2 en un nuevo objeto llamado combinado.
+
+Combinar arrays y objetos.También puedes combinar arrays y objetos utilizando el operador de propagación:
+
+```javascript
+const array = [1, 2, 3];
+const objeto = { a: 4, b: 5 };
+
+const combinado = [...array, objeto];
+
+console.log(combinado); // [1, 2, 3, { a: 4, b: 5 }]
+
+```
+
+En este ejemplo, se combina el array array con el objeto objeto en un nuevo array llamado combinado.
+
+Sobrescritura de propiedades
+
+Cuando se combinan objetos utilizando el operador de propagación, si dos o más objetos tienen propiedades con el mismo nombre, la propiedad del objeto que se combina en segundo lugar sobrescribirá la propiedad del objeto que se combina en primer lugar.
+
+Aquí hay un ejemplo:
+
+```javascript
+const objeto1 = { a: 1, b: 2 };
+const objeto2 = { b: 3, c: 4 };
+
+const combinado = {...objeto1, ...objeto2};
+
+console.log(combinado); // { a: 1, b: 3, c: 4 }
+
+```
+
+En este ejemplo, la propiedad b del objeto objeto2 sobrescribe la propiedad b del objeto objeto1, por lo que el valor de b en el objeto combinado es 3, no 2.
+
+Es importante tener en cuenta que esto se aplica a todas las propiedades que se combinan, no solo a las que tienen el mismo nombre. Si un objeto tiene una propiedad que no existe en el otro objeto, se agregará al objeto combinado sin problemas.
+
+Aquí hay un ejemplo con múltiples objetos:
+
+```javascript
+const objeto1 = { a: 1, b: 2 };
+const objeto2 = { b: 3, c: 4 };
+const objeto3 = { c: 5, d: 6 };
+
+const combinado = {...objeto1, ...objeto2, ...objeto3};
+
+console.log(combinado); // { a: 1, b: 3, c: 5, d: 6 }
+
+```
+
+En este ejemplo, la propiedad b del objeto objeto2 sobrescribe la propiedad b del objeto objeto1, y la propiedad c del objeto objeto3 sobrescribe la propiedad c del objeto objeto2. El objeto combinado tiene las propiedades de todos los objetos, con las sobrescrituras correspondientes.
+
+**En llamadas de función**
+
+El operador de propagación (spread syntax) se puede utilizar en llamadas de función para pasar argumentos de manera flexible y conveniente.
+
+Pasar argumentos como array
+
+En JavaScript, cuando se llama a una función, se pueden pasar argumentos de manera individual, como en el siguiente ejemplo:
+
+```javascript
+function suma(a, b, c) {
+  return a + b + c;
 }
+
+const resultado = suma(1, 2, 3);
+console.log(resultado); // 6
 ```
 
-Ahora veamos un seudo código de operación ternaria:
+Sin embargo, si se tiene un array de valores que se desean pasar como argumentos, se puede utilizar el operador de propagación para "desempacar" el array y pasar sus elementos como argumentos individuales:
 
-``` default
-HayMenosQueUmbral ? ComprarLeche : NoComprarLeche
+```javascript
+function suma(a, b, c) {
+  return a + b + c;
+}
+
+const valores = [1, 2, 3];
+const resultado = suma(...valores);
+console.log(resultado); // 6
+
 ```
 
-En código seria algo como:
+En este ejemplo, el operador de propagación (...) se utiliza para "desempacar" el array valores y pasar sus elementos como argumentos individuales a la función suma.
 
-``` default
-const umbral = 5;
-let lecheLitros = 26;
-const comprarLeche = lecheLitros >= umbral ? "No comprar leche" : "Comprar Leche";
-console.log(comprarLeche); // "No comprar leche"
+otra aplicación importante del operador de propagación en funciones: permitir que una función acepte un número variable de argumentos.
+
+Funciones con un número variable de argumentos
+
+En JavaScript, se puede definir una función que acepte un número variable de argumentos utilizando el operador de propagación en la lista de parámetros. Esto se conoce como "rest parameter" (parámetro de resto).
+
+Aquí hay un ejemplo:
+
+```javascript
+function suma(...numeros) {
+  return numeros.reduce((a, b) => a + b, 0);
+}
+
+console.log(suma(1, 2, 3)); // 6
+console.log(suma(1, 2, 3, 4, 5)); // 15
+
 ```
 
-Como vemos, la operación ternaria nos ofrece una manera de simplificar el código y la lectura en ciertos casos donde las condiciones son simples.
+En este ejemplo, la función suma acepta un número variable de argumentos, que se almacenan en el array numeros. La función utiliza el método reduce para sumar todos los números en el array y devolver el resultado.
+
+El operador de propagación (...) se utiliza para indicar que el parámetro numeros es un parámetro de resto, que puede aceptar cualquier número de argumentos.
+
+De esta manera, la función suma puede ser llamada con cualquier número de argumentos, y siempre devolverá la suma de todos los números pasados como argumentos.
+
+Otro ejemplo
+
+Aquí hay otro ejemplo de una función que utiliza el operador de propagación para aceptar un número variable de argumentos:
+
+```javascript
+
+function max(...numeros) {
+  return Math.max(...numeros);
+}
+
+console.log(max(1, 2, 3)); // 3
+console.log(max(1, 2, 3, 4, 5)); // 5
+
+```
+
+En este ejemplo, la función max acepta un número variable de argumentos y devuelve el máximo de todos los números pasados como argumentos.
+
 
 Referencias
 
-<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator>
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax>
 
-<https://www.w3schools.com/java/java_conditions_shorthand.asp>
+<https://www.w3schools.com/howto/howto_js_spread_operator.asp>
 
-<https://www.tpointtech.com/ternary-operator-in-java>
+<https://lodash.com/>
 
-## ¿Cuál es la diferencia entre una declaración de función y una expresión de función?
+<https://www.geeksforgeeks.org/lodash-_-clonedeep-method/>
 
-En JS, se pueden definir funciones de usando declaración de función y expresión de función. Vamos a ver ejemplos y diferencias.
 
-### Declaración de función
-
-La función se define usando la palabra clave **function**. Se le asigna un nombre y se pueden llamar y reusar en varios sitios.
-
-Por ejemplo, creamos una función que suma dos números de la siguiente manera:
-
-``` default
-
-function sumarNumeros(num1,num2){
- return num1 + num2;
-}
-```
-
-***Hoisting***. Las declaraciones de funciones se elevan al inicio del contexto lo que permite llamar a la función antes de escribir la declaración en el código.
-
-``` default
-
-sumarNumeros(1,3);// 4
-
-function sumarNumeros(num1,num2){
- return num1 + num2;
-}
-```
-
-### Expresión de función
-
-En este caso, a una variable se le asigna la función que puede ser anónima o tener un nombre interno. Por ejemplo, en la siguiente expresión creamos la variable getRectArea que contiene una función anónima:
-
-``` default
-
-const getRectArea = function(width, height) {
-  return width * height;
-};
-
-console.log(getRectArea(3, 4));
-// Expected output: 12
-```
-
-Un ejemplo de función con nombre podria ser:
-
-``` default
-
-let funcionConNombre = function miFuncion() {
-    console.log("Esta es una function expression con nombre.");
-};
-
-funcionConNombre();  //
-// Expected output: Esta es una function expression con nombre
-```
-
-***No hosting***. Lo que quiere decir que no se eleva y se tiene usar después de la asignación.
-
-Un uso común de expresiones de función es cuando se requiere una función como valor como cuando se usan callbacks.
-
-***Callbacks*** son funciones que se pasan como argumento a otra función y se ejecuta después de que ocurra un evento o se completa un proceso. Este tipo de mecánismos se usa en operaciones asíncronas como manejar eventos o esperar a una respuesta de API, ya que permite que el código continua su ejecución sin bloquearse. Por ejemplo, en en sieguiente código se espera a que ocurra un evento (click) y cuando esto ocurre, se imprime en consola un mensaje:
-
-``` default
-
-button.addEventListener("click", function (event) {
-  console.log("button is clicked!");
-});
-```
-
-Es importante observar que la secuencia de ejecución con callbacks no es la secuencia en la que estan definidas pero más bien en la secuencia en la que son llamadas.Esto permite ir llamando a funciones de manera muy dinámicas y en respuesta a las acciones de lo que podría ser las necesidades de un usuario en una web app.
-
-Referencias
-
-<https://www.w3schools.com/js/js_function_definition.asp>
-
-<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function>
-
-<https://www.w3schools.com/js/js_callback.asp>
-
-<https://www.youtube.com/watch?v=kz_vwAF4NHI>
 
 ## ¿Qué es la programación orientada a objetos?
 
-![JS this](images/js_this.png)
 
-***This*** es una palabra clave utilizada dentro de funciones y clases. Hace referencia al objeto en cuestión. En el caso de que estamos creando una función, la palabra "this" se usa para representar o llamar al objeto que dicha función esta modificando. El objeto al que se refiere varia en dependencia de cómo y donde se llama a ***this***.
+El operador de extensión (`...`) se utiliza para expandir un array o un objeto en una nueva estructura de datos.
 
-Vamos a ver algunos ejemplos para entender mejor como usar ***this***:
+```javascript
+// Expansión de array
+const numeros = [1, 2, 3];
+const nuevosNumeros = [...numeros, 4, 5, 6];
 
-1.  Al llamar fuera de función, se refire al objeto de ventana global.
+console.log(nuevosNumeros); // Output: [1, 2, 3, 4, 5, 6]
 
-``` default
+// Expansión de objeto
+const persona = { nombre: "Juan", edad: 30 };
+const nuevaPersona = { ...persona, direccion: "Calle 123" };
 
-console.log('this alone', this); // [object Window]
+console.log(nuevaPersona); // Output: { nombre: "Juan", edad: 30, direccion: "Calle 123" }
 ```
+El operador de extensión es útil para crear copias de arrays y objetos, y para combinar datos de diferentes fuentes.
 
-2.  Al llamar dentro de un objeto, nos referimos al objeto.
-
-``` default
-
-const person = {
-    firstName: "John",
-    lastName : "Doe",
-    id       : 5566,
-    getThis : function() {
-      return this;
-    }
-};
-
-console.log('this in object method', person.getThis());
-```
-
-Y de la misma manera, podemos usar ***this*** para llamar a otras propiedades del objeto
-
-``` default
-const person = {
-    firstName: "John",
-    lastName : "Doe",
-    id       : 5566,
-    getFullName : function() {
-      return this.name + ' ' + this.lastName;
-    }
-};
-
-console.log('this in object method', person.getFullName());
-```
-
-Hay otras posibles referencias de "this" que se resumen aqui:
-
--   En un método de un objeto, this se refiere al objeto.
--   Por sí solo, this se refiere al objeto global.
--   En una función, this se refiere al objeto global.
--   En una función en modo estricto, this es undefined.
--   En un evento, this se refiere al elemento que recibió el evento.
--   Métodos como call(), apply() y bind() pueden asignar this a cualquier objeto.
 
 Referencias
 

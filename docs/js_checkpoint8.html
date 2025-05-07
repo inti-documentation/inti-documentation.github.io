@@ -163,11 +163,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#qué-es-una-función-de-flecha" id="toc-qué-es-una-función-de-flecha" class="nav-link" data-scroll-target="#qué-es-una-función-de-flecha">¿Qué es una función de flecha?</a></li>
   <li><a href="#qué-es-la-deconstrucción-de-variables" id="toc-qué-es-la-deconstrucción-de-variables" class="nav-link" data-scroll-target="#qué-es-la-deconstrucción-de-variables">¿Qué es la deconstrucción de variables?</a></li>
   <li><a href="#qué-hace-el-operador-de-extensión-en-js" id="toc-qué-hace-el-operador-de-extensión-en-js" class="nav-link" data-scroll-target="#qué-hace-el-operador-de-extensión-en-js">¿Qué hace el operador de extensión en JS?</a></li>
-  <li><a href="#cuál-es-la-diferencia-entre-una-declaración-de-función-y-una-expresión-de-función" id="toc-cuál-es-la-diferencia-entre-una-declaración-de-función-y-una-expresión-de-función" class="nav-link" data-scroll-target="#cuál-es-la-diferencia-entre-una-declaración-de-función-y-una-expresión-de-función">¿Cuál es la diferencia entre una declaración de función y una expresión de función?</a>
-  <ul class="collapse">
-  <li><a href="#declaración-de-función" id="toc-declaración-de-función" class="nav-link" data-scroll-target="#declaración-de-función">Declaración de función</a></li>
-  <li><a href="#expresión-de-función" id="toc-expresión-de-función" class="nav-link" data-scroll-target="#expresión-de-función">Expresión de función</a></li>
-  </ul></li>
   <li><a href="#qué-es-la-programación-orientada-a-objetos" id="toc-qué-es-la-programación-orientada-a-objetos" class="nav-link" data-scroll-target="#qué-es-la-programación-orientada-a-objetos">¿Qué es la programación orientada a objetos?</a></li>
   <li><a href="#qué-es-una-promesa-en-js" id="toc-qué-es-una-promesa-en-js" class="nav-link" data-scroll-target="#qué-es-una-promesa-en-js">¿Qué es una promesa en JS?</a></li>
   <li><a href="#qué-hacen-async-y-await-por-nosotros" id="toc-qué-hacen-async-y-await-por-nosotros" class="nav-link" data-scroll-target="#qué-hacen-async-y-await-por-nosotros">¿Qué hacen async y await por nosotros?</a></li>
@@ -381,136 +376,172 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="qué-hace-el-operador-de-extensión-en-js" class="level2">
 <h2 class="anchored" data-anchor-id="qué-hace-el-operador-de-extensión-en-js">¿Qué hace el operador de extensión en JS?</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/js_ternary.png" class="img-fluid figure-img"></p>
-<figcaption>JS ternary</figcaption>
-</figure>
-</div>
-<p>El operador condicional (ternario) es el único operador de JavaScript que toma tres operandos: una condición seguida de un signo de interrogación (?), luego una expresión que se ejecuta si la condición es verdadera y, a continuación, dos puntos (:) seguidos de la expresión que se ejecuta si la condición es falsa. Este operador se utiliza frecuentemente como una alternativa a la sentencia if…else.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>condicion ? ExpresionEjecutaSiVerdadero : ExpresionEjecutaSiFalso</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Por ejemplo, imaginamos que hemos decidido comprar lecha cuando hay menos de 5 litros en casa (nos encanta hacer yogurt :D).</p>
-<p>Primero veamos como seria usando condicional tipo <strong>if … else</strong> :</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>if (lecheLitros &gt;= 5) {</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  console.log(`No comprar leche!`);</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>} else {</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  console.log(`Comprar leche!`);</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ahora veamos un seudo código de operación ternaria:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>HayMenosQueUmbral ? ComprarLeche : NoComprarLeche</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En código seria algo como:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>const umbral = 5;</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>let lecheLitros = 26;</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>const comprarLeche = lecheLitros &gt;= umbral ? "No comprar leche" : "Comprar Leche";</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>console.log(comprarLeche); // "No comprar leche"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Como vemos, la operación ternaria nos ofrece una manera de simplificar el código y la lectura en ciertos casos donde las condiciones son simples.</p>
-<p>Referencias</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator</a></p>
-<p><a href="https://www.w3schools.com/java/java_conditions_shorthand.asp" class="uri">https://www.w3schools.com/java/java_conditions_shorthand.asp</a></p>
-<p><a href="https://www.tpointtech.com/ternary-operator-in-java" class="uri">https://www.tpointtech.com/ternary-operator-in-java</a></p>
-</section>
-<section id="cuál-es-la-diferencia-entre-una-declaración-de-función-y-una-expresión-de-función" class="level2">
-<h2 class="anchored" data-anchor-id="cuál-es-la-diferencia-entre-una-declaración-de-función-y-una-expresión-de-función">¿Cuál es la diferencia entre una declaración de función y una expresión de función?</h2>
-<p>En JS, se pueden definir funciones de usando declaración de función y expresión de función. Vamos a ver ejemplos y diferencias.</p>
-<section id="declaración-de-función" class="level3">
-<h3 class="anchored" data-anchor-id="declaración-de-función">Declaración de función</h3>
-<p>La función se define usando la palabra clave <strong>function</strong>. Se le asigna un nombre y se pueden llamar y reusar en varios sitios.</p>
-<p>Por ejemplo, creamos una función que suma dos números de la siguiente manera:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>function sumarNumeros(num1,num2){</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a> return num1 + num2;</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong><em>Hoisting</em></strong>. Las declaraciones de funciones se elevan al inicio del contexto lo que permite llamar a la función antes de escribir la declaración en el código.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>sumarNumeros(1,3);// 4</span>
+<p>El operador de extensión o spread syntax(<code>...</code>) se utiliza para expandir un array o un objeto en una nueva estructura de datos. La sintaxis extendida permite a un elemento iterable tal como un arreglo o cadena ser expandido en lugares donde cero o más argumentos (para llamadas de función) o elementos (para Array literales) son esperados, o a un objeto ser expandido en lugares donde cero o más pares de valores clave (para literales Tipo Objeto) son esperados.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Expansión de array</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> numeros <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nuevosNumeros <span class="op">=</span> [<span class="op">...</span>numeros<span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nuevosNumeros)<span class="op">;</span> <span class="co">// Output: [1, 2, 3, 4, 5, 6]</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Expansión de objeto</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> { <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Juan"</span><span class="op">,</span> <span class="dt">edad</span><span class="op">:</span> <span class="dv">30</span> }<span class="op">;</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nuevaPersona <span class="op">=</span> { <span class="op">...</span>persona<span class="op">,</span> <span class="dt">direccion</span><span class="op">:</span> <span class="st">"Calle 123"</span> }<span class="op">;</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nuevaPersona)<span class="op">;</span> <span class="co">// Output: { nombre: "Juan", edad: 30, direccion: "Calle 123" }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El operador de extensión es útil para crear copias de arrays y objetos, y para combinar datos de diferentes fuentes.</p>
+<p><strong>Crear copias</strong></p>
+<p>En el contexto de crear copias, se utiliza para crear una copia superficial de un array o un objeto.</p>
+<ul>
+<li>Copiar arrays</li>
+</ul>
+<p>Para copiar un array, puedes utilizar el operador de propagación de la siguiente manera:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> original <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> copia <span class="op">=</span> [<span class="op">...</span>original]<span class="op">;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(copia)<span class="op">;</span> <span class="co">// [1, 2, 3]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, se crea una copia del array original utilizando el operador de propagación (…). La copia se almacena en la variable copia.</p>
+<ul>
+<li>Copiar objetos</li>
+</ul>
+<p>De manera similar, puedes copiar un objeto utilizando el operador de propagación:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> original <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> copia <span class="op">=</span> { <span class="op">...</span>original }<span class="op">;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(copia)<span class="op">;</span> <span class="co">// { a: 1, b: 2 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si te preguntas que es una copia superficial aqui se explica. La copia creada con el operador de propagación se llama “copia superficial” (o “shallow copy” en inglés) porque solo copia los valores de las propiedades del objeto o los elementos del array de manera directa, sin copiar los objetos o arrays anidados.</p>
+<p>En otras palabras, si el objeto o array original contiene referencias a otros objetos o arrays, la copia solo copiará las referencias, no los objetos o arrays en sí mismos. Esto significa que si se modifica el objeto o array original, la copia también se verá afectada, ya que ambos comparten las mismas referencias.</p>
+<p>Aquí hay un ejemplo:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> original <span class="op">=</span> {</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">b</span><span class="op">:</span> [<span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">c</span><span class="op">:</span> { <span class="dt">d</span><span class="op">:</span> <span class="dv">4</span> }</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> copia <span class="op">=</span> { <span class="op">...</span>original }<span class="op">;</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>copia<span class="op">.</span><span class="at">b</span><span class="op">.</span><span class="fu">push</span>(<span class="dv">5</span>)<span class="op">;</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>copia<span class="op">.</span><span class="at">c</span><span class="op">.</span><span class="at">d</span> <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(original)<span class="op">;</span> <span class="co">// { a: 1, b: [2, 3, 5], c: { d: 6 } }</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(copia)<span class="op">;</span> <span class="co">// { a: 1, b: [2, 3, 5], c: { d: 6 } }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, el objeto original se ve afectada por las modificaciones realizadas en el objeto copia, ya que ambos comparten las mismas referencias a los arrays y objetos anidados.</p>
+<p>Para crear una copia profunda (o “deep copy”) que no comparta referencias con el objeto original, se necesitan técnicas más avanzadas, como la recursividad o la utilización de bibliotecas como Lodash</p>
+<p><strong>Combinar datos</strong></p>
+<p>El operador de propagación (spread syntax) también se puede utilizar para combinar datos de diferentes fuentes en un nuevo array o objeto.</p>
+<ul>
+<li>Combinar arrays</li>
+</ul>
+<p>Para combinar dos o más arrays, puedes utilizar el operador de propagación de la siguiente manera:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> array1 <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> array2 <span class="op">=</span> [<span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> [<span class="op">...</span>array1<span class="op">,</span> <span class="op">...</span>array2]<span class="op">;</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// [1, 2, 3, 4, 5, 6]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, se combinan los arrays array1 y array2 en un nuevo array llamado combinado.</p>
+<ul>
+<li>Combinar objetos</li>
+</ul>
+<p>De manera similar, puedes combinar dos o más objetos utilizando el operador de propagación:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto2 <span class="op">=</span> { <span class="dt">c</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">d</span><span class="op">:</span> <span class="dv">4</span> }<span class="op">;</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>function sumarNumeros(num1,num2){</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a> return num1 + num2;</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="expresión-de-función" class="level3">
-<h3 class="anchored" data-anchor-id="expresión-de-función">Expresión de función</h3>
-<p>En este caso, a una variable se le asigna la función que puede ser anónima o tener un nombre interno. Por ejemplo, en la siguiente expresión creamos la variable getRectArea que contiene una función anónima:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>const getRectArea = function(width, height) {</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  return width * height;</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>};</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> {<span class="op">...</span>objeto1<span class="op">,</span> <span class="op">...</span>objeto2}<span class="op">;</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// { a: 1, b: 2, c: 3, d: 4 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, se combinan los objetos objeto1 y objeto2 en un nuevo objeto llamado combinado.</p>
+<p>Combinar arrays y objetos.También puedes combinar arrays y objetos utilizando el operador de propagación:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> array <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">5</span> }<span class="op">;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> [<span class="op">...</span>array<span class="op">,</span> objeto]<span class="op">;</span></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>console.log(getRectArea(3, 4));</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>// Expected output: 12</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Un ejemplo de función con nombre podria ser:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>let funcionConNombre = function miFuncion() {</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    console.log("Esta es una function expression con nombre.");</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>};</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// [1, 2, 3, { a: 4, b: 5 }]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, se combina el array array con el objeto objeto en un nuevo array llamado combinado.</p>
+<p>Sobrescritura de propiedades</p>
+<p>Cuando se combinan objetos utilizando el operador de propagación, si dos o más objetos tienen propiedades con el mismo nombre, la propiedad del objeto que se combina en segundo lugar sobrescribirá la propiedad del objeto que se combina en primer lugar.</p>
+<p>Aquí hay un ejemplo:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto2 <span class="op">=</span> { <span class="dt">b</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">c</span><span class="op">:</span> <span class="dv">4</span> }<span class="op">;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> {<span class="op">...</span>objeto1<span class="op">,</span> <span class="op">...</span>objeto2}<span class="op">;</span></span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>funcionConNombre();  //</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>// Expected output: Esta es una function expression con nombre</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong><em>No hosting</em></strong>. Lo que quiere decir que no se eleva y se tiene usar después de la asignación.</p>
-<p>Un uso común de expresiones de función es cuando se requiere una función como valor como cuando se usan callbacks.</p>
-<p><strong><em>Callbacks</em></strong> son funciones que se pasan como argumento a otra función y se ejecuta después de que ocurra un evento o se completa un proceso. Este tipo de mecánismos se usa en operaciones asíncronas como manejar eventos o esperar a una respuesta de API, ya que permite que el código continua su ejecución sin bloquearse. Por ejemplo, en en sieguiente código se espera a que ocurra un evento (click) y cuando esto ocurre, se imprime en consola un mensaje:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>button.addEventListener("click", function (event) {</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  console.log("button is clicked!");</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>});</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Es importante observar que la secuencia de ejecución con callbacks no es la secuencia en la que estan definidas pero más bien en la secuencia en la que son llamadas.Esto permite ir llamando a funciones de manera muy dinámicas y en respuesta a las acciones de lo que podría ser las necesidades de un usuario en una web app.</p>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// { a: 1, b: 3, c: 4 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, la propiedad b del objeto objeto2 sobrescribe la propiedad b del objeto objeto1, por lo que el valor de b en el objeto combinado es 3, no 2.</p>
+<p>Es importante tener en cuenta que esto se aplica a todas las propiedades que se combinan, no solo a las que tienen el mismo nombre. Si un objeto tiene una propiedad que no existe en el otro objeto, se agregará al objeto combinado sin problemas.</p>
+<p>Aquí hay un ejemplo con múltiples objetos:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto1 <span class="op">=</span> { <span class="dt">a</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">b</span><span class="op">:</span> <span class="dv">2</span> }<span class="op">;</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto2 <span class="op">=</span> { <span class="dt">b</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">c</span><span class="op">:</span> <span class="dv">4</span> }<span class="op">;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto3 <span class="op">=</span> { <span class="dt">c</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">d</span><span class="op">:</span> <span class="dv">6</span> }<span class="op">;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> combinado <span class="op">=</span> {<span class="op">...</span>objeto1<span class="op">,</span> <span class="op">...</span>objeto2<span class="op">,</span> <span class="op">...</span>objeto3}<span class="op">;</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(combinado)<span class="op">;</span> <span class="co">// { a: 1, b: 3, c: 5, d: 6 }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, la propiedad b del objeto objeto2 sobrescribe la propiedad b del objeto objeto1, y la propiedad c del objeto objeto3 sobrescribe la propiedad c del objeto objeto2. El objeto combinado tiene las propiedades de todos los objetos, con las sobrescrituras correspondientes.</p>
+<p><strong>En llamadas de función</strong></p>
+<p>El operador de propagación (spread syntax) se puede utilizar en llamadas de función para pasar argumentos de manera flexible y conveniente.</p>
+<p>Pasar argumentos como array</p>
+<p>En JavaScript, cuando se llama a una función, se pueden pasar argumentos de manera individual, como en el siguiente ejemplo:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(a<span class="op">,</span> b<span class="op">,</span> c) {</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b <span class="op">+</span> c<span class="op">;</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> resultado <span class="op">=</span> <span class="fu">suma</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>)<span class="op">;</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(resultado)<span class="op">;</span> <span class="co">// 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sin embargo, si se tiene un array de valores que se desean pasar como argumentos, se puede utilizar el operador de propagación para “desempacar” el array y pasar sus elementos como argumentos individuales:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(a<span class="op">,</span> b<span class="op">,</span> c) {</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b <span class="op">+</span> c<span class="op">;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> valores <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> resultado <span class="op">=</span> <span class="fu">suma</span>(<span class="op">...</span>valores)<span class="op">;</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(resultado)<span class="op">;</span> <span class="co">// 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, el operador de propagación (…) se utiliza para “desempacar” el array valores y pasar sus elementos como argumentos individuales a la función suma.</p>
+<p>otra aplicación importante del operador de propagación en funciones: permitir que una función acepte un número variable de argumentos.</p>
+<p>Funciones con un número variable de argumentos</p>
+<p>En JavaScript, se puede definir una función que acepte un número variable de argumentos utilizando el operador de propagación en la lista de parámetros. Esto se conoce como “rest parameter” (parámetro de resto).</p>
+<p>Aquí hay un ejemplo:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(<span class="op">...</span>numeros) {</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> numeros<span class="op">.</span><span class="fu">reduce</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> a <span class="op">+</span> b<span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">suma</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>))<span class="op">;</span> <span class="co">// 6</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">suma</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>))<span class="op">;</span> <span class="co">// 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, la función suma acepta un número variable de argumentos, que se almacenan en el array numeros. La función utiliza el método reduce para sumar todos los números en el array y devolver el resultado.</p>
+<p>El operador de propagación (…) se utiliza para indicar que el parámetro numeros es un parámetro de resto, que puede aceptar cualquier número de argumentos.</p>
+<p>De esta manera, la función suma puede ser llamada con cualquier número de argumentos, y siempre devolverá la suma de todos los números pasados como argumentos.</p>
+<p>Otro ejemplo</p>
+<p>Aquí hay otro ejemplo de una función que utiliza el operador de propagación para aceptar un número variable de argumentos:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">max</span>(<span class="op">...</span>numeros) {</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>numeros)<span class="op">;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>))<span class="op">;</span> <span class="co">// 3</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>))<span class="op">;</span> <span class="co">// 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, la función max acepta un número variable de argumentos y devuelve el máximo de todos los números pasados como argumentos.</p>
 <p>Referencias</p>
-<p><a href="https://www.w3schools.com/js/js_function_definition.asp" class="uri">https://www.w3schools.com/js/js_function_definition.asp</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function</a></p>
-<p><a href="https://www.w3schools.com/js/js_callback.asp" class="uri">https://www.w3schools.com/js/js_callback.asp</a></p>
-<p><a href="https://www.youtube.com/watch?v=kz_vwAF4NHI" class="uri">https://www.youtube.com/watch?v=kz_vwAF4NHI</a></p>
-</section>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax</a></p>
+<p><a href="https://www.w3schools.com/howto/howto_js_spread_operator.asp" class="uri">https://www.w3schools.com/howto/howto_js_spread_operator.asp</a></p>
+<p><a href="https://lodash.com/" class="uri">https://lodash.com/</a></p>
+<p><a href="https://www.geeksforgeeks.org/lodash-_-clonedeep-method/" class="uri">https://www.geeksforgeeks.org/lodash-_-clonedeep-method/</a></p>
 </section>
 <section id="qué-es-la-programación-orientada-a-objetos" class="level2">
 <h2 class="anchored" data-anchor-id="qué-es-la-programación-orientada-a-objetos">¿Qué es la programación orientada a objetos?</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/js_this.png" class="img-fluid figure-img"></p>
-<figcaption>JS this</figcaption>
-</figure>
-</div>
-<p><strong><em>This</em></strong> es una palabra clave utilizada dentro de funciones y clases. Hace referencia al objeto en cuestión. En el caso de que estamos creando una función, la palabra “this” se usa para representar o llamar al objeto que dicha función esta modificando. El objeto al que se refiere varia en dependencia de cómo y donde se llama a <strong><em>this</em></strong>.</p>
-<p>Vamos a ver algunos ejemplos para entender mejor como usar <strong><em>this</em></strong>:</p>
-<ol type="1">
-<li>Al llamar fuera de función, se refire al objeto de ventana global.</li>
-</ol>
-<div class="sourceCode" id="cb30"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>console.log('this alone', this); // [object Window]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Al llamar dentro de un objeto, nos referimos al objeto.</li>
-</ol>
-<div class="sourceCode" id="cb31"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>const person = {</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    firstName: "John",</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    lastName : "Doe",</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    id       : 5566,</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    getThis : function() {</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>      return this;</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>};</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>console.log('this in object method', person.getThis());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Y de la misma manera, podemos usar <strong><em>this</em></strong> para llamar a otras propiedades del objeto</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>const person = {</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    firstName: "John",</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    lastName : "Doe",</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    id       : 5566,</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    getFullName : function() {</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>      return this.name + ' ' + this.lastName;</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>};</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>console.log('this in object method', person.getFullName());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Hay otras posibles referencias de “this” que se resumen aqui:</p>
-<ul>
-<li>En un método de un objeto, this se refiere al objeto.</li>
-<li>Por sí solo, this se refiere al objeto global.</li>
-<li>En una función, this se refiere al objeto global.</li>
-<li>En una función en modo estricto, this es undefined.</li>
-<li>En un evento, this se refiere al elemento que recibió el evento.</li>
-<li>Métodos como call(), apply() y bind() pueden asignar this a cualquier objeto.</li>
-</ul>
+<p>El operador de extensión (<code>...</code>) se utiliza para expandir un array o un objeto en una nueva estructura de datos.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Expansión de array</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> numeros <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nuevosNumeros <span class="op">=</span> [<span class="op">...</span>numeros<span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nuevosNumeros)<span class="op">;</span> <span class="co">// Output: [1, 2, 3, 4, 5, 6]</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Expansión de objeto</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> { <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Juan"</span><span class="op">,</span> <span class="dt">edad</span><span class="op">:</span> <span class="dv">30</span> }<span class="op">;</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nuevaPersona <span class="op">=</span> { <span class="op">...</span>persona<span class="op">,</span> <span class="dt">direccion</span><span class="op">:</span> <span class="st">"Calle 123"</span> }<span class="op">;</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nuevaPersona)<span class="op">;</span> <span class="co">// Output: { nombre: "Juan", edad: 30, direccion: "Calle 123" }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El operador de extensión es útil para crear copias de arrays y objetos, y para combinar datos de diferentes fuentes.</p>
 <p>Referencias</p>
 <p><a href="https://www.freecodecamp.org/espanol/news/como-usar-la-palabra-clave-this-en-javascript/" class="uri">https://www.freecodecamp.org/espanol/news/como-usar-la-palabra-clave-this-en-javascript/</a></p>
 <p><a href="https://keepcoding.io/blog/que-es-this-en-javascript/" class="uri">https://keepcoding.io/blog/que-es-this-en-javascript/</a></p>
@@ -531,54 +562,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>  miLista = “velma”, “exploradora”, “jane”, “john”, “harry”</code></pre>
 <p>Crea un bucle while que recorra la misma lista y también imprima los nombres. Nota: Recuerda crear un contador para que el ciclo no sea infinito.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34" data-startfrom="509" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 508;"><span id="cb34-509"><a href="#cb34-509" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
-<span id="cb34-510"><a href="#cb34-510" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-511"><a href="#cb34-511" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
-<span id="cb34-512"><a href="#cb34-512" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
-<span id="cb34-513"><a href="#cb34-513" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
-<span id="cb34-514"><a href="#cb34-514" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb34-515"><a href="#cb34-515" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
-<span id="cb34-516"><a href="#cb34-516" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb34-517"><a href="#cb34-517" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
-<span id="cb34-518"><a href="#cb34-518" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
-<span id="cb34-519"><a href="#cb34-519" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
-<span id="cb34-520"><a href="#cb34-520" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb34-521"><a href="#cb34-521" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb34-522"><a href="#cb34-522" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-523"><a href="#cb34-523" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
-<span id="cb34-524"><a href="#cb34-524" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
-<span id="cb34-525"><a href="#cb34-525" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb34-526"><a href="#cb34-526" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb34-527"><a href="#cb34-527" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb34-528"><a href="#cb34-528" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
-<span id="cb34-529"><a href="#cb34-529" aria-hidden="true" tabindex="-1"></a>) {</span>
-<span id="cb34-530"><a href="#cb34-530" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
-<span id="cb34-531"><a href="#cb34-531" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb34-532"><a href="#cb34-532" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb34-533"><a href="#cb34-533" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb34-534"><a href="#cb34-534" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
-<span id="cb34-535"><a href="#cb34-535" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
-<span id="cb34-536"><a href="#cb34-536" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
-<span id="cb34-537"><a href="#cb34-537" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
-<span id="cb34-538"><a href="#cb34-538" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb34-539"><a href="#cb34-539" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb34-540"><a href="#cb34-540" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
-<span id="cb34-541"><a href="#cb34-541" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
-<span id="cb34-542"><a href="#cb34-542" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb34-543"><a href="#cb34-543" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
-<span id="cb34-544"><a href="#cb34-544" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb34-545"><a href="#cb34-545" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb34-546"><a href="#cb34-546" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-547"><a href="#cb34-547" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb34-548"><a href="#cb34-548" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb34-549"><a href="#cb34-549" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-550"><a href="#cb34-550" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
-<span id="cb34-551"><a href="#cb34-551" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
-<span id="cb34-552"><a href="#cb34-552" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-553"><a href="#cb34-553" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
-<span id="cb34-554"><a href="#cb34-554" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
-<span id="cb34-555"><a href="#cb34-555" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
-<span id="cb34-556"><a href="#cb34-556" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36" data-startfrom="596" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 595;"><span id="cb36-596"><a href="#cb36-596" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
+<span id="cb36-597"><a href="#cb36-597" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-598"><a href="#cb36-598" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
+<span id="cb36-599"><a href="#cb36-599" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
+<span id="cb36-600"><a href="#cb36-600" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
+<span id="cb36-601"><a href="#cb36-601" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb36-602"><a href="#cb36-602" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
+<span id="cb36-603"><a href="#cb36-603" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb36-604"><a href="#cb36-604" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
+<span id="cb36-605"><a href="#cb36-605" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
+<span id="cb36-606"><a href="#cb36-606" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
+<span id="cb36-607"><a href="#cb36-607" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb36-608"><a href="#cb36-608" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-609"><a href="#cb36-609" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-610"><a href="#cb36-610" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
+<span id="cb36-611"><a href="#cb36-611" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
+<span id="cb36-612"><a href="#cb36-612" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb36-613"><a href="#cb36-613" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb36-614"><a href="#cb36-614" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb36-615"><a href="#cb36-615" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
+<span id="cb36-616"><a href="#cb36-616" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="cb36-617"><a href="#cb36-617" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
+<span id="cb36-618"><a href="#cb36-618" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb36-619"><a href="#cb36-619" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-620"><a href="#cb36-620" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb36-621"><a href="#cb36-621" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
+<span id="cb36-622"><a href="#cb36-622" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
+<span id="cb36-623"><a href="#cb36-623" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
+<span id="cb36-624"><a href="#cb36-624" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb36-625"><a href="#cb36-625" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb36-626"><a href="#cb36-626" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb36-627"><a href="#cb36-627" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
+<span id="cb36-628"><a href="#cb36-628" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
+<span id="cb36-629"><a href="#cb36-629" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb36-630"><a href="#cb36-630" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
+<span id="cb36-631"><a href="#cb36-631" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb36-632"><a href="#cb36-632" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb36-633"><a href="#cb36-633" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-634"><a href="#cb36-634" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb36-635"><a href="#cb36-635" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-636"><a href="#cb36-636" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-637"><a href="#cb36-637" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
+<span id="cb36-638"><a href="#cb36-638" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
+<span id="cb36-639"><a href="#cb36-639" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-640"><a href="#cb36-640" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
+<span id="cb36-641"><a href="#cb36-641" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
+<span id="cb36-642"><a href="#cb36-642" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
+<span id="cb36-643"><a href="#cb36-643" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
