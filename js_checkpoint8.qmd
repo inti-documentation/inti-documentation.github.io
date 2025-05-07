@@ -549,31 +549,128 @@ Referencias
 ## ¿Qué es la programación orientada a objetos?
 
 
-El operador de extensión (`...`) se utiliza para expandir un array o un objeto en una nueva estructura de datos.
+La programación orientada a objetos (POO) es un paradigma de programación que se centra en la creación de objetos que tienen propiedades y métodos que describen su comportamiento. En JavaScript, la POO se utiliza para crear objetos que pueden interactuar entre sí y con otros objetos.
+
+**Creación de objetos en JavaScript**
+
+En JavaScript, los objetos se pueden crear de dos maneras:
+
+1. Sintaxis de objeto literal.
+
+Esta es la forma más común de crear objetos en JavaScript. Se utiliza la sintaxis {} para crear un objeto y se pueden agregar propiedades y métodos utilizando la sintaxis clave: valor
 
 ```javascript
-// Expansión de array
-const numeros = [1, 2, 3];
-const nuevosNumeros = [...numeros, 4, 5, 6];
+// Ejemplo de objeto en JavaScript
+const persona = {
+  nombre: "Ernesto",
+  edad: 41,
+  profesion: "ingeniero ambiental",
+  saludar: function() {
+	console.log(`Hola, me llamo ${this.nombre}, tengo ${this.edad} años y trabajo como ${profesion}`);
+  }
+};
 
-console.log(nuevosNumeros); // Output: [1, 2, 3, 4, 5, 6]
-
-// Expansión de objeto
-const persona = { nombre: "Juan", edad: 30 };
-const nuevaPersona = { ...persona, direccion: "Calle 123" };
-
-console.log(nuevaPersona); // Output: { nombre: "Juan", edad: 30, direccion: "Calle 123" }
+persona.saludar(); // Output: "Hola, me llamo Ernesto, tengo 41 años y trabajo como ingeniero ambiental"
 ```
-El operador de extensión es útil para crear copias de arrays y objetos, y para combinar datos de diferentes fuentes.
+En este ejemplo, se crea un objeto persona con tres propiedades: nombre, edad, profesión y el método saludar. La propiedad saludar es un método que se puede llamar para saludar.
 
+2. Constructores.
+
+Los constructores son funciones especiales que se utilizan para crear objetos. Se utilizan la palabra clave new para crear un objeto a partir de un constructor.
+
+```javascript
+function Persona(nombre, edad, profesion) {
+  this.nombre = nombre;
+  this.edad = edad;
+  this.profesion = profesion;
+  this.saludar = function() {
+    console.log(`Hola, me llamo ${this.nombre}`);
+  };
+}
+
+const persona = new Persona('Ines', 30, "Doctora");
+
+```
+
+En este ejemplo, se define un constructor Persona que toma tres parámetros: nombre, edad y profesión. El constructor crea un objeto con las propiedades nombre, edad, profesión y el método saludar. Luego, se crea un objeto persona utilizando el constructor Persona y la palabra clave new.
+
+**Diferencias entre la sintaxis de objeto literal y los constructores**
+
+La principal diferencia entre la sintaxis de objeto literal y los constructores es la forma en que se crean los objetos. La sintaxis de objeto literal es más concisa y fácil de leer, mientras que los constructores ofrecen más flexibilidad y permiten la creación de objetos con propiedades y métodos dinámicos.
+
+
+**Herencia**
+
+La herencia es un concepto fundamental en la Programación Orientada a Objetos (OOP) que permite crear una nueva clase a partir de una clase existente, heredando sus propiedades y métodos. En JavaScript, la herencia se puede implementar utilizando la palabra clave extends y la función constructor.
+
+Ejemplo de herencia
+
+Supongamos que tenemos una clase Vehiculo que tiene propiedades como marca, modelo y año, y métodos como arrancar y detener. Queremos crear una clase Coche que herede las propiedades y métodos de Vehiculo y agregue algunas propiedades y métodos adicionales.
+
+```javascript
+// Clase Vehiculo
+class Vehiculo {
+  constructor(marca, modelo, año) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.año = año;
+  }
+
+  arrancar() {
+    console.log(`El vehículo ${this.marca} ${this.modelo} está arrancando`);
+  }
+
+  detener() {
+    console.log(`El vehículo ${this.marca} ${this.modelo} está deteniendo`);
+  }
+}
+
+// Clase Coche que hereda de Vehiculo
+class Coche extends Vehiculo {
+  constructor(marca, modelo, año, puertas) {
+    super(marca, modelo, año);
+    this.puertas = puertas;
+  }
+
+  abrirPuertas() {
+    console.log(`Se abren las ${this.puertas} puertas del coche ${this.marca} ${this.modelo}`);
+  }
+}
+```
+
+La clase Coche hereda de Vehiculo utilizando la palabra clave extends. El constructor de Coche llama al constructor de Vehiculo utilizando la función super, pasando los parámetros marca, modelo y año. Luego, inicializa la propiedad puertas propia de la clase Coche.
+
+La función super se utiliza para llamar al constructor de la clase padre (en este caso, Vehiculo) y heredar sus propiedades y métodos. De esta manera, la clase Coche tiene acceso a las propiedades y métodos de Vehiculo, como marca, modelo, año, arrancar y detener, y puede agregar sus propias propiedades y métodos, como puertas y abrirPuertas.
+
+A continuación se presenta ejemplo de como usar clase Coche que hereda de vehiculo:
+
+```javascript
+// Crear un objeto de la clase Coche
+const miCoche = new Coche('Toyota', 'Corolla', 2015, 4);
+
+// Llamar a los métodos heredados de Vehiculo
+miCoche.arrancar(); // El vehículo Toyota Corolla está arrancando
+miCoche.detener(); // El vehículo Toyota Corolla está deteniendo
+
+// Llamar al método propio de Coche
+miCoche.abrirPuertas(); // Se abren las 4 puertas del coche Toyota Corolla
+
+// Acceder a las propiedades
+console.log(miCoche.marca); // Toyota
+console.log(miCoche.modelo); // Corolla
+console.log(miCoche.año); // 2015
+console.log(miCoche.puertas); // 4
+```
+
+En este ejemplo, creamos un objeto miCoche de la clase Coche, pasando los parámetros marca, modelo, año y puertas. Luego, llamamos a los métodos heredados de Vehiculo, como arrancar y detener, y al método propio de Coche, como abrirPuertas.
 
 Referencias
 
-<https://www.freecodecamp.org/espanol/news/como-usar-la-palabra-clave-this-en-javascript/>
+<https://www.w3schools.com/js/js_object_constructors.asp>
 
 <https://keepcoding.io/blog/que-es-this-en-javascript/>
 
-<https://www.w3schools.com/js/js_this.asp>
+<https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/>
 
 [https://medium.com/\@leoanimesh/javascript-this-keyword-explained-a62f3676fca1](https://medium.com/@leoanimesh/javascript-this-keyword-explained-a62f3676fca1){.uri}
 

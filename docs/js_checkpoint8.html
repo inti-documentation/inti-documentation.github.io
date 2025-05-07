@@ -529,23 +529,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="qué-es-la-programación-orientada-a-objetos" class="level2">
 <h2 class="anchored" data-anchor-id="qué-es-la-programación-orientada-a-objetos">¿Qué es la programación orientada a objetos?</h2>
-<p>El operador de extensión (<code>...</code>) se utiliza para expandir un array o un objeto en una nueva estructura de datos.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Expansión de array</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> numeros <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nuevosNumeros <span class="op">=</span> [<span class="op">...</span>numeros<span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">;</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nuevosNumeros)<span class="op">;</span> <span class="co">// Output: [1, 2, 3, 4, 5, 6]</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Expansión de objeto</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> { <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Juan"</span><span class="op">,</span> <span class="dt">edad</span><span class="op">:</span> <span class="dv">30</span> }<span class="op">;</span></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nuevaPersona <span class="op">=</span> { <span class="op">...</span>persona<span class="op">,</span> <span class="dt">direccion</span><span class="op">:</span> <span class="st">"Calle 123"</span> }<span class="op">;</span></span>
+<p>La programación orientada a objetos (POO) es un paradigma de programación que se centra en la creación de objetos que tienen propiedades y métodos que describen su comportamiento. En JavaScript, la POO se utiliza para crear objetos que pueden interactuar entre sí y con otros objetos.</p>
+<p><strong>Creación de objetos en JavaScript</strong></p>
+<p>En JavaScript, los objetos se pueden crear de dos maneras:</p>
+<ol type="1">
+<li>Sintaxis de objeto literal.</li>
+</ol>
+<p>Esta es la forma más común de crear objetos en JavaScript. Se utiliza la sintaxis {} para crear un objeto y se pueden agregar propiedades y métodos utilizando la sintaxis clave: valor</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Ejemplo de objeto en JavaScript</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> {</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">nombre</span><span class="op">:</span> <span class="st">"Ernesto"</span><span class="op">,</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">edad</span><span class="op">:</span> <span class="dv">41</span><span class="op">,</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">profesion</span><span class="op">:</span> <span class="st">"ingeniero ambiental"</span><span class="op">,</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">saludar</span><span class="op">:</span> <span class="kw">function</span>() {</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Hola, me llamo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">nombre</span><span class="sc">}</span><span class="vs">, tengo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">edad</span><span class="sc">}</span><span class="vs"> años y trabajo como </span><span class="sc">${</span>profesion<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
 <span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(nuevaPersona)<span class="op">;</span> <span class="co">// Output: { nombre: "Juan", edad: 30, direccion: "Calle 123" }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>El operador de extensión es útil para crear copias de arrays y objetos, y para combinar datos de diferentes fuentes.</p>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>persona<span class="op">.</span><span class="fu">saludar</span>()<span class="op">;</span> <span class="co">// Output: "Hola, me llamo Ernesto, tengo 41 años y trabajo como ingeniero ambiental"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, se crea un objeto persona con tres propiedades: nombre, edad, profesión y el método saludar. La propiedad saludar es un método que se puede llamar para saludar.</p>
+<ol start="2" type="1">
+<li>Constructores.</li>
+</ol>
+<p>Los constructores son funciones especiales que se utilizan para crear objetos. Se utilizan la palabra clave new para crear un objeto a partir de un constructor.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Persona</span>(nombre<span class="op">,</span> edad<span class="op">,</span> profesion) {</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">nombre</span> <span class="op">=</span> nombre<span class="op">;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">edad</span> <span class="op">=</span> edad<span class="op">;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">profesion</span> <span class="op">=</span> profesion<span class="op">;</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">saludar</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Hola, me llamo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">nombre</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> persona <span class="op">=</span> <span class="kw">new</span> <span class="fu">Persona</span>(<span class="st">'Ines'</span><span class="op">,</span> <span class="dv">30</span><span class="op">,</span> <span class="st">"Doctora"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, se define un constructor Persona que toma tres parámetros: nombre, edad y profesión. El constructor crea un objeto con las propiedades nombre, edad, profesión y el método saludar. Luego, se crea un objeto persona utilizando el constructor Persona y la palabra clave new.</p>
+<p><strong>Diferencias entre la sintaxis de objeto literal y los constructores</strong></p>
+<p>La principal diferencia entre la sintaxis de objeto literal y los constructores es la forma en que se crean los objetos. La sintaxis de objeto literal es más concisa y fácil de leer, mientras que los constructores ofrecen más flexibilidad y permiten la creación de objetos con propiedades y métodos dinámicos.</p>
+<p><strong>Herencia</strong></p>
+<p>La herencia es un concepto fundamental en la Programación Orientada a Objetos (OOP) que permite crear una nueva clase a partir de una clase existente, heredando sus propiedades y métodos. En JavaScript, la herencia se puede implementar utilizando la palabra clave extends y la función constructor.</p>
+<p>Ejemplo de herencia</p>
+<p>Supongamos que tenemos una clase Vehiculo que tiene propiedades como marca, modelo y año, y métodos como arrancar y detener. Queremos crear una clase Coche que herede las propiedades y métodos de Vehiculo y agregue algunas propiedades y métodos adicionales.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Clase Vehiculo</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Vehiculo {</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(marca<span class="op">,</span> modelo<span class="op">,</span> año) {</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">marca</span> <span class="op">=</span> marca<span class="op">;</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">modelo</span> <span class="op">=</span> modelo<span class="op">;</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">año</span> <span class="op">=</span> año<span class="op">;</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrancar</span>() {</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`El vehículo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">marca</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">modelo</span><span class="sc">}</span><span class="vs"> está arrancando`</span>)<span class="op">;</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">detener</span>() {</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`El vehículo </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">marca</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">modelo</span><span class="sc">}</span><span class="vs"> está deteniendo`</span>)<span class="op">;</span></span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a><span class="co">// Clase Coche que hereda de Vehiculo</span></span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Coche <span class="kw">extends</span> Vehiculo {</span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(marca<span class="op">,</span> modelo<span class="op">,</span> año<span class="op">,</span> puertas) {</span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">super</span>(marca<span class="op">,</span> modelo<span class="op">,</span> año)<span class="op">;</span></span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">puertas</span> <span class="op">=</span> puertas<span class="op">;</span></span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abrirPuertas</span>() {</span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Se abren las </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">puertas</span><span class="sc">}</span><span class="vs"> puertas del coche </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">marca</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">modelo</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La clase Coche hereda de Vehiculo utilizando la palabra clave extends. El constructor de Coche llama al constructor de Vehiculo utilizando la función super, pasando los parámetros marca, modelo y año. Luego, inicializa la propiedad puertas propia de la clase Coche.</p>
+<p>La función super se utiliza para llamar al constructor de la clase padre (en este caso, Vehiculo) y heredar sus propiedades y métodos. De esta manera, la clase Coche tiene acceso a las propiedades y métodos de Vehiculo, como marca, modelo, año, arrancar y detener, y puede agregar sus propias propiedades y métodos, como puertas y abrirPuertas.</p>
+<p>A continuación se presenta ejemplo de como usar clase Coche que hereda de vehiculo:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Crear un objeto de la clase Coche</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> miCoche <span class="op">=</span> <span class="kw">new</span> <span class="fu">Coche</span>(<span class="st">'Toyota'</span><span class="op">,</span> <span class="st">'Corolla'</span><span class="op">,</span> <span class="dv">2015</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Llamar a los métodos heredados de Vehiculo</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>miCoche<span class="op">.</span><span class="fu">arrancar</span>()<span class="op">;</span> <span class="co">// El vehículo Toyota Corolla está arrancando</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>miCoche<span class="op">.</span><span class="fu">detener</span>()<span class="op">;</span> <span class="co">// El vehículo Toyota Corolla está deteniendo</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="co">// Llamar al método propio de Coche</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>miCoche<span class="op">.</span><span class="fu">abrirPuertas</span>()<span class="op">;</span> <span class="co">// Se abren las 4 puertas del coche Toyota Corolla</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Acceder a las propiedades</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">marca</span>)<span class="op">;</span> <span class="co">// Toyota</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">modelo</span>)<span class="op">;</span> <span class="co">// Corolla</span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">año</span>)<span class="op">;</span> <span class="co">// 2015</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(miCoche<span class="op">.</span><span class="at">puertas</span>)<span class="op">;</span> <span class="co">// 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, creamos un objeto miCoche de la clase Coche, pasando los parámetros marca, modelo, año y puertas. Luego, llamamos a los métodos heredados de Vehiculo, como arrancar y detener, y al método propio de Coche, como abrirPuertas.</p>
 <p>Referencias</p>
-<p><a href="https://www.freecodecamp.org/espanol/news/como-usar-la-palabra-clave-this-en-javascript/" class="uri">https://www.freecodecamp.org/espanol/news/como-usar-la-palabra-clave-this-en-javascript/</a></p>
+<p><a href="https://www.w3schools.com/js/js_object_constructors.asp" class="uri">https://www.w3schools.com/js/js_object_constructors.asp</a></p>
 <p><a href="https://keepcoding.io/blog/que-es-this-en-javascript/" class="uri">https://keepcoding.io/blog/que-es-this-en-javascript/</a></p>
-<p><a href="https://www.w3schools.com/js/js_this.asp" class="uri">https://www.w3schools.com/js/js_this.asp</a></p>
+<p><a href="https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/" class="uri">https://www.geeksforgeeks.org/introduction-object-oriented-programming-javascript/</a></p>
 <p><a href="https://medium.com/@leoanimesh/javascript-this-keyword-explained-a62f3676fca1" class="uri">https://medium.com/@leoanimesh/javascript-this-keyword-explained-a62f3676fca1</a></p>
 </section>
 <section id="qué-es-una-promesa-en-js" class="level2">
@@ -562,54 +636,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>  miLista = “velma”, “exploradora”, “jane”, “john”, “harry”</code></pre>
 <p>Crea un bucle while que recorra la misma lista y también imprima los nombres. Nota: Recuerda crear un contador para que el ciclo no sea infinito.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36" data-startfrom="596" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 595;"><span id="cb36-596"><a href="#cb36-596" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
-<span id="cb36-597"><a href="#cb36-597" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-598"><a href="#cb36-598" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
-<span id="cb36-599"><a href="#cb36-599" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
-<span id="cb36-600"><a href="#cb36-600" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
-<span id="cb36-601"><a href="#cb36-601" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb36-602"><a href="#cb36-602" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
-<span id="cb36-603"><a href="#cb36-603" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb36-604"><a href="#cb36-604" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
-<span id="cb36-605"><a href="#cb36-605" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
-<span id="cb36-606"><a href="#cb36-606" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
-<span id="cb36-607"><a href="#cb36-607" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb36-608"><a href="#cb36-608" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb36-609"><a href="#cb36-609" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-610"><a href="#cb36-610" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
-<span id="cb36-611"><a href="#cb36-611" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
-<span id="cb36-612"><a href="#cb36-612" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb36-613"><a href="#cb36-613" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb36-614"><a href="#cb36-614" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
-<span id="cb36-615"><a href="#cb36-615" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
-<span id="cb36-616"><a href="#cb36-616" aria-hidden="true" tabindex="-1"></a>) {</span>
-<span id="cb36-617"><a href="#cb36-617" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
-<span id="cb36-618"><a href="#cb36-618" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb36-619"><a href="#cb36-619" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb36-620"><a href="#cb36-620" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb36-621"><a href="#cb36-621" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
-<span id="cb36-622"><a href="#cb36-622" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
-<span id="cb36-623"><a href="#cb36-623" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
-<span id="cb36-624"><a href="#cb36-624" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
-<span id="cb36-625"><a href="#cb36-625" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb36-626"><a href="#cb36-626" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb36-627"><a href="#cb36-627" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
-<span id="cb36-628"><a href="#cb36-628" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
-<span id="cb36-629"><a href="#cb36-629" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb36-630"><a href="#cb36-630" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
-<span id="cb36-631"><a href="#cb36-631" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
-<span id="cb36-632"><a href="#cb36-632" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb36-633"><a href="#cb36-633" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-634"><a href="#cb36-634" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb36-635"><a href="#cb36-635" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb36-636"><a href="#cb36-636" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-637"><a href="#cb36-637" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
-<span id="cb36-638"><a href="#cb36-638" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
-<span id="cb36-639"><a href="#cb36-639" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-640"><a href="#cb36-640" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
-<span id="cb36-641"><a href="#cb36-641" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
-<span id="cb36-642"><a href="#cb36-642" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
-<span id="cb36-643"><a href="#cb36-643" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39" data-startfrom="693" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 692;"><span id="cb39-693"><a href="#cb39-693" aria-hidden="true" tabindex="-1"></a><span class="co">// ejercicio.js</span></span>
+<span id="cb39-694"><a href="#cb39-694" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-695"><a href="#cb39-695" aria-hidden="true" tabindex="-1"></a><span class="co">/*crea funcion que toma 4 argumentos, suma los 2 primeros y multiplica los 2 siguientes</span></span>
+<span id="cb39-696"><a href="#cb39-696" aria-hidden="true" tabindex="-1"></a><span class="co">Si el número creado es mayor que 50, la consola registra "¡El número es mayor que 50!". </span></span>
+<span id="cb39-697"><a href="#cb39-697" aria-hidden="true" tabindex="-1"></a><span class="co">Si es más pequeño, la consola registra "¡El número es menor que 50!"</span></span>
+<span id="cb39-698"><a href="#cb39-698" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb39-699"><a href="#cb39-699" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">myFunctionSumaMultiplica</span>(num1<span class="op">,</span> num2<span class="op">,</span>num3<span class="op">,</span>num4) {</span>
+<span id="cb39-700"><a href="#cb39-700" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-701"><a href="#cb39-701" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que se hayan pasado exactamente 4 argumentos</span></span>
+<span id="cb39-702"><a href="#cb39-702" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">arguments</span><span class="op">.</span><span class="at">length</span> <span class="op">!==</span> <span class="dv">4</span>) {</span>
+<span id="cb39-703"><a href="#cb39-703" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de cantidad: se deben pasar 4 argumentos."</span>)<span class="op">;</span></span>
+<span id="cb39-704"><a href="#cb39-704" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb39-705"><a href="#cb39-705" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb39-706"><a href="#cb39-706" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-707"><a href="#cb39-707" aria-hidden="true" tabindex="-1"></a><span class="co">// Verificar que todos sean números</span></span>
+<span id="cb39-708"><a href="#cb39-708" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (</span>
+<span id="cb39-709"><a href="#cb39-709" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num1 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb39-710"><a href="#cb39-710" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num2 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb39-711"><a href="#cb39-711" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num3 <span class="op">!==</span> <span class="st">'number'</span> <span class="op">||</span></span>
+<span id="cb39-712"><a href="#cb39-712" aria-hidden="true" tabindex="-1"></a>    <span class="kw">typeof</span> num4 <span class="op">!==</span> <span class="st">'number'</span></span>
+<span id="cb39-713"><a href="#cb39-713" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="cb39-714"><a href="#cb39-714" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Error de tipo: todos los 4 argumentos deben ser números."</span>)<span class="op">;</span></span>
+<span id="cb39-715"><a href="#cb39-715" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb39-716"><a href="#cb39-716" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb39-717"><a href="#cb39-717" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-718"><a href="#cb39-718" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma1 <span class="op">=</span> num1 <span class="op">+</span> num2<span class="op">;</span></span>
+<span id="cb39-719"><a href="#cb39-719" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> suma2 <span class="op">=</span> num3 <span class="op">+</span> num4<span class="op">;</span></span>
+<span id="cb39-720"><a href="#cb39-720" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> producto <span class="op">=</span> suma1 <span class="op">*</span> suma2<span class="op">;</span></span>
+<span id="cb39-721"><a href="#cb39-721" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (producto <span class="op">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb39-722"><a href="#cb39-722" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es mayor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb39-723"><a href="#cb39-723" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb39-724"><a href="#cb39-724" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">if</span> (producto <span class="op">===</span> <span class="dv">50</span>) {</span>
+<span id="cb39-725"><a href="#cb39-725" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es igual a 50!`</span>)<span class="op">;</span></span>
+<span id="cb39-726"><a href="#cb39-726" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb39-727"><a href="#cb39-727" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> {</span>
+<span id="cb39-728"><a href="#cb39-728" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`¡El número </span><span class="sc">${</span>producto<span class="sc">}</span><span class="vs"> es menor que 50!`</span>)<span class="op">;</span></span>
+<span id="cb39-729"><a href="#cb39-729" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb39-730"><a href="#cb39-730" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-731"><a href="#cb39-731" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-732"><a href="#cb39-732" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-733"><a href="#cb39-733" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-734"><a href="#cb39-734" aria-hidden="true" tabindex="-1"></a><span class="co">//llama a la funcion y muestra el resultado en consola</span></span>
+<span id="cb39-735"><a href="#cb39-735" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado = myFunctionSumaMultiplica(2.5, 3, 4, 2);</span></span>
+<span id="cb39-736"><a href="#cb39-736" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-737"><a href="#cb39-737" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de tipo</span></span>
+<span id="cb39-738"><a href="#cb39-738" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado2 = myFunctionSumaMultiplica(2.5, 3, "4", 2);</span></span>
+<span id="cb39-739"><a href="#cb39-739" aria-hidden="true" tabindex="-1"></a><span class="co">// ejemplo con error de cantidad de argumentos</span></span>
+<span id="cb39-740"><a href="#cb39-740" aria-hidden="true" tabindex="-1"></a><span class="co">//var resultado3 = myFunctionSumaMultiplica(2.5, 3, 4);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
